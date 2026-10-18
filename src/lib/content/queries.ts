@@ -13,7 +13,8 @@ const summaryFields = `
   "featured": coalesce(featured, false),
   "category": category->${categoryProjection},
   "author": author->{ name, role, "avatarUrl": avatar.asset->url },
-  "plain": { "vi": pt::text(body.vi), "en": pt::text(body.en) }
+  "plain": { "vi": pt::text(body.vi), "en": pt::text(body.en) },
+  "hasVideo": count(body.vi[_type == "youtube"]) > 0
 `;
 
 const bodyLang = (lang: string) =>

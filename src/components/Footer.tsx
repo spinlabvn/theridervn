@@ -6,13 +6,13 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { getCategories } from "@/lib/content";
 import { href } from "@/lib/format";
 import { Logo } from "./Logo";
-import { FacebookIcon, InstagramIcon, StravaIcon, YoutubeIcon } from "./SocialIcons";
+import { FacebookIcon, InstagramIcon, TiktokIcon, YoutubeIcon } from "./SocialIcons";
 
 const socials = [
   { key: "facebook", label: "Facebook", Icon: FacebookIcon },
   { key: "instagram", label: "Instagram", Icon: InstagramIcon },
   { key: "youtube", label: "YouTube", Icon: YoutubeIcon },
-  { key: "strava", label: "Strava", Icon: StravaIcon },
+  { key: "tiktok", label: "TikTok", Icon: TiktokIcon },
 ] as const;
 
 export async function Footer({ locale }: { locale: Locale }) {

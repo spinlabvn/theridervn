@@ -1,0 +1,98 @@
+[
+ {
+  "slug": "news",
+  "order": 1,
+  "title": {
+   "vi": "Tin mới",
+   "en": "News"
+  },
+  "description": {
+   "vi": "Tin tức mới nhất từ thế giới xe đạp thể thao.",
+   "en": "The latest news from the world of performance cycling."
+  }
+ },
+ {
+  "slug": "bike-check",
+  "order": 2,
+  "title": {
+   "vi": "Bike Check",
+   "en": "Bike Check"
+  },
+  "description": {
+   "vi": "Soi chi tiết cấu hình những chiếc xe đáng chú ý.",
+   "en": "A close look at the build of notable bikes."
+  }
+ },
+ {
+  "slug": "review-bikes",
+  "order": 3,
+  "title": {
+   "vi": "Review Bikes",
+   "en": "Review Bikes"
+  },
+  "description": {
+   "vi": "Đánh giá xe đạp road, gravel và MTB.",
+   "en": "Road, gravel and MTB bike reviews."
+  }
+ },
+ {
+  "slug": "review-parts",
+  "order": 4,
+  "title": {
+   "vi": "Review Parts",
+   "en": "Review Parts"
+  },
+  "description": {
+   "vi": "Đánh giá linh kiện, phụ tùng và trang bị.",
+   "en": "Reviews of components, parts and kit."
+  }
+ },
+ {
+  "slug": "events",
+  "order": 5,
+  "title": {
+   "vi": "Events",
+   "en": "Events"
+  },
+  "description": {
+   "vi": "Giải đấu và sự kiện xe đạp.",
+   "en": "Races and cycling events."
+  }
+ },
+ {
+  "slug": "podcast",
+  "order": 6,
+  "title": {
+   "vi": "Podcast",
+   "en": "Podcast"
+  },
+  "description": {
+   "vi": "Trò chuyện cùng những người trong giới xe đạp.",
+   "en": "Conversations with people in the cycling world."
+  }
+ },
+ {
+  "slug": "interview",
+  "order": 7,
+  "title": {
+   "vi": "Interview",
+   "en": "Interview"
+  },
+  "description": {
+   "vi": "Phỏng vấn tay đua, thợ xe và người làm nghề.",
+   "en": "Interviews with riders, mechanics and industry people."
+  }
+ },
+ {
+  "slug": "how-to",
+  "order": 8,
+  "title": {
+   "vi": "How To",
+   "en": "How To"
+  },
+  "description": {
+   "vi": "Hướng dẫn kỹ thuật từ The Rider Academy.",
+   "en": "Skills tutorials from The Rider Academy."
+  }
+ }
+]

@@ -1,15 +1,20 @@
 import Image from "next/image";
 import { site } from "@/config/site";
 
-/** Logo chữ mặc định; nếu khai báo file logo trong src/config/site.ts sẽ dùng ảnh. */
+/** Logo ảnh khai báo trong src/config/site.ts; để `src: null` sẽ dùng logo chữ. */
 export function Logo({ className = "" }: { className?: string }) {
-  const { light, dark, width, height } = site.logo;
-  if (light && dark) {
+  const { src, width, height } = site.logo;
+  if (src) {
     return (
-      <span className={`inline-flex ${className}`}>
-        <Image src={light} alt={site.name} width={width} height={height} priority className="dark:hidden" />
-        <Image src={dark} alt={site.name} width={width} height={height} priority className="hidden dark:block" />
-      </span>
+      <Image
+        src={src}
+        alt={site.name}
+        width={width}
+        height={height}
+        priority
+        unoptimized
+        className={`h-7 w-auto brightness-0 dark:brightness-100 ${className}`}
+      />
     );
   }
   return (

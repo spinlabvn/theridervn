@@ -70,7 +70,7 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
     "@type": "NewsArticle",
     headline: post.title,
     description: post.excerpt,
-    image: post.coverUrl ? [post.coverUrl] : undefined,
+    image: post.coverUrl ? [new URL(post.coverUrl, site.url).toString()] : undefined,
     datePublished: post.publishedAt,
     inLanguage: locale,
     mainEntityOfPage: url,
@@ -160,7 +160,7 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
                 This story is currently only available in Vietnamese.
               </p>
             ) : null}
-            <ArticleBody body={post.body} />
+            <ArticleBody body={post.body} videoTitle={post.title} />
 
             <footer className="mt-14 space-y-8 border-t border-line pt-8">
               {post.tags.length ? (

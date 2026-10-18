@@ -22,13 +22,13 @@ export async function Header({ locale }: { locale: Locale }) {
           <Logo />
         </Link>
 
-        <nav aria-label={t.nav.categories} className="hidden flex-1 lg:block">
+        <nav aria-label={t.nav.categories} className="hidden flex-1 xl:block">
           <ul className="flex items-center gap-1">
             {catItems.map((item) => (
               <li key={item.href}>
                 <NavLink
                   href={item.href}
-                  className="relative flex h-11 items-center px-3 text-sm font-medium text-ink-2 transition-colors duration-200 hover:text-ink aria-[current=page]:text-ink after:absolute after:inset-x-3 after:-bottom-[13px] after:h-[3px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 aria-[current=page]:after:scale-x-100"
+                  className="relative flex h-11 items-center px-2.5 text-sm font-medium text-ink-2 transition-colors duration-200 hover:text-ink aria-[current=page]:text-ink after:absolute after:inset-x-2.5 after:-bottom-[13px] after:h-[3px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 aria-[current=page]:after:scale-x-100"
                 >
                   {item.label}
                 </NavLink>

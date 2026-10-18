@@ -37,7 +37,7 @@ export function MobileMenu({
         onClick={() => ref.current?.showModal()}
         aria-label={labels.open}
         aria-haspopup="dialog"
-        className="grid size-11 place-items-center rounded-full transition-colors duration-200 hover:bg-surface-2 lg:hidden"
+        className="grid size-11 place-items-center rounded-full transition-colors duration-200 hover:bg-surface-2 xl:hidden"
       >
         <Menu className="size-6" strokeWidth={1.8} aria-hidden="true" />
       </button>

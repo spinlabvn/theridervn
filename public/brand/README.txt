@@ -1,1 +1,1 @@
-Đặt logo TheRider (SVG/PNG) vào thư mục này, rồi khai báo đường dẫn trong src/config/site.ts (logo.light / logo.dark).
+therider-logo.png: logo TheRider lấy từ therider.vn (chữ trắng, nền trong suốt). Khai báo trong src/config/site.ts.

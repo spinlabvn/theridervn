@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Clock3 } from "lucide-react";
+import { Clock3, Play } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { PostSummary } from "@/lib/content";
@@ -12,10 +12,17 @@ export function PostMeta({ post, locale, className = "" }: { post: PostSummary; 
     <p className={`flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.8125rem] ${className}`}>
       <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, locale)}</time>
       <span aria-hidden="true" className="size-1 rounded-full bg-current opacity-50" />
-      <span className="inline-flex items-center gap-1">
-        <Clock3 className="size-3.5" strokeWidth={2} aria-hidden="true" />
-        {post.readingMinutes} {t.post.minRead}
-      </span>
+      {post.isVideo ? (
+        <span className="inline-flex items-center gap-1">
+          <Play className="size-3.5" strokeWidth={2} aria-hidden="true" />
+          {t.post.video}
+        </span>
+      ) : (
+        <span className="inline-flex items-center gap-1">
+          <Clock3 className="size-3.5" strokeWidth={2} aria-hidden="true" />
+          {post.readingMinutes} {t.post.minRead}
+        </span>
+      )}
     </p>
   );
 }
@@ -56,6 +63,14 @@ function Cover({
           className="media-zoom object-cover"
           style={post.coverPosition ? { objectPosition: post.coverPosition } : undefined}
         />
+      ) : null}
+      {post.isVideo ? (
+        <span
+          aria-hidden="true"
+          className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-accent text-on-accent shadow-lg transition-transform duration-300 group-hover:scale-110 [.w-24_&]:size-9"
+        >
+          <Play className="size-6 translate-x-px fill-current [.w-24_&]:size-4" aria-hidden="true" />
+        </span>
       ) : null}
     </div>
   );

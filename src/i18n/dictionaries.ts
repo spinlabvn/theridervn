@@ -2,9 +2,9 @@ import type { Locale } from "./config";
 
 const vi = {
   meta: {
-    title: "TheRider – Tạp chí xe đạp thể thao",
+    title: "TheRider – Tin tức và đánh giá về xe đạp",
     description:
-      "Tin tức, đánh giá trang bị, cung đường và kiến thức tập luyện xe đạp thể thao: road, MTB, gravel – từ đội ngũ biên tập TheRider.",
+      "Tin tức, bike check, đánh giá xe và phụ tùng, sự kiện, podcast, phỏng vấn và video hướng dẫn kỹ thuật The Rider Academy – từ TheRider.",
   },
   nav: {
     home: "Trang chủ",
@@ -18,22 +18,23 @@ const vi = {
   theme: { toggle: "Chuyển giao diện sáng/tối", light: "Sáng", dark: "Tối" },
   language: { switch: "Đổi ngôn ngữ" },
   home: {
-    eyebrow: "Tạp chí xe đạp thể thao",
+    eyebrow: "Tin tức & đánh giá xe đạp",
     readStory: "Đọc bài",
     latest: "Mới nhất",
     latestLead: "Những câu chuyện vừa lên trang từ đội ngũ biên tập.",
     editorsPick: "Biên tập chọn",
     exploreTitle: "Đi theo chuyên mục",
-    exploreLead: "Road, địa hình, gravel, trang bị hay giáo án tập — chọn cung đường của bạn.",
+    exploreLead: "Tin mới, bike check, đánh giá hay video kỹ thuật — chọn nội dung bạn quan tâm.",
     allStories: "Xem tất cả bài viết",
     searchTitle: "Bạn đang tìm gì?",
-    searchLead: "Tìm theo cung đường, mẫu xe, kỹ thuật hay giải đấu. Gõ có dấu hoặc không dấu đều được.",
+    searchLead: "Tìm theo mẫu xe, thương hiệu, kỹ thuật hay giải đấu. Gõ có dấu hoặc không dấu đều được.",
     statsStories: "bài viết",
     statsCategories: "chuyên mục",
   },
   post: {
     by: "Bởi",
     minRead: "phút đọc",
+    video: "Video",
     published: "Đăng ngày",
     contents: "Nội dung",
     tags: "Thẻ",
@@ -46,7 +47,7 @@ const vi = {
   },
   list: {
     title: "Tất cả bài viết",
-    lead: "Kho bài viết của TheRider: tin tức, đánh giá, cung đường và tập luyện.",
+    lead: "Kho bài viết của TheRider: tin tức, bike check, đánh giá và hướng dẫn kỹ thuật.",
     all: "Tất cả",
     empty: "Chưa có bài viết nào ở đây.",
     page: "Trang",
@@ -59,7 +60,7 @@ const vi = {
   search: {
     title: "Tìm kiếm",
     label: "Từ khoá tìm kiếm",
-    placeholder: "Ví dụ: gravel Đà Lạt, bảo dưỡng xích…",
+    placeholder: "Ví dụ: Canyon, wheelie, gravel…",
     submit: "Tìm",
     results: (n: number, q: string) => `${n} kết quả cho “${q}”`,
     noResults: (q: string) => `Không tìm thấy bài viết nào cho “${q}”.`,
@@ -86,9 +87,9 @@ export type Dictionary = typeof vi;
 
 const en: Dictionary = {
   meta: {
-    title: "TheRider – Performance cycling magazine",
+    title: "TheRider – Cycling news & reviews",
     description:
-      "News, gear reviews, routes and training know-how for road, MTB and gravel riders – from the TheRider editorial team.",
+      "Cycling news, bike checks, bike and parts reviews, events, podcasts, interviews and The Rider Academy skills videos – from TheRider.",
   },
   nav: {
     home: "Home",
@@ -102,22 +103,23 @@ const en: Dictionary = {
   theme: { toggle: "Toggle light/dark theme", light: "Light", dark: "Dark" },
   language: { switch: "Change language" },
   home: {
-    eyebrow: "Performance cycling magazine",
+    eyebrow: "Cycling news & reviews",
     readStory: "Read story",
     latest: "Latest",
     latestLead: "Fresh off the press from our editorial team.",
     editorsPick: "Editor's pick",
     exploreTitle: "Ride by category",
-    exploreLead: "Road, mountain, gravel, gear or training plans — pick your line.",
+    exploreLead: "News, bike checks, reviews or skills videos — pick what you’re into.",
     allStories: "See all stories",
     searchTitle: "Looking for something?",
-    searchLead: "Search routes, bikes, techniques or races.",
+    searchLead: "Search bikes, brands, techniques or races.",
     statsStories: "stories",
     statsCategories: "categories",
   },
   post: {
     by: "By",
     minRead: "min read",
+    video: "Video",
     published: "Published",
     contents: "Contents",
     tags: "Tags",
@@ -130,7 +132,7 @@ const en: Dictionary = {
   },
   list: {
     title: "All stories",
-    lead: "The TheRider archive: news, reviews, routes and training.",
+    lead: "The TheRider archive: news, bike checks, reviews and skills tutorials.",
     all: "All",
     empty: "No stories here yet.",
     page: "Page",
@@ -143,7 +145,7 @@ const en: Dictionary = {
   search: {
     title: "Search",
     label: "Search keywords",
-    placeholder: "e.g. Dalat gravel, chain maintenance…",
+    placeholder: "e.g. Canyon, wheelie, gravel…",
     submit: "Search",
     results: (n: number, q: string) => `${n} ${n === 1 ? "result" : "results"} for “${q}”`,
     noResults: (q: string) => `No stories found for “${q}”.`,

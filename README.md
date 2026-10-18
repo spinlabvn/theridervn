@@ -7,7 +7,7 @@ Website song ngữ (Tiếng Việt / English) cho **TheRider**, xây bằng **Ne
 - Tìm kiếm **không phân biệt dấu** ("da lat" tìm ra "Đà Lạt")
 - SEO: metadata, Open Graph, `hreflang`, sitemap.xml, robots.txt, RSS (`/vi/rss.xml`, `/en/rss.xml`), JSON-LD NewsArticle
 - Tự cập nhật khi xuất bản bài trên Sanity (ISR 60 giây + webhook tức thì)
-- Chạy được ngay với **10 bài viết mẫu** khi chưa kết nối Sanity
+- Đã chuyển toàn bộ nội dung từ therider.vn (8 bài, 8 chuyên mục, ảnh, logo) và dịch sang tiếng Anh – website chạy được ngay cả khi chưa kết nối Sanity
 
 > Hướng dẫn đưa website lên GitHub, Hostinger và kết nối Sanity: xem **[DEPLOY.md](DEPLOY.md)**.
 
@@ -17,7 +17,7 @@ Yêu cầu Node.js 20.9 trở lên (khuyên dùng 22).
 
 ```bash
 npm install
-cp .env.example .env.local   # để trống Sanity thì website dùng bài mẫu
+cp .env.example .env.local   # để trống Sanity thì website dùng nội dung trong content/
 npm run dev                  # http://localhost:3000
 ```
 
@@ -45,16 +45,32 @@ src/
   components/                 # Header, Footer, thẻ bài viết, mục lục…
   config/site.ts              # Tên, logo, email, mạng xã hội
   i18n/                       # Cấu hình ngôn ngữ + toàn bộ chữ trên giao diện
-  lib/content/                # Lớp dữ liệu: Sanity hoặc bài mẫu
+  lib/content/                # Lớp dữ liệu: Sanity hoặc content/*.json
   proxy.ts                    # Chuyển / → /vi hoặc /en theo trình duyệt
+content/
+  therider.json               # 8 bài viết chuyển từ therider.vn (vi + en)
+  categories.json             # 8 chuyên mục giống therider.vn
+public/media/                 # Ảnh bài viết tải về từ therider.vn
+public/brand/                 # Logo TheRider
 studio/                       # Sanity Studio (deploy riêng, không lên Hostinger)
 ```
+
+## Nội dung chuyển từ therider.vn
+
+| Chuyên mục | Bài |
+| --- | --- |
+| Tin mới (News) | Keegan Swenson & bánh hai van, Revel Bikes, Propain Tyee 2025 |
+| Bike Check | Canyon Grizl CF SL AXS (gallery, video, bảng cấu hình) |
+| How To | 4 video The Rider Academy: Bunny Hop, Hop, Track Stand, Wheelie |
+| Review Bikes, Review Parts, Events, Podcast, Interview | Chưa có bài (giống therider.vn) |
+
+Ba bài "Tin mới" trên therider.vn không thuộc chuyên mục nào (chỉ hiện ở mục *New* trang chủ), nên được gom vào chuyên mục **Tin mới**. Dòng ghi nguồn cuối bài (cyclingnow.com, Pinkbike, Vital MTB) được giữ nguyên. Bản tiếng Anh do Claude dịch – nên rà lại trước khi ra mắt.
 
 ## Tuỳ chỉnh thương hiệu
 
 | Muốn đổi | Sửa ở đâu |
 | --- | --- |
-| Logo | Chép file vào `public/brand/`, khai báo `logo.light` / `logo.dark` trong `src/config/site.ts` |
+| Logo | `public/brand/therider-logo.png` (lấy từ therider.vn), khai báo trong `src/config/site.ts` |
 | Màu thương hiệu | Khối **BRAND TOKENS** đầu file `src/app/globals.css` (có cả bản sáng và tối) |
 | Email, mạng xã hội | `src/config/site.ts` |
 | Chữ trên giao diện (menu, nút…) | `src/i18n/dictionaries.ts` |

@@ -2,7 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { site } from "@/config/site";
 import type { Locale } from "@/i18n/config";
-import { samplePosts, sampleCategories } from "./sample-data";
+import { localCategories, localPosts } from "./local-data";
 import { sanityCategories, sanityEnabled, sanityPost, sanityPostSummaries } from "./sanity";
 import { bodyToPlainText, normalizeText, slugify } from "./text";
 import type { BodyNode, Category, Localized, Post, PostSummary, RawCategory, RawPost } from "./types";
@@ -17,16 +17,17 @@ function pick<T>(value: Localized<T> | undefined, locale: Locale, fallback: T): 
 }
 
 /* ------------------------------------------------------------------ */
-/* Nguồn dữ liệu: Sanity nếu đã cấu hình, ngược lại dùng bài viết mẫu   */
+/* Nguồn dữ liệu: Sanity nếu đã cấu hình, ngược lại dùng nội dung      */
+/* đã chuyển từ therider.vn (content/*.json)                          */
 /* ------------------------------------------------------------------ */
 
 const loadCategories = cache(async (): Promise<RawCategory[]> => {
-  return sanityEnabled ? sanityCategories() : sampleCategories;
+  return sanityEnabled ? sanityCategories() : localCategories;
 });
 
 const loadSummaries = cache(async (): Promise<RawSummary[]> => {
   if (sanityEnabled) return sanityPostSummaries();
-  return [...samplePosts]
+  return [...localPosts]
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
     .map(({ body, ...rest }) => ({
       ...rest,
@@ -36,7 +37,7 @@ const loadSummaries = cache(async (): Promise<RawSummary[]> => {
 
 const loadPost = cache(async (slug: string): Promise<(RawSummary & { body: Localized<BodyNode[]> }) | null> => {
   if (sanityEnabled) return sanityPost(slug);
-  const post = samplePosts.find((p) => p.slug === slug);
+  const post = localPosts.find((p) => p.slug === slug);
   if (!post) return null;
   return {
     ...post,
@@ -73,6 +74,7 @@ function localizeSummary(raw: RawSummary, locale: Locale): PostSummary {
     publishedAt: raw.publishedAt,
     featured: raw.featured,
     readingMinutes: minutesFromPlain(pick(raw.plain, locale, "")),
+    isVideo: Boolean(raw.hasVideo) && pick(raw.plain, locale, "").split(/\s+/).filter(Boolean).length < 120,
   };
 }
 

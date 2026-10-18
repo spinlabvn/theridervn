@@ -7,7 +7,7 @@
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "import-seed": "sanity dataset import seed/categories.ndjson production --missing"
+    "import-therider": "sanity exec scripts/import-therider.ts --with-user-token"
   },
   "dependencies": {
     "@sanity/vision": "^6.19.0",

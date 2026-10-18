@@ -174,7 +174,9 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           <SectionHeading title={t.home.exploreTitle} lead={t.home.exploreLead} />
         </div>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((c) => {
+          {categories
+            .filter((c) => c.count > 0)
+            .map((c) => {
             const cover = coverFor(c.slug);
             return (
               <li key={c.slug} className="reveal grid">

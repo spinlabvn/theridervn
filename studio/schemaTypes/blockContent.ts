@@ -1,6 +1,6 @@
 import { defineArrayMember, defineType } from "sanity";
 
-/** Trình soạn thảo thân bài: đoạn văn, tiêu đề H2/H3, trích dẫn, danh sách, liên kết và ảnh có chú thích. */
+/** Trình soạn thảo thân bài: đoạn văn, tiêu đề, trích dẫn, danh sách, liên kết, ảnh, video YouTube và bảng thông số. */
 export const blockContent = defineType({
   name: "blockContent",
   title: "Nội dung",
@@ -48,6 +48,47 @@ export const blockContent = defineType({
         { name: "alt", type: "string", title: "Mô tả ảnh (cho người khiếm thị & SEO)", validation: (r) => r.required() },
         { name: "caption", type: "string", title: "Chú thích" },
       ],
+    }),
+    defineArrayMember({
+      name: "youtube",
+      type: "object",
+      title: "Video YouTube",
+      fields: [
+        {
+          name: "url",
+          type: "url",
+          title: "Đường dẫn YouTube",
+          description: "Ví dụ: https://www.youtube.com/watch?v=8Pk26JZoTsA",
+          validation: (r) => r.required().uri({ scheme: ["https"] }),
+        },
+      ],
+      preview: { select: { title: "url" }, prepare: ({ title }) => ({ title: "▶ Video YouTube", subtitle: title }) },
+    }),
+    defineArrayMember({
+      name: "specTable",
+      type: "object",
+      title: "Bảng thông số (Bike Check)",
+      fields: [
+        { name: "hasHeader", type: "boolean", title: "Dòng đầu là tiêu đề cột", initialValue: true },
+        {
+          name: "rows",
+          type: "array",
+          title: "Các dòng",
+          description: "Mỗi dòng gồm các ô: Bộ phận | Hãng | Model | Ghi chú",
+          of: [
+            {
+              type: "object",
+              name: "row",
+              fields: [{ name: "cells", type: "array", title: "Ô", of: [{ type: "string" }] }],
+              preview: {
+                select: { cells: "cells" },
+                prepare: ({ cells }) => ({ title: (cells ?? []).filter(Boolean).join(" · ") || "(dòng trống)" }),
+              },
+            },
+          ],
+        },
+      ],
+      preview: { select: { rows: "rows" }, prepare: ({ rows }) => ({ title: "Bảng thông số", subtitle: `${rows?.length ?? 0} dòng` }) },
     }),
   ],
 });

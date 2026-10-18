@@ -1,6 +1,6 @@
 # Triển khai TheRider: GitHub → Hostinger → Sanity
 
-Thứ tự khuyến nghị: **(1) đưa code lên GitHub → (2) tạo Node.js Web App trên Hostinger → (3) kết nối Sanity → (4) trỏ tên miền therider.vn**. Website chạy được ngay sau bước 2 (với bài mẫu), nên bạn có thể kiểm tra trước khi làm bước 3.
+Thứ tự khuyến nghị: **(1) đưa code lên GitHub → (2) tạo Node.js Web App trên Hostinger → (3) kết nối Sanity → (4) trỏ tên miền therider.vn**. Website chạy được ngay sau bước 2 (với 8 bài đã chuyển từ therider.vn), nên bạn có thể kiểm tra trước khi làm bước 3.
 
 ---
 
@@ -46,7 +46,7 @@ Từ đó, mỗi lần sửa code: `git add -A && git commit -m "mô tả thay �
 | `NEXT_PUBLIC_SANITY_DATASET` | `production` |
 | `SANITY_REVALIDATE_SECRET` | một chuỗi ngẫu nhiên dài, ví dụ tạo bằng `openssl rand -hex 24` |
 
-5. Bấm **Deploy**. Sau vài phút website chạy tại tên miền tạm Hostinger cấp, với 10 bài viết mẫu.
+5. Bấm **Deploy**. Sau vài phút website chạy tại tên miền tạm Hostinger cấp, với toàn bộ nội dung đã chuyển từ therider.vn.
 6. Bật **auto-deploy** (nếu có tuỳ chọn) để mỗi lần `git push` lên `main`, Hostinger tự build lại.
 
 > **Lưu ý:** biến bắt đầu bằng `NEXT_PUBLIC_` được "đóng gói" lúc build. Sau khi thêm/sửa chúng, hãy **Redeploy** để có hiệu lực.
@@ -68,7 +68,7 @@ cd studio
 cp .env.example .env          # điền SANITY_STUDIO_PROJECT_ID=<Project ID>
 npm install
 npx sanity login
-npm run import-seed           # tạo sẵn 6 chuyên mục: Road, MTB, Gravel, Trang bị, Tập luyện, Sự kiện
+npm run import-therider       # đưa 8 chuyên mục, 8 bài (vi + en) và toàn bộ ảnh lên Sanity
 npm run dev                   # thử tại http://localhost:3333
 npm run deploy                # đưa Studio lên https://therider.sanity.studio
 ```
@@ -78,8 +78,8 @@ Biên tập viên chỉ cần mở **https://therider.sanity.studio**, đăng nh
 ### 3.3 Nối website với Sanity
 
 1. Trên Hostinger, điền `NEXT_PUBLIC_SANITY_PROJECT_ID` = Project ID → **Redeploy**.
-2. Website sẽ chuyển từ bài mẫu sang bài trên Sanity. (Nếu Sanity chưa có bài nào, trang chủ sẽ báo chưa có bài.)
-3. Tạo ít nhất 1 **Tác giả**, rồi viết bài đầu tiên. Bài đánh dấu **Bài nổi bật** mới nhất sẽ lên ảnh lớn đầu trang chủ.
+2. Website sẽ chuyển sang đọc bài từ Sanity. Hãy chạy `npm run import-therider` **trước** bước này, nếu không trang chủ sẽ báo chưa có bài.
+3. Từ đây, viết bài mới trên Studio. Bài đánh dấu **Bài nổi bật** mới nhất sẽ lên ảnh lớn đầu trang chủ. Studio có sẵn khối **Video YouTube** và **Bảng thông số** cho bài Bike Check.
 
 ### 3.4 Webhook – cập nhật website ngay khi xuất bản
 
@@ -98,6 +98,8 @@ Không có webhook, bài mới vẫn tự xuất hiện sau tối đa ~60 giây.
 
 ## 4. Trỏ tên miền therider.vn
 
+> **Quan trọng:** ảnh của therider.vn cũ đã được tải về `public/media/` nên không phụ thuộc vào máy chủ cũ. Đường dẫn bài viết giữ cấu trúc mới `/vi/blog/<slug>` (slug giống bản cũ); địa chỉ cũ `therider.vn/post/<slug>` và `/danh-muc/<mục>` được tự chuyển hướng sang trang mới.
+
 1. Trên Hostinger: vào Node.js App vừa tạo → **Domains** → **Connect domain** → nhập `therider.vn`.
 2. Nếu tên miền mua ở nơi khác (Mắt Bão, PA Việt Nam, iNET…): đổi **nameserver** sang nameserver Hostinger hiển thị, hoặc tạo bản ghi `A`/`CNAME` theo hướng dẫn trong hPanel.
 3. Hostinger tự cấp **SSL miễn phí**. Kiểm tra https://therider.vn chạy được, rồi đảm bảo `NEXT_PUBLIC_SITE_URL=https://therider.vn`.
@@ -110,7 +112,7 @@ Không có webhook, bài mới vẫn tự xuất hiện sau tối đa ~60 giây.
 | Hiện tượng | Cách xử lý |
 | --- | --- |
 | Build lỗi `Cannot find module 'tailwindcss'` | Đảm bảo install command là `npm install` (không dùng `--omit=dev`). Các gói build đã được đặt trong `dependencies`. |
-| Website vẫn hiện bài mẫu sau khi nối Sanity | Chưa Redeploy sau khi thêm `NEXT_PUBLIC_SANITY_PROJECT_ID`. |
+| Website chưa hiện bài mới viết trên Sanity | Chưa Redeploy sau khi thêm `NEXT_PUBLIC_SANITY_PROJECT_ID`. |
 | Ảnh từ Sanity không hiện | Ảnh bìa là trường bắt buộc; kiểm tra bài đã có ảnh và đã **Publish** (không chỉ lưu nháp). |
 | Bài đã publish nhưng chưa hiện | Kiểm tra *Ngày đăng* không nằm ở tương lai, bài đã chọn *Chuyên mục*. |
 | Webhook trả 401 | `secret` trên URL webhook khác với `SANITY_REVALIDATE_SECRET` trên Hostinger. |

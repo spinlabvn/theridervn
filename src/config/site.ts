@@ -6,18 +6,21 @@
 export const site = {
   name: "TheRider",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://therider.vn").replace(/\/$/, ""),
+  /**
+   * Logo lấy từ therider.vn: chữ trắng trên nền trong suốt (360×70).
+   * Ở giao diện sáng, logo được tô đen bằng CSS (filter) nên chỉ cần một file.
+   */
   logo: {
-    light: null as string | null, // ví dụ "/brand/logo-dark.svg" (logo màu tối, dùng trên nền sáng)
-    dark: null as string | null, // ví dụ "/brand/logo-light.svg" (logo màu sáng, dùng trên nền tối)
-    width: 148,
-    height: 32,
+    src: "/brand/therider-logo.png" as string | null,
+    width: 144,
+    height: 28,
   },
-  email: "hello@therider.vn",
+  email: "info@therider.vn",
   social: {
-    facebook: "https://facebook.com/therider.vn",
-    instagram: "https://instagram.com/therider.vn",
-    youtube: "https://youtube.com/@therider",
-    strava: "https://www.strava.com/clubs/therider",
+    facebook: "https://www.facebook.com/therider.vn",
+    instagram: "https://www.instagram.com/therider.vn/",
+    youtube: "https://www.youtube.com/@theridertv",
+    tiktok: "https://www.tiktok.com/@therider.vn",
   },
   postsPerPage: 12,
 } as const;

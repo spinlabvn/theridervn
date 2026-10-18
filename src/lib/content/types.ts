@@ -3,16 +3,18 @@ import type { Locale } from "@/i18n/config";
 
 export type Localized<T> = Partial<Record<Locale, T>>;
 
-/** Khối Portable Text (đoạn văn, tiêu đề, danh sách) hoặc khối ảnh trong thân bài. */
-export type BodyNode =
-  | PortableTextBlock
-  | {
-      _type: "figure";
-      _key: string;
-      url: string;
-      alt?: string;
-      caption?: string;
-    };
+export type FigureNode = { _type: "figure"; _key: string; url: string; alt?: string; caption?: string };
+export type YoutubeNode = { _type: "youtube"; _key: string; url: string };
+export type SpecTableNode = {
+  _type: "specTable";
+  _key: string;
+  hasHeader?: boolean;
+  rows: { _key: string; cells: string[] }[];
+};
+export type GalleryNode = { _type: "gallery"; _key: string; images: { _key: string; url: string; alt?: string }[] };
+
+/** Khối Portable Text (đoạn văn, tiêu đề, danh sách) hoặc khối nhúng: ảnh, video YouTube, bảng thông số, bộ ảnh. */
+export type BodyNode = PortableTextBlock | FigureNode | YoutubeNode | SpecTableNode | GalleryNode;
 
 export interface Category {
   slug: string;
@@ -42,6 +44,8 @@ export interface PostSummary {
   publishedAt: string;
   featured: boolean;
   readingMinutes: number;
+  /** Bài có video YouTube và gần như không có chữ (ví dụ The Rider Academy) */
+  isVideo: boolean;
 }
 
 export interface Post extends PostSummary {
@@ -50,7 +54,7 @@ export interface Post extends PostSummary {
   isFallbackLanguage: boolean;
 }
 
-/** Dạng thô trước khi chọn ngôn ngữ – dùng chung cho dữ liệu mẫu và Sanity. */
+/** Dạng thô trước khi chọn ngôn ngữ – dùng chung cho nội dung nội bộ (content/*.json) và Sanity. */
 export interface RawCategory {
   slug: string;
   title: Localized<string>;
@@ -71,4 +75,6 @@ export interface RawPost {
   author: { name: string; role: Localized<string>; avatarUrl?: string };
   publishedAt: string;
   featured: boolean;
+  /** Bài có nhúng video YouTube */
+  hasVideo?: boolean;
 }
