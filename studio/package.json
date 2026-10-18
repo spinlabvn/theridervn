@@ -1,0 +1,22 @@
+{
+  "name": "therider-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sanity Studio – nơi biên tập viên TheRider viết và xuất bản bài",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "import-seed": "sanity dataset import seed/categories.ndjson production --missing"
+  },
+  "dependencies": {
+    "@sanity/vision": "^6.19.0",
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^6.19.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}

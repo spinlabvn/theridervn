@@ -1,0 +1,87 @@
+import { defineField, defineType } from "sanity";
+import { slugifyVi } from "./slugify";
+
+export const post = defineType({
+  name: "post",
+  title: "Bài viết",
+  type: "document",
+  groups: [
+    { name: "content", title: "Nội dung", default: true },
+    { name: "meta", title: "Phân loại & xuất bản" },
+  ],
+  fields: [
+    defineField({ name: "title", title: "Tiêu đề", type: "localeString", group: "content", validation: (r) => r.required() }),
+    defineField({
+      name: "slug",
+      title: "Đường dẫn (slug)",
+      type: "slug",
+      group: "content",
+      description: "Bấm “Generate” để tạo từ tiêu đề tiếng Việt (tự bỏ dấu). Dùng chung cho cả hai ngôn ngữ.",
+      options: { source: "title.vi", slugify: slugifyVi, maxLength: 96 },
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "excerpt",
+      title: "Tóm tắt",
+      type: "localeText",
+      group: "content",
+      description: "1–2 câu, hiển thị trên thẻ bài viết và khi chia sẻ lên mạng xã hội.",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "coverImage",
+      title: "Ảnh bìa",
+      type: "image",
+      group: "content",
+      description: "Ảnh ngang, tối thiểu 2000px chiều rộng. Đặt điểm “hotspot” vào chủ thể để ảnh cắt đẹp ở mọi khung.",
+      options: { hotspot: true },
+      fields: [defineField({ name: "alt", title: "Mô tả ảnh", type: "localeString" })],
+      validation: (r) => r.required(),
+    }),
+    defineField({ name: "body", title: "Nội dung bài", type: "localeBlockContent", group: "content" }),
+    defineField({
+      name: "category",
+      title: "Chuyên mục",
+      type: "reference",
+      to: [{ type: "category" }],
+      group: "meta",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "tags",
+      title: "Thẻ",
+      type: "array",
+      of: [{ type: "string" }],
+      group: "meta",
+      options: { layout: "tags" },
+      description: "Ví dụ: Đà Lạt, Bikepacking, Shimano. Thẻ tạo trang riêng tại /tag/<thẻ-không-dấu>.",
+    }),
+    defineField({ name: "author", title: "Tác giả", type: "reference", to: [{ type: "author" }], group: "meta" }),
+    defineField({
+      name: "publishedAt",
+      title: "Ngày đăng",
+      type: "datetime",
+      group: "meta",
+      initialValue: () => new Date().toISOString(),
+      description: "Bài có ngày đăng trong tương lai sẽ tự xuất hiện khi tới giờ.",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "featured",
+      title: "Bài nổi bật",
+      type: "boolean",
+      group: "meta",
+      description: "Bài nổi bật mới nhất sẽ lên ảnh lớn đầu trang chủ; các bài tiếp theo vào mục “Biên tập chọn”.",
+      initialValue: false,
+    }),
+  ],
+  orderings: [{ title: "Mới nhất", name: "publishedAtDesc", by: [{ field: "publishedAt", direction: "desc" }] }],
+  preview: {
+    select: { title: "title.vi", subtitle: "category.title.vi", media: "coverImage", featured: "featured" },
+    prepare: ({ title, subtitle, media, featured }) => ({
+      title: title || "(Chưa có tiêu đề)",
+      subtitle: [featured ? "★ Nổi bật" : null, subtitle].filter(Boolean).join(" · "),
+      media,
+    }),
+  },
+});

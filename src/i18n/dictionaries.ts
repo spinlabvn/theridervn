@@ -1,0 +1,173 @@
+import type { Locale } from "./config";
+
+const vi = {
+  meta: {
+    title: "TheRider – Tạp chí xe đạp thể thao",
+    description:
+      "Tin tức, đánh giá trang bị, cung đường và kiến thức tập luyện xe đạp thể thao: road, MTB, gravel – từ đội ngũ biên tập TheRider.",
+  },
+  nav: {
+    home: "Trang chủ",
+    stories: "Tất cả bài viết",
+    categories: "Chuyên mục",
+    search: "Tìm kiếm",
+    menu: "Mở menu",
+    close: "Đóng menu",
+    skip: "Bỏ qua, tới nội dung chính",
+  },
+  theme: { toggle: "Chuyển giao diện sáng/tối", light: "Sáng", dark: "Tối" },
+  language: { switch: "Đổi ngôn ngữ" },
+  home: {
+    eyebrow: "Tạp chí xe đạp thể thao",
+    readStory: "Đọc bài",
+    latest: "Mới nhất",
+    latestLead: "Những câu chuyện vừa lên trang từ đội ngũ biên tập.",
+    editorsPick: "Biên tập chọn",
+    exploreTitle: "Đi theo chuyên mục",
+    exploreLead: "Road, địa hình, gravel, trang bị hay giáo án tập — chọn cung đường của bạn.",
+    allStories: "Xem tất cả bài viết",
+    searchTitle: "Bạn đang tìm gì?",
+    searchLead: "Tìm theo cung đường, mẫu xe, kỹ thuật hay giải đấu. Gõ có dấu hoặc không dấu đều được.",
+    statsStories: "bài viết",
+    statsCategories: "chuyên mục",
+  },
+  post: {
+    by: "Bởi",
+    minRead: "phút đọc",
+    published: "Đăng ngày",
+    contents: "Nội dung",
+    tags: "Thẻ",
+    share: "Chia sẻ",
+    copyLink: "Sao chép liên kết",
+    copied: "Đã sao chép",
+    related: "Đọc tiếp",
+    backToStories: "Tất cả bài viết",
+    progress: "Tiến độ đọc",
+  },
+  list: {
+    title: "Tất cả bài viết",
+    lead: "Kho bài viết của TheRider: tin tức, đánh giá, cung đường và tập luyện.",
+    all: "Tất cả",
+    empty: "Chưa có bài viết nào ở đây.",
+    page: "Trang",
+    prev: "Trang trước",
+    next: "Trang sau",
+    pagination: "Phân trang",
+    tagTitle: "Thẻ",
+    storiesCount: (n: number) => `${n} bài viết`,
+  },
+  search: {
+    title: "Tìm kiếm",
+    label: "Từ khoá tìm kiếm",
+    placeholder: "Ví dụ: gravel Đà Lạt, bảo dưỡng xích…",
+    submit: "Tìm",
+    results: (n: number, q: string) => `${n} kết quả cho “${q}”`,
+    noResults: (q: string) => `Không tìm thấy bài viết nào cho “${q}”.`,
+    noResultsHint: "Thử từ khoá ngắn hơn, hoặc duyệt theo chuyên mục bên dưới.",
+    prompt: "Nhập từ khoá để tìm trong toàn bộ bài viết.",
+    popular: "Gợi ý",
+  },
+  notFound: {
+    title: "Lạc đường rồi",
+    lead: "Trang bạn tìm không tồn tại hoặc đã được chuyển đi. Quay đầu xe nhé.",
+    back: "Về trang chủ",
+  },
+  footer: {
+    tagline: "Câu chuyện, trang bị và cung đường cho người mê xe đạp thể thao.",
+    explore: "Khám phá",
+    follow: "Theo dõi",
+    contact: "Hợp tác & quảng cáo",
+    rss: "RSS",
+    rights: "Bảo lưu mọi quyền.",
+  },
+};
+
+export type Dictionary = typeof vi;
+
+const en: Dictionary = {
+  meta: {
+    title: "TheRider – Performance cycling magazine",
+    description:
+      "News, gear reviews, routes and training know-how for road, MTB and gravel riders – from the TheRider editorial team.",
+  },
+  nav: {
+    home: "Home",
+    stories: "All stories",
+    categories: "Categories",
+    search: "Search",
+    menu: "Open menu",
+    close: "Close menu",
+    skip: "Skip to main content",
+  },
+  theme: { toggle: "Toggle light/dark theme", light: "Light", dark: "Dark" },
+  language: { switch: "Change language" },
+  home: {
+    eyebrow: "Performance cycling magazine",
+    readStory: "Read story",
+    latest: "Latest",
+    latestLead: "Fresh off the press from our editorial team.",
+    editorsPick: "Editor's pick",
+    exploreTitle: "Ride by category",
+    exploreLead: "Road, mountain, gravel, gear or training plans — pick your line.",
+    allStories: "See all stories",
+    searchTitle: "Looking for something?",
+    searchLead: "Search routes, bikes, techniques or races.",
+    statsStories: "stories",
+    statsCategories: "categories",
+  },
+  post: {
+    by: "By",
+    minRead: "min read",
+    published: "Published",
+    contents: "Contents",
+    tags: "Tags",
+    share: "Share",
+    copyLink: "Copy link",
+    copied: "Copied",
+    related: "Keep reading",
+    backToStories: "All stories",
+    progress: "Reading progress",
+  },
+  list: {
+    title: "All stories",
+    lead: "The TheRider archive: news, reviews, routes and training.",
+    all: "All",
+    empty: "No stories here yet.",
+    page: "Page",
+    prev: "Previous page",
+    next: "Next page",
+    pagination: "Pagination",
+    tagTitle: "Tag",
+    storiesCount: (n: number) => `${n} ${n === 1 ? "story" : "stories"}`,
+  },
+  search: {
+    title: "Search",
+    label: "Search keywords",
+    placeholder: "e.g. Dalat gravel, chain maintenance…",
+    submit: "Search",
+    results: (n: number, q: string) => `${n} ${n === 1 ? "result" : "results"} for “${q}”`,
+    noResults: (q: string) => `No stories found for “${q}”.`,
+    noResultsHint: "Try a shorter keyword, or browse by category below.",
+    prompt: "Type a keyword to search every story.",
+    popular: "Try",
+  },
+  notFound: {
+    title: "Wrong turn",
+    lead: "The page you're looking for doesn't exist or has moved. Let's turn around.",
+    back: "Back to home",
+  },
+  footer: {
+    tagline: "Stories, gear and routes for people obsessed with fast bikes.",
+    explore: "Explore",
+    follow: "Follow",
+    contact: "Partnerships & advertising",
+    rss: "RSS",
+    rights: "All rights reserved.",
+  },
+};
+
+const dictionaries: Record<Locale, Dictionary> = { vi, en };
+
+export function getDictionary(locale: Locale): Dictionary {
+  return dictionaries[locale];
+}
