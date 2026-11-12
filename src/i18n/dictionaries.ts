@@ -8,7 +8,6 @@ const vi = {
   },
   nav: {
     home: "Trang chủ",
-    stories: "Tất cả bài viết",
     categories: "Chuyên mục",
     search: "Tìm kiếm",
     menu: "Mở menu",
@@ -20,7 +19,6 @@ const vi = {
   home: {
     eyebrow: "Tin tức & đánh giá xe đạp",
     mostViewed: "Xem nhiều nhất",
-    allStories: "Xem tất cả bài viết",
     news: "Tin tức",
     today: "Hôm nay",
     yesterday: "Hôm qua",
@@ -41,20 +39,14 @@ const vi = {
     copyLink: "Sao chép liên kết",
     copied: "Đã sao chép",
     related: "Đọc tiếp",
-    backToStories: "Tất cả bài viết",
     progress: "Tiến độ đọc",
   },
   list: {
-    title: "Tất cả bài viết",
-    lead: "Kho bài viết của TheRider: tin tức, bike check, đánh giá và hướng dẫn kỹ thuật.",
-    all: "Tất cả",
     empty: "Chưa có bài viết nào ở đây.",
     page: "Trang",
     prev: "Trang trước",
     next: "Trang sau",
     pagination: "Phân trang",
-    tagTitle: "Thẻ",
-    storiesCount: (n: number) => `${n} bài viết`,
   },
   search: {
     title: "Tìm kiếm",
@@ -92,7 +84,6 @@ const en: Dictionary = {
   },
   nav: {
     home: "Home",
-    stories: "All stories",
     categories: "Categories",
     search: "Search",
     menu: "Open menu",
@@ -104,7 +95,6 @@ const en: Dictionary = {
   home: {
     eyebrow: "Cycling news & reviews",
     mostViewed: "Most viewed",
-    allStories: "See all stories",
     news: "News",
     today: "Today",
     yesterday: "Yesterday",
@@ -125,20 +115,14 @@ const en: Dictionary = {
     copyLink: "Copy link",
     copied: "Copied",
     related: "Keep reading",
-    backToStories: "All stories",
     progress: "Reading progress",
   },
   list: {
-    title: "All stories",
-    lead: "The TheRider archive: news, bike checks, reviews and skills tutorials.",
-    all: "All",
     empty: "No stories here yet.",
     page: "Page",
     prev: "Previous page",
     next: "Next page",
     pagination: "Pagination",
-    tagTitle: "Tag",
-    storiesCount: (n: number) => `${n} ${n === 1 ? "story" : "stories"}`,
   },
   search: {
     title: "Search",

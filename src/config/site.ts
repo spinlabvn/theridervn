@@ -22,7 +22,8 @@ export const site = {
     youtube: "https://www.youtube.com/@theridertv",
     tiktok: "https://www.tiktok.com/@therider.vn",
   },
-  postsPerPage: 12,
+  /** Số bài mỗi trang của dòng tin (trang chủ, chuyên mục, thẻ) – như Pinkbike, cuối trang có nút sang trang. */
+  postsPerPage: 8,
   /**
    * Quảng cáo trang chủ. Đặt file banner vào public/ads/ rồi điền `image: "/ads/ten-file.jpg"`,
    * `href`: trang của nhà tài trợ. Để `image` trống thì hiện ô "Đặt quảng cáo tại đây" dẫn tới email liên hệ.

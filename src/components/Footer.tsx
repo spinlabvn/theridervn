@@ -42,8 +42,8 @@ export async function Footer({ locale }: { locale: Locale }) {
             <h2 className="eyebrow text-ink-2">{t.footer.explore}</h2>
             <ul className="mt-4 grid grid-cols-2 gap-x-6">
               <li>
-                <Link href={href.blog(locale)} className="flex min-h-11 items-center hover:text-accent-ink">
-                  {t.nav.stories}
+                <Link href={href.home(locale)} className="flex min-h-11 items-center hover:text-accent-ink">
+                  {t.nav.home}
                 </Link>
               </li>
               {categories.map((c) => (

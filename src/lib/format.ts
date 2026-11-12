@@ -24,12 +24,11 @@ export function daysAgo(iso: string, now = new Date()): 0 | 1 | null {
 
 /** Đường dẫn nội bộ luôn có tiền tố ngôn ngữ */
 export const href = {
-  home: (l: Locale) => `/${l}`,
-  blog: (l: Locale, page = 1) => (page > 1 ? `/${l}/blog/page/${page}` : `/${l}/blog`),
+  home: (l: Locale, page = 1) => (page > 1 ? `/${l}/page/${page}` : `/${l}`),
   post: (l: Locale, slug: string) => `/${l}/blog/${slug}`,
   category: (l: Locale, slug: string, page = 1) =>
     page > 1 ? `/${l}/category/${slug}/page/${page}` : `/${l}/category/${slug}`,
-  tag: (l: Locale, slug: string) => `/${l}/tag/${slug}`,
+  tag: (l: Locale, slug: string, page = 1) => (page > 1 ? `/${l}/tag/${slug}/page/${page}` : `/${l}/tag/${slug}`),
   search: (l: Locale, q?: string) => (q ? `/${l}/search?q=${encodeURIComponent(q)}` : `/${l}/search`),
   rss: (l: Locale) => `/${l}/rss.xml`,
 };

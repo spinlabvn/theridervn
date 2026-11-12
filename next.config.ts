@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
       { source: "/post/:slug", destination: "/vi/blog/:slug", permanent: true },
       { source: "/danh-muc/:slug", destination: "/vi/category/:slug", permanent: true },
       { source: "/tag/:slug", destination: "/vi/tag/:slug", permanent: true },
+      // Trang "Tất cả bài viết" đã gộp vào trang chủ (có phân trang)
+      { source: "/:locale(vi|en)/blog", destination: "/:locale", permanent: true },
+      { source: "/:locale(vi|en)/blog/page/:page", destination: "/:locale/page/:page", permanent: true },
     ];
   },
   async headers() {

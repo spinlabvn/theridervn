@@ -91,11 +91,11 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
       <article>
         <header className="container-x pt-10 sm:pt-14">
           <Link
-            href={href.blog(locale)}
+            href={href.category(locale, post.category.slug)}
             className="group inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink-2 hover:text-ink"
           >
             <ArrowLeft className="size-4 transition-transform duration-300 group-hover:-translate-x-1" aria-hidden="true" />
-            {t.post.backToStories}
+            {post.category.title}
           </Link>
           <div className="mx-auto mt-6 max-w-5xl text-center">
             <CategoryLabel post={post} locale={locale} solid />

@@ -17,7 +17,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   for (const l of locales) {
     entries.push({ url: abs(href.home(l)), changeFrequency: "daily", priority: 1, alternates: alt(href.home) });
-    entries.push({ url: abs(href.blog(l)), changeFrequency: "daily", priority: 0.8, alternates: alt((x) => href.blog(x)) });
     for (const c of categories) {
       entries.push({
         url: abs(href.category(l, c.slug)),

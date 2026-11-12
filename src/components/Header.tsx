@@ -35,10 +35,7 @@ export function Header({ locale }: { locale: Locale }) {
           <MobileMenu
             labels={{ open: t.nav.menu, close: t.nav.close, categories: t.nav.categories, search: t.nav.search }}
             locale={locale}
-            primary={[
-              { href: href.home(locale), label: t.nav.home },
-              { href: href.blog(locale), label: t.nav.stories },
-            ]}
+            primary={[{ href: href.home(locale), label: t.nav.home }]}
             searchHref={href.search(locale)}
           >
             <LocaleSwitcher locale={locale} label={t.language.switch} />
