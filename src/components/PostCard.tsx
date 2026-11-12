@@ -68,9 +68,9 @@ function Cover({
       {post.isVideo ? (
         <span
           aria-hidden="true"
-          className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-accent text-on-accent shadow-lg transition-transform duration-300 group-hover:scale-110 [.w-24_&]:size-9"
+          className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-accent text-on-accent shadow-lg transition-transform duration-300 group-hover:scale-110 [.w-28_&]:size-9"
         >
-          <Play className="size-6 translate-x-px fill-current [.w-24_&]:size-4" aria-hidden="true" />
+          <Play className="size-6 translate-x-px fill-current [.w-28_&]:size-4" aria-hidden="true" />
         </span>
       ) : null}
     </div>
@@ -97,7 +97,7 @@ export function PostCard({
       <Cover
         post={post}
         priority={priority}
-        className={size === "lg" ? "aspect-[4/3] sm:aspect-[16/10]" : "aspect-[3/2]"}
+        className="aspect-video"
         sizes={size === "lg" ? "(min-width: 1024px) 60vw, 100vw" : "(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"}
       />
       <div className="mt-4 flex flex-1 flex-col">
@@ -132,7 +132,7 @@ export function PostRow({ post, locale, index }: { post: PostSummary; locale: Lo
         </h3>
         <PostMeta post={post} locale={locale} className="mt-2 text-ink-2" />
       </div>
-      <Cover post={post} className="aspect-square w-24 sm:aspect-[4/3] sm:w-40" sizes="160px" />
+      <Cover post={post} className="aspect-video w-28 sm:w-40" sizes="160px" />
     </article>
   );
 }
@@ -141,7 +141,7 @@ export function PostRow({ post, locale, index }: { post: PostSummary; locale: Lo
 export function PostMini({ post, locale }: { post: PostSummary; locale: Locale }) {
   return (
     <article className="group relative grid grid-cols-[auto_1fr] items-center gap-4 border-t border-line py-4">
-      <Cover post={post} className="aspect-square w-24" sizes="96px" />
+      <Cover post={post} className="aspect-video w-28" sizes="112px" />
       <div className="min-w-0">
         <CategoryLabel post={post} locale={locale} />
         <h3 className="display mt-1 line-clamp-2 text-xl">
@@ -160,7 +160,7 @@ export function PostTile({ post, locale, views }: { post: PostSummary; locale: L
   const t = getDictionary(locale);
   return (
     <article className="group relative">
-      <Cover post={post} className="aspect-[16/9]" sizes="(min-width: 1024px) 300px, 100vw" />
+      <Cover post={post} className="aspect-video" sizes="(min-width: 1024px) 300px, 100vw" />
       <div className="mt-3">
         <CategoryLabel post={post} locale={locale} />
         <h3 className="mt-1 font-bold leading-snug">
@@ -187,8 +187,8 @@ export function PostFeedItem({ post, locale, priority = false }: { post: PostSum
   const t = getDictionary(locale);
   const ago = daysAgo(post.publishedAt);
   return (
-    <article className="group relative grid grid-cols-[7.5rem_1fr] gap-4 py-5 sm:grid-cols-[13rem_1fr] sm:gap-5">
-      <Cover post={post} priority={priority} className="aspect-[4/3] self-start sm:aspect-[3/2] [&_span]:size-10" sizes="(min-width: 640px) 208px, 120px" />
+    <article className="group relative grid grid-cols-[8.5rem_1fr] gap-4 py-5 sm:grid-cols-[13rem_1fr] sm:gap-5">
+      <Cover post={post} priority={priority} className="aspect-video self-start [&_span]:size-10" sizes="(min-width: 640px) 208px, 136px" />
       <div className="min-w-0">
         <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] text-ink-2">
           <span className="font-semibold text-ink">{post.author.name}</span>

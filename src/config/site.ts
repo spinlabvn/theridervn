@@ -23,4 +23,15 @@ export const site = {
     tiktok: "https://www.tiktok.com/@therider.vn",
   },
   postsPerPage: 12,
+  /**
+   * Ô quảng cáo cột trái trang chủ – cao bằng khối "Xem nhiều nhất" (~290×800px trên màn hình rộng).
+   * Banner nên dọc khoảng 1:2.5 (vd. 600×1500), nội dung chính đặt giữa vì mép trên/dưới có thể bị cắt.
+   * Đặt file banner vào public/ads/ rồi điền `image: "/ads/ten-file.jpg"`, `href`: trang của nhà tài trợ.
+   * Để `image` trống thì hiện ô "Đặt quảng cáo tại đây" dẫn tới email liên hệ.
+   */
+  ad: {
+    image: "" as string,
+    href: "" as string,
+    alt: "" as string,
+  },
 } as const;

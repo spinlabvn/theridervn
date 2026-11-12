@@ -25,6 +25,9 @@ const vi = {
     today: "Hôm nay",
     yesterday: "Hôm qua",
     popularTags: "Thẻ phổ biến",
+    ad: "Quảng cáo",
+    adCta: "Đặt quảng cáo tại đây",
+    adLead: "Tiếp cận cộng đồng đạp xe thể thao của TheRider.",
   },
   post: {
     by: "Bởi",
@@ -106,6 +109,9 @@ const en: Dictionary = {
     today: "Today",
     yesterday: "Yesterday",
     popularTags: "Popular tags",
+    ad: "Advertisement",
+    adCta: "Advertise here",
+    adLead: "Reach TheRider's performance cycling community.",
   },
   post: {
     by: "By",
