@@ -79,7 +79,7 @@ export function MobileMenu({
                         <Link
                           href={href.category(locale, child.category)}
                           onClick={close}
-                          className="flex min-h-11 items-center rounded-md bg-surface-2 px-3 text-sm font-medium hover:bg-accent hover:text-on-accent"
+                          className="display flex min-h-11 items-center rounded-md bg-surface-2 px-3 text-xl hover:bg-accent hover:text-on-accent"
                         >
                           {child.label}
                         </Link>
