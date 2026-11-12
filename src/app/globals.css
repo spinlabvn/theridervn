@@ -36,6 +36,29 @@
   color-scheme: dark;
 }
 
+/* Đỏ thương hiệu TheRider (lấy từ therider.vn: --brand-red / --brand-dark-red) */
+:root {
+  --brand-red: #bc2b28;
+  --brand-dark-red: #8a1f1d;
+}
+
+/*
+ * Vùng nền đỏ thương hiệu (thanh menu trên cùng + menu mobile).
+ * Đổi lại token để mọi thành phần bên trong tự chuyển sang chữ trắng trên nền đỏ,
+ * giống nhau ở cả giao diện sáng và tối. Trắng/đỏ = 5.98:1, trắng 85%/đỏ = 4.7:1.
+ */
+.on-brand {
+  --paper: var(--brand-red);
+  --surface-2: rgb(255 255 255 / 0.14);
+  --ink: #ffffff;
+  --ink-2: rgb(255 255 255 / 0.85);
+  --line: rgb(255 255 255 / 0.28);
+  --accent: #ffffff;
+  --accent-ink: #ffffff;
+  --on-accent: var(--brand-red);
+  color-scheme: dark;
+}
+
 @theme inline {
   --color-paper: var(--paper);
   --color-surface: var(--surface);
@@ -273,6 +296,10 @@
       font-size: 1.65rem;
     }
   }
+}
+
+.on-brand .brand-logo {
+  filter: none;
 }
 
 /* ---------- Chuyển động ---------- */

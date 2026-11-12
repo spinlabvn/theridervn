@@ -13,7 +13,7 @@ export function Logo({ className = "" }: { className?: string }) {
         height={height}
         priority
         unoptimized
-        className={`h-7 w-auto brightness-0 dark:brightness-100 ${className}`}
+        className={`brand-logo h-7 w-auto brightness-0 dark:brightness-100 ${className}`}
       />
     );
   }

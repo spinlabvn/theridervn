@@ -16,7 +16,7 @@ export async function Header({ locale }: { locale: Locale }) {
   const catItems = categories.map((c) => ({ href: href.category(locale, c.slug), label: c.title }));
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-paper/75">
+    <header className="on-brand sticky top-0 z-40 border-b border-[var(--brand-dark-red)] bg-paper text-ink">
       <div className="container-x flex h-16 items-center gap-6 lg:h-[4.5rem]">
         <Link href={href.home(locale)} className="shrink-0" aria-label={`TheRider – ${t.nav.home}`}>
           <Logo />
