@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
-import { PostCard, PostMeta, PostOverlayCard, PostRow } from "@/components/PostCard";
+import { PostCard, PostOverlayCard, PostRow } from "@/components/PostCard";
 import { SearchForm } from "@/components/SearchForm";
-import { isLocale, type Locale } from "@/i18n/config";
+import { site } from "@/config/site";
+import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
-import { getAllPosts, getAllTags, getCategories, type PostSummary } from "@/lib/content";
+import { getAllPosts, getAllTags, getCategories } from "@/lib/content";
 import { href } from "@/lib/format";
 
 export const revalidate = 60;
@@ -28,58 +29,6 @@ function SectionHeading({ title, lead, link }: { title: string; lead?: string; l
   );
 }
 
-function Hero({ post, locale }: { post: PostSummary; locale: Locale }) {
-  const t = getDictionary(locale);
-  return (
-    <section aria-labelledby="hero-title" className="scheme-dark relative isolate overflow-hidden bg-paper text-ink">
-      <div className="absolute inset-0 -z-10">
-        {post.coverUrl ? (
-          <Image
-            src={post.coverUrl}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="hero-media object-cover"
-            style={post.coverPosition ? { objectPosition: post.coverPosition } : undefined}
-          />
-        ) : null}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
-      </div>
-
-      <div className="container-x flex min-h-[calc(100svh-4rem)] flex-col justify-end pb-12 pt-32 lg:min-h-[calc(100svh-4.5rem)] lg:pb-16">
-        <p className="rise eyebrow flex items-center gap-3 text-white/85" style={{ ["--i" as string]: 0 }}>
-          <span className="h-px w-10 bg-accent" aria-hidden="true" />
-          {t.home.eyebrow} · {post.category.title}
-        </p>
-        <h1
-          id="hero-title"
-          className="rise display mt-5 max-w-5xl text-[3.25rem] text-white sm:text-7xl lg:text-[7.5rem]"
-          style={{ ["--i" as string]: 1 }}
-        >
-          <Link href={href.post(locale, post.slug)} className="hover:text-accent focus-visible:text-accent">
-            {post.title}
-          </Link>
-        </h1>
-        <div className="rise mt-6 grid gap-6 lg:grid-cols-12 lg:items-end" style={{ ["--i" as string]: 2 }}>
-          <p className="max-w-2xl text-lg text-white/85 lg:col-span-7 lg:text-xl">{post.excerpt}</p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-4 lg:col-span-5 lg:justify-end">
-            <PostMeta post={post} locale={locale} className="text-white/75" />
-            <Link
-              href={href.post(locale, post.slug)}
-              className="group inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 font-semibold text-on-accent transition-colors duration-200 hover:bg-white"
-            >
-              {t.home.readStory}
-              <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
@@ -90,35 +39,21 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
     return <p className="container-x py-32 text-center text-lg text-ink-2">{t.list.empty}</p>;
   }
 
-  const hero = posts.find((p) => p.featured) ?? posts[0];
-  const rest = posts.filter((p) => p.slug !== hero.slug);
-  const [lead, ...others] = rest;
+  const [lead, ...others] = posts;
   const rows = others.slice(0, 4);
   const more = others.slice(4, 7);
-  const picks = rest.filter((p) => p.featured).slice(0, 2);
+  const picks = others.filter((p) => p.featured).slice(0, 2);
   const coverFor = (slug: string) => posts.find((p) => p.category.slug === slug && p.coverUrl);
 
   return (
     <>
-      <Hero post={hero} locale={locale} />
-
-      {/* Dải chuyên mục */}
-      <nav aria-label={t.nav.categories} className="bg-accent text-on-accent">
-        <ul className="container-x flex gap-x-8 gap-y-1 overflow-x-auto py-4 [scrollbar-width:none]">
-          {categories.map((c, i) => (
-            <li key={c.slug} className="flex shrink-0 items-center gap-8">
-              {i > 0 ? <span aria-hidden="true" className="display text-2xl opacity-40">/</span> : null}
-              <Link href={href.category(locale, c.slug)} className="display flex min-h-11 items-center text-2xl hover:underline sm:text-3xl">
-                {c.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <h1 className="sr-only">
+        {site.name} – {t.home.eyebrow}
+      </h1>
 
       {/* Mới nhất */}
       {lead ? (
-        <section aria-labelledby="latest" className="container-x pt-20 lg:pt-28">
+        <section aria-labelledby="latest" className="container-x pt-10 lg:pt-14">
           <div id="latest">
             <SectionHeading
               title={t.home.latest}

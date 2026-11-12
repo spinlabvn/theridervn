@@ -19,7 +19,6 @@ const vi = {
   language: { switch: "Đổi ngôn ngữ" },
   home: {
     eyebrow: "Tin tức & đánh giá xe đạp",
-    readStory: "Đọc bài",
     latest: "Mới nhất",
     latestLead: "Những câu chuyện vừa lên trang từ đội ngũ biên tập.",
     editorsPick: "Biên tập chọn",
@@ -104,7 +103,6 @@ const en: Dictionary = {
   language: { switch: "Change language" },
   home: {
     eyebrow: "Cycling news & reviews",
-    readStory: "Read story",
     latest: "Latest",
     latestLead: "Fresh off the press from our editorial team.",
     editorsPick: "Editor's pick",

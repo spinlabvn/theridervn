@@ -312,15 +312,6 @@
 }
 
 /* ---------- Chuyển động ---------- */
-@keyframes hero-in {
-  from {
-    transform: scale(1.08);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
 @keyframes rise {
   from {
     opacity: 0;
@@ -333,9 +324,6 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-media {
-    animation: hero-in 1600ms var(--ease-out-quint) both;
-  }
   .rise {
     animation: rise 700ms var(--ease-out-quint) both;
     animation-delay: calc(var(--i, 0) * 70ms + 120ms);
