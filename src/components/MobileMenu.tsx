@@ -4,19 +4,22 @@ import Link from "next/link";
 import { Menu, Search, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { hasChildren, mainMenu } from "@/config/menu";
+import type { Locale } from "@/i18n/config";
+import { href } from "@/lib/format";
 
 type Item = { href: string; label: string };
 
 export function MobileMenu({
   labels,
+  locale,
   primary,
-  categories,
   searchHref,
   children,
 }: {
   labels: { open: string; close: string; categories: string; search: string };
+  locale: Locale;
   primary: Item[];
-  categories: Item[];
   searchHref: string;
   children?: React.ReactNode;
 }) {
@@ -37,7 +40,7 @@ export function MobileMenu({
         onClick={() => ref.current?.showModal()}
         aria-label={labels.open}
         aria-haspopup="dialog"
-        className="grid size-11 place-items-center rounded-full transition-colors duration-200 hover:bg-surface-2 xl:hidden"
+        className="grid size-11 place-items-center rounded-full transition-colors duration-200 hover:bg-surface-2 lg:hidden"
       >
         <Menu className="size-6" strokeWidth={1.8} aria-hidden="true" />
       </button>
@@ -64,23 +67,43 @@ export function MobileMenu({
         </div>
 
         <nav className="flex-1 overflow-y-auto px-4 py-6">
+          {/* Cùng cấu trúc menu với therider.vn: mục đơn + nhóm có menu con */}
           <ul className="space-y-1">
+            {mainMenu.map((item) =>
+              hasChildren(item) ? (
+                <li key={item.label} className="py-3">
+                  <p className="eyebrow text-ink-2">{item.label}</p>
+                  <ul className="mt-2 grid grid-cols-2 gap-2">
+                    {item.children.map((child) => (
+                      <li key={child.category}>
+                        <Link
+                          href={href.category(locale, child.category)}
+                          onClick={close}
+                          className="flex min-h-11 items-center rounded-md bg-surface-2 px-3 text-sm font-medium hover:bg-accent hover:text-on-accent"
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li key={item.label}>
+                  <Link
+                    href={href.category(locale, item.category)}
+                    onClick={close}
+                    className="display block py-1.5 text-4xl hover:opacity-80"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ),
+            )}
+          </ul>
+          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-1 border-t border-line pt-5">
             {primary.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} onClick={close} className="display block py-2 text-4xl hover:text-accent-ink">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <ul className="mt-6 grid grid-cols-2 gap-2 border-t border-line pt-6">
-            {categories.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={close}
-                  className="flex min-h-11 items-center rounded-md bg-surface-2 px-3 text-sm font-medium hover:bg-accent hover:text-on-accent"
-                >
+                <Link href={item.href} onClick={close} className="flex min-h-11 items-center font-medium text-ink-2 hover:text-ink">
                   {item.label}
                 </Link>
               </li>
