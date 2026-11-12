@@ -21,22 +21,8 @@ export async function Footer({ locale }: { locale: Locale }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="scheme-dark mt-24 bg-paper text-ink">
+    <footer className="scheme-dark mt-16 bg-paper text-ink lg:mt-20">
       <div className="container-x">
-        <div className="border-b border-line py-14 lg:py-20">
-          <p className="display max-w-4xl text-5xl sm:text-6xl lg:text-8xl">
-            {locale === "vi" ? (
-              <>
-                Đạp xa hơn. <span className="text-accent">Kể hay hơn.</span>
-              </>
-            ) : (
-              <>
-                Ride further. <span className="text-accent">Tell it better.</span>
-              </>
-            )}
-          </p>
-        </div>
-
         <div className="grid gap-10 py-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Logo />
