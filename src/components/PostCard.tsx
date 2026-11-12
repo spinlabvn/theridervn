@@ -4,7 +4,8 @@ import { Clock3, Play } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { PostSummary } from "@/lib/content";
-import { formatDate, href } from "@/lib/format";
+import { slugify } from "@/lib/content/text";
+import { daysAgo, formatDate, href } from "@/lib/format";
 
 export function PostMeta({ post, locale, className = "" }: { post: PostSummary; locale: Locale; className?: string }) {
   const t = getDictionary(locale);
@@ -154,20 +155,71 @@ export function PostMini({ post, locale }: { post: PostSummary; locale: Locale }
   );
 }
 
-/** Thẻ lớn có chữ đè trên ảnh – dùng cho mục "Biên tập chọn". */
-export function PostOverlayCard({ post, locale, className = "" }: { post: PostSummary; locale: Locale; className?: string }) {
+/** Thẻ dọc gọn cho cột phụ hẹp: ảnh trên, chuyên mục + tiêu đề dưới. */
+export function PostTile({ post, locale }: { post: PostSummary; locale: Locale }) {
   return (
-    <article className={`group scheme-dark relative isolate flex min-h-[26rem] flex-col justify-end overflow-hidden ${className}`}>
-      <Cover post={post} className="absolute inset-0 -z-10" sizes="(min-width: 1024px) 50vw, 100vw" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-black/90 via-black/45 to-black/5" />
-      <div className="p-6 sm:p-8">
-        <CategoryLabel post={post} locale={locale} solid />
-        <h3 className="display mt-3 text-4xl text-white sm:text-5xl">
+    <article className="group relative">
+      <Cover post={post} className="aspect-[16/9]" sizes="(min-width: 1024px) 300px, 100vw" />
+      <div className="mt-3">
+        <CategoryLabel post={post} locale={locale} />
+        <h3 className="mt-1 font-bold leading-snug">
           <Link href={href.post(locale, post.slug)} className="after:absolute after:inset-0">
             <span className="link-title">{post.title}</span>
           </Link>
         </h3>
-        <PostMeta post={post} locale={locale} className="mt-3 text-white/80" />
+      </div>
+    </article>
+  );
+}
+
+/**
+ * Một dòng trong dòng tin trang chủ (kiểu Pinkbike): ảnh bên trái; tác giả + ngày,
+ * tiêu đề đậm, tóm tắt, chuyên mục và thẻ bên phải.
+ */
+export function PostFeedItem({ post, locale, priority = false }: { post: PostSummary; locale: Locale; priority?: boolean }) {
+  const t = getDictionary(locale);
+  const ago = daysAgo(post.publishedAt);
+  return (
+    <article className="group relative grid grid-cols-[7.5rem_1fr] gap-4 py-5 sm:grid-cols-[13rem_1fr] sm:gap-5">
+      <Cover post={post} priority={priority} className="aspect-[4/3] self-start sm:aspect-[3/2] [&_span]:size-10" sizes="(min-width: 640px) 208px, 120px" />
+      <div className="min-w-0">
+        <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] text-ink-2">
+          <span className="font-semibold text-ink">{post.author.name}</span>
+          {ago !== null ? (
+            <span className="rounded-sm bg-yellow-300 px-1.5 py-px font-semibold text-black">
+              {ago === 0 ? t.home.today : t.home.yesterday}
+            </span>
+          ) : (
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, locale)}</time>
+          )}
+        </p>
+        <h3 className="mt-1 text-lg font-bold leading-snug sm:text-[1.375rem]">
+          <Link href={href.post(locale, post.slug)} className="after:absolute after:inset-0">
+            <span className="link-title">{post.title}</span>
+          </Link>
+        </h3>
+        <p className="mt-1 line-clamp-2 hidden text-[0.9375rem] text-ink-2 sm:block">{post.excerpt}</p>
+        <div className="mt-2.5 flex flex-wrap items-center gap-1.5 text-[0.8125rem]">
+          <Link
+            href={href.category(locale, post.category.slug)}
+            className="relative z-10 inline-flex min-h-7 items-center rounded-sm bg-accent px-2 font-semibold text-on-accent hover:bg-ink hover:text-paper"
+          >
+            {post.category.title}
+          </Link>
+          {post.tags.slice(0, 4).map((tag) => (
+            <Link
+              key={tag}
+              href={href.tag(locale, slugify(tag))}
+              className="relative z-10 hidden min-h-7 items-center rounded-sm bg-surface-2 px-2 text-ink-2 hover:bg-ink hover:text-paper sm:inline-flex"
+            >
+              {tag}
+            </Link>
+          ))}
+          <span className="inline-flex items-center gap-1 pl-1 text-ink-2">
+            {post.isVideo ? <Play className="size-3.5" strokeWidth={2} aria-hidden="true" /> : <Clock3 className="size-3.5" strokeWidth={2} aria-hidden="true" />}
+            {post.isVideo ? t.post.video : `${post.readingMinutes} ${t.post.minRead}`}
+          </span>
+        </div>
       </div>
     </article>
   );

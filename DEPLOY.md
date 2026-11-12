@@ -79,7 +79,7 @@ Biên tập viên chỉ cần mở **https://therider.sanity.studio**, đăng nh
 
 1. Trên Hostinger, điền `NEXT_PUBLIC_SANITY_PROJECT_ID` = Project ID → **Redeploy**.
 2. Website sẽ chuyển sang đọc bài từ Sanity. Hãy chạy `npm run import-therider` **trước** bước này, nếu không trang chủ sẽ báo chưa có bài.
-3. Từ đây, viết bài mới trên Studio. Bài đánh dấu **Bài nổi bật** mới nhất sẽ lên ảnh lớn đầu trang chủ. Studio có sẵn khối **Video YouTube** và **Bảng thông số** cho bài Bike Check.
+3. Từ đây, viết bài mới trên Studio. Bài đánh dấu **Bài nổi bật** hiện ở khối *Biên tập chọn* bên phải trang chủ (tối đa 3 bài). Studio có sẵn khối **Video YouTube** và **Bảng thông số** cho bài Bike Check.
 
 ### 3.4 Webhook – cập nhật website ngay khi xuất bản
 

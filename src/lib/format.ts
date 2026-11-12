@@ -14,6 +14,14 @@ export function formatDate(iso: string, locale: Locale, style: "long" | "short" 
   return (style === "long" ? dateFormatters : shortFormatters)[locale].format(new Date(iso));
 }
 
+const dayKey = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Ho_Chi_Minh" });
+
+/** 0 = hôm nay, 1 = hôm qua (giờ Việt Nam), ngược lại null. */
+export function daysAgo(iso: string, now = new Date()): 0 | 1 | null {
+  const diff = (Date.parse(dayKey.format(now)) - Date.parse(dayKey.format(new Date(iso)))) / 86_400_000;
+  return diff === 0 || diff === 1 ? diff : null;
+}
+
 /** Đường dẫn nội bộ luôn có tiền tố ngôn ngữ */
 export const href = {
   home: (l: Locale) => `/${l}`,
