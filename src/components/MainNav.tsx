@@ -9,7 +9,7 @@ import type { Locale } from "@/i18n/config";
 import { href } from "@/lib/format";
 
 const itemClass =
-  "display relative flex h-11 items-center gap-1 px-3 text-[1.375rem] text-ink-2 transition-colors duration-200 hover:text-ink aria-[current=page]:text-ink data-[active=true]:text-ink after:absolute after:inset-x-3 after:-bottom-[13px] after:h-[3px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 aria-[current=page]:after:scale-x-100 data-[active=true]:after:scale-x-100";
+  "display relative flex h-11 items-center gap-1 px-3 text-[1.375rem] text-ink-2 transition-colors duration-200 hover:text-ink aria-[current=page]:text-ink data-[active=true]:text-ink after:absolute after:inset-x-3 after:-bottom-[6px] after:h-[3px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 aria-[current=page]:after:scale-x-100 data-[active=true]:after:scale-x-100";
 
 /** Menu ngang trên desktop, có menu con mở bằng rê chuột, bấm hoặc bàn phím (Esc để đóng). */
 export function MainNav({ locale, label }: { locale: Locale; label: string }) {
@@ -40,8 +40,8 @@ export function MainNav({ locale, label }: { locale: Locale; label: string }) {
   }, [open]);
 
   return (
-    <nav ref={navRef} aria-label={label} className="hidden flex-1 lg:block">
-      <ul className="flex items-center gap-1">
+    <nav ref={navRef} aria-label={label} className="hidden lg:block">
+      <ul className="flex items-center justify-center gap-1">
         {mainMenu.map((item) => {
           if (!hasChildren(item)) {
             return (
