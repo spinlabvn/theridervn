@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { ArticleBody } from "@/components/ArticleBody";
-import { CategoryLabel, PostCard, PostMeta } from "@/components/PostCard";
+import { CategoryLabel, PostMeta, PostMini } from "@/components/PostCard";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { ShareBar } from "@/components/ShareBar";
 import { TableOfContents } from "@/components/TableOfContents";
@@ -194,14 +194,14 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
       </article>
 
       {related.length ? (
-        <section aria-labelledby="related" className="container-x mt-24">
-          <h2 id="related" className="display border-t-4 border-ink pt-5 text-5xl sm:text-6xl">
+        <section aria-labelledby="related" className="container-x mt-16 lg:mt-20">
+          <h2 id="related" className="display border-t-4 border-ink pt-4 text-3xl sm:text-4xl">
             {t.post.related}
           </h2>
-          <ul className="mt-10 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-4 grid gap-x-8 md:grid-cols-3">
             {related.map((p) => (
-              <li key={p.slug} className="reveal grid">
-                <PostCard post={p} locale={locale} />
+              <li key={p.slug} className="grid">
+                <PostMini post={p} locale={locale} />
               </li>
             ))}
           </ul>

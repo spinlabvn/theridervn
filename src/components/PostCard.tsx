@@ -136,6 +136,24 @@ export function PostRow({ post, locale, index }: { post: PostSummary; locale: Lo
   );
 }
 
+/** Thẻ nhỏ: ảnh vuông bên trái, tiêu đề bên phải – dùng cho mục "Đọc tiếp" cuối bài. */
+export function PostMini({ post, locale }: { post: PostSummary; locale: Locale }) {
+  return (
+    <article className="group relative grid grid-cols-[auto_1fr] items-center gap-4 border-t border-line py-4">
+      <Cover post={post} className="aspect-square w-24" sizes="96px" />
+      <div className="min-w-0">
+        <CategoryLabel post={post} locale={locale} />
+        <h3 className="display mt-1 line-clamp-2 text-xl">
+          <Link href={href.post(locale, post.slug)} className="after:absolute after:inset-0">
+            <span className="link-title">{post.title}</span>
+          </Link>
+        </h3>
+        <PostMeta post={post} locale={locale} className="mt-1.5 text-ink-2" />
+      </div>
+    </article>
+  );
+}
+
 /** Thẻ lớn có chữ đè trên ảnh – dùng cho mục "Biên tập chọn". */
 export function PostOverlayCard({ post, locale, className = "" }: { post: PostSummary; locale: Locale; className?: string }) {
   return (
