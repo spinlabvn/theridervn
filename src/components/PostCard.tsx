@@ -187,8 +187,8 @@ export function PostFeedItem({ post, locale, priority = false }: { post: PostSum
   const t = getDictionary(locale);
   const ago = daysAgo(post.publishedAt);
   return (
-    <article className="group relative grid grid-cols-[8.5rem_1fr] gap-4 py-5 sm:grid-cols-[13rem_1fr] sm:gap-5">
-      <Cover post={post} priority={priority} className="aspect-video self-start [&_span]:size-10" sizes="(min-width: 640px) 208px, 136px" />
+    <article className="group relative grid grid-cols-[8.5rem_1fr] gap-4 py-5 sm:grid-cols-[13rem_1fr] sm:gap-5 xl:grid-cols-[260px_1fr]">
+      <Cover post={post} priority={priority} className="aspect-video self-start [&_span]:size-10" sizes="(min-width: 1280px) 260px, (min-width: 640px) 208px, 136px" />
       <div className="min-w-0">
         <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] text-ink-2">
           <span className="font-semibold text-ink">{post.author.name}</span>

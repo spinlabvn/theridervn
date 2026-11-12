@@ -24,14 +24,16 @@ export const site = {
   },
   postsPerPage: 12,
   /**
-   * Ô quảng cáo cột trái trang chủ – cao bằng khối "Xem nhiều nhất" (~290×800px trên màn hình rộng).
-   * Banner nên dọc khoảng 1:2.5 (vd. 600×1500), nội dung chính đặt giữa vì mép trên/dưới có thể bị cắt.
-   * Đặt file banner vào public/ads/ rồi điền `image: "/ads/ten-file.jpg"`, `href`: trang của nhà tài trợ.
-   * Để `image` trống thì hiện ô "Đặt quảng cáo tại đây" dẫn tới email liên hệ.
+   * Quảng cáo trang chủ. Đặt file banner vào public/ads/ rồi điền `image: "/ads/ten-file.jpg"`,
+   * `href`: trang của nhà tài trợ. Để `image` trống thì hiện ô "Đặt quảng cáo tại đây" dẫn tới email liên hệ.
    */
-  ad: {
-    image: "" as string,
-    href: "" as string,
-    alt: "" as string,
+  ads: {
+    /**
+     * Ô cột trái – cao bằng khối "Xem nhiều nhất" (~250×850px trên màn hình rộng).
+     * Banner dọc khoảng 1:3 (vd. 500×1500), nội dung chính đặt giữa vì mép trên/dưới có thể bị cắt.
+     */
+    sidebar: { image: "" as string, href: "" as string, alt: "" as string },
+    /** Banner ngang trong dòng tin, sau bài thứ 3 – tỉ lệ cố định 970:250 (vd. 1940×500). */
+    feed: { image: "" as string, href: "" as string, alt: "" as string },
   },
 } as const;

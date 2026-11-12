@@ -147,6 +147,13 @@
       padding-inline: 2.5rem;
     }
   }
+  /* Màn hình rộng: khung nội dung 1400px như Pinkbike */
+  @media (min-width: 1280px) {
+    .container-x {
+      max-width: 1424px;
+      padding-inline: 0.75rem;
+    }
+  }
 
   /* Tiêu đề kiểu thể thao: Barlow Condensed in hoa, khoảng cách dòng chặt */
   .display {

@@ -20,7 +20,7 @@ export function Header({ locale }: { locale: Locale }) {
           <Logo className="lg:h-10" />
         </Link>
 
-        <div className="ml-auto flex items-center gap-1 sm:gap-2 lg:absolute lg:inset-y-0 lg:right-10">
+        <div className="ml-auto flex items-center gap-1 sm:gap-2 lg:absolute lg:inset-y-0 lg:right-10 xl:right-3">
           <Link
             href={href.search(locale)}
             aria-label={t.nav.search}
