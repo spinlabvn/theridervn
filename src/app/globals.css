@@ -197,6 +197,15 @@
     line-height: 1.75;
     color: var(--ink);
   }
+  /* Chữ giữ cột đọc ~44rem; video, bảng thông số, gallery (.wide) được rộng hơn */
+  .prose-article > * {
+    max-width: 44rem;
+    margin-inline: auto;
+  }
+  .prose-article > .wide,
+  .prose-article > :is(h2, h3):has(+ .wide) {
+    max-width: 56rem;
+  }
   .prose-article > * + * {
     margin-top: 1.4em;
   }

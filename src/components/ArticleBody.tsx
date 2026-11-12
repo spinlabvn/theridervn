@@ -53,7 +53,7 @@ export function ArticleBody({ body, videoTitle }: { body: BodyNode[]; videoTitle
         const id = youtubeId(value?.url ?? "");
         if (!id) return null;
         return (
-          <figure className="not-prose">
+          <figure className="wide">
             <div className="relative aspect-video overflow-hidden bg-black">
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${id}?rel=0`}
@@ -74,7 +74,7 @@ export function ArticleBody({ body, videoTitle }: { body: BodyNode[]; videoTitle
         if (!rows.length) return null;
         const [head, ...rest] = value.hasHeader ? rows : [null, ...rows];
         return (
-          <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+          <div className="wide -mx-4 overflow-x-auto px-4 sm:mx-auto sm:px-0">
             <table className="w-full min-w-[34rem] border-collapse font-sans text-[0.9375rem] leading-snug">
               {head ? (
                 <thead>
@@ -113,10 +113,10 @@ export function ArticleBody({ body, videoTitle }: { body: BodyNode[]; videoTitle
 
       gallery: ({ value }: { value: GalleryNode }) =>
         value?.images?.length ? (
-          <div className={`grid gap-3 ${value.images.length > 1 ? "sm:grid-cols-2" : ""}`}>
+          <div className={`wide grid gap-3 ${value.images.length > 1 ? "sm:grid-cols-2" : ""}`}>
             {value.images.map((img) => (
               <div key={img._key} className="relative aspect-[3/2] overflow-hidden bg-surface-2">
-                <Image src={src(img.url, 1200)} alt={img.alt ?? ""} fill sizes="(min-width: 768px) 360px, 100vw" className="object-cover" />
+                <Image src={src(img.url, 1200)} alt={img.alt ?? ""} fill sizes="(min-width: 768px) 450px, 100vw" className="object-cover" />
               </div>
             ))}
           </div>

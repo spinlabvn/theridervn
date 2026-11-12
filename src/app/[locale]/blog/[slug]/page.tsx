@@ -63,6 +63,7 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
   const t = getDictionary(locale);
   const related = await getRelatedPosts(locale, post);
   const headings = headingsOf(post.body);
+  const hasToc = headings.length >= 2; // TableOfContents tự ẩn khi ít hơn 2 mục
   const url = `${site.url}${href.post(locale, slug)}`;
 
   const jsonLd = {
@@ -133,13 +134,14 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
 
         {post.coverUrl ? (
           <figure className="container-x mt-10 sm:mt-14">
-            <div className="relative aspect-[16/10] overflow-hidden bg-surface-2 lg:aspect-[21/9]">
+            {/* 16:9 trên desktop: đủ cao để không cắt bánh xe/yên trong ảnh chụp nguyên chiếc xe (ảnh gốc 3:2) */}
+            <div className="relative mx-auto aspect-[3/2] max-w-6xl overflow-hidden bg-surface-2 lg:aspect-video">
               <Image
                 src={post.coverUrl}
                 alt={post.coverAlt}
                 fill
                 priority
-                sizes="(min-width: 1320px) 1240px, 100vw"
+                sizes="(min-width: 1232px) 1152px, 100vw"
                 className="object-cover"
                 style={post.coverPosition ? { objectPosition: post.coverPosition } : undefined}
               />
@@ -148,21 +150,24 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
         ) : null}
 
         <div className="container-x mt-12 grid gap-12 lg:mt-16 lg:grid-cols-12">
-          <aside className="hidden lg:col-span-3 lg:block">
-            <div className="sticky top-28 space-y-10">
-              <TableOfContents headings={headings} label={t.post.contents} />
-            </div>
-          </aside>
+          {hasToc ? (
+            <aside className="hidden lg:col-span-3 lg:block">
+              <div className="sticky top-28 space-y-10">
+                <TableOfContents headings={headings} label={t.post.contents} />
+              </div>
+            </aside>
+          ) : null}
 
-          <div id="article-body" className="mx-auto w-full max-w-[44rem] lg:col-span-6">
+          {/* Không có mục lục thì bài nằm giữa trang, thay vì lệch phải cạnh một cột trống */}
+          <div id="article-body" className={`w-full min-w-0 ${hasToc ? "lg:col-span-9" : "lg:col-span-12"}`}>
             {post.isFallbackLanguage && locale === "en" ? (
-              <p className="mb-8 border-l-4 border-accent bg-surface-2 px-4 py-3 text-sm">
+              <p className="mx-auto mb-8 max-w-[44rem] border-l-4 border-accent bg-surface-2 px-4 py-3 text-sm">
                 This story is currently only available in Vietnamese.
               </p>
             ) : null}
             <ArticleBody body={post.body} videoTitle={post.title} />
 
-            <footer className="mt-14 space-y-8 border-t border-line pt-8">
+            <footer className="mx-auto mt-14 max-w-[44rem] space-y-8 border-t border-line pt-8">
               {post.tags.length ? (
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="eyebrow mr-1 text-ink-2">{t.post.tags}</span>

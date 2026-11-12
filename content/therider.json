@@ -1397,22 +1397,6 @@
   "body": {
    "vi": [
     {
-     "_type": "gallery",
-     "_key": "k0035",
-     "images": [
-      {
-       "_key": "k0036",
-       "url": "/media/eAZL3f67yCA8CcJHxGu7MuQCico5tmPT5Pl69bPa.jpg",
-       "alt": "Canyon Grizl CF SL AXS - Bike Check"
-      },
-      {
-       "_key": "k0037",
-       "url": "/media/8p2xowyetmFoJ7VX2k9huRok0wyNjUmMTEBZW3Ha.jpg",
-       "alt": "Canyon Grizl CF SL AXS - Bike Check"
-      }
-     ]
-    },
-    {
      "_type": "youtube",
      "_key": "k0002",
      "url": "https://www.youtube.com/watch?v=1zSZgMEKd90"
@@ -1629,22 +1613,6 @@
     }
    ],
    "en": [
-    {
-     "_type": "gallery",
-     "_key": "k0035",
-     "images": [
-      {
-       "_key": "k0036",
-       "url": "/media/eAZL3f67yCA8CcJHxGu7MuQCico5tmPT5Pl69bPa.jpg",
-       "alt": "Canyon Grizl CF SL AXS - Bike Check"
-      },
-      {
-       "_key": "k0037",
-       "url": "/media/8p2xowyetmFoJ7VX2k9huRok0wyNjUmMTEBZW3Ha.jpg",
-       "alt": "Canyon Grizl CF SL AXS - Bike Check"
-      }
-     ]
-    },
     {
      "_type": "youtube",
      "_key": "k0002",
