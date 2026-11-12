@@ -2,7 +2,7 @@
 
 Website song ngữ (Tiếng Việt / English) cho **TheRider**, xây bằng **Next.js 16 (Node.js)**, nội dung quản lý trên **Sanity CMS**, triển khai trên **Hostinger Node.js Web App**.
 
-- Trang chủ dạng dòng tin như Pinkbike (chuyên mục | tin mới nhất | biên tập chọn), tối/sáng tuỳ chọn (ghi nhớ lựa chọn của người đọc)
+- Trang chủ dạng dòng tin như Pinkbike (chuyên mục | tin mới nhất | xem nhiều nhất – tự đếm lượt xem), tối/sáng tuỳ chọn (ghi nhớ lựa chọn của người đọc)
 - Blog: chuyên mục, thẻ, phân trang, bài liên quan, mục lục bám dính, thanh tiến độ đọc, chia sẻ
 - Tìm kiếm **không phân biệt dấu** ("da lat" tìm ra "Đà Lạt")
 - SEO: metadata, Open Graph, `hreflang`, sitemap.xml, robots.txt, RSS (`/vi/rss.xml`, `/en/rss.xml`), JSON-LD NewsArticle

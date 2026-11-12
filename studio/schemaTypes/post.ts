@@ -71,7 +71,7 @@ export const post = defineType({
       title: "Bài nổi bật",
       type: "boolean",
       group: "meta",
-      description: "Bài nổi bật mới nhất sẽ lên ảnh lớn đầu trang chủ; các bài tiếp theo vào mục “Biên tập chọn”.",
+      description: "Dùng để bù vào khối “Xem nhiều nhất” trên trang chủ khi chưa đủ dữ liệu lượt xem.",
       initialValue: false,
     }),
   ],

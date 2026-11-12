@@ -79,7 +79,7 @@ Biên tập viên chỉ cần mở **https://therider.sanity.studio**, đăng nh
 
 1. Trên Hostinger, điền `NEXT_PUBLIC_SANITY_PROJECT_ID` = Project ID → **Redeploy**.
 2. Website sẽ chuyển sang đọc bài từ Sanity. Hãy chạy `npm run import-therider` **trước** bước này, nếu không trang chủ sẽ báo chưa có bài.
-3. Từ đây, viết bài mới trên Studio. Bài đánh dấu **Bài nổi bật** hiện ở khối *Biên tập chọn* bên phải trang chủ (tối đa 3 bài). Studio có sẵn khối **Video YouTube** và **Bảng thông số** cho bài Bike Check.
+3. Từ đây, viết bài mới trên Studio. Khối *Xem nhiều nhất* bên phải trang chủ tự xếp 3 bài nhiều lượt xem nhất (xem mục 3.5); khi chưa đủ lượt xem, bài đánh dấu **Bài nổi bật** được dùng để bù. Studio có sẵn khối **Video YouTube** và **Bảng thông số** cho bài Bike Check.
 
 ### 3.4 Webhook – cập nhật website ngay khi xuất bản
 
@@ -93,6 +93,18 @@ Không có webhook, bài mới vẫn tự xuất hiện sau tối đa ~60 giây.
    - **Filter:** `_type in ["post", "category", "author"]`
    - **HTTP method:** POST
 3. Lưu và thử xuất bản một bài – website cập nhật trong vài giây.
+
+### 3.5 Lượt xem – khối "Xem nhiều nhất"
+
+Mỗi lần có người mở bài, website ghi một lượt xem (bỏ qua bot; cùng một người mở lại trong 30 phút chỉ tính một lần). Trang chủ cập nhật thứ hạng sau tối đa ~60 giây.
+
+Để lượt xem **không bị mất khi deploy lại**, lưu chúng lên Sanity:
+
+1. sanity.io/manage → project TheRider → **API** → **Tokens** → **Add API token**, tên `website-views`, quyền **Editor**.
+2. Trên Hostinger thêm biến `SANITY_API_WRITE_TOKEN` = token vừa tạo → **Redeploy**.
+3. Xem số liệu trong Studio ở mục **Lượt xem** (chỉ đọc).
+
+Chưa có token thì lượt xem lưu vào file `.data/views.json` trên máy chủ – vẫn chạy, nhưng có thể về 0 sau mỗi lần Hostinger build lại.
 
 ---
 
@@ -115,4 +127,5 @@ Không có webhook, bài mới vẫn tự xuất hiện sau tối đa ~60 giây.
 | Website chưa hiện bài mới viết trên Sanity | Chưa Redeploy sau khi thêm `NEXT_PUBLIC_SANITY_PROJECT_ID`. |
 | Ảnh từ Sanity không hiện | Ảnh bìa là trường bắt buộc; kiểm tra bài đã có ảnh và đã **Publish** (không chỉ lưu nháp). |
 | Bài đã publish nhưng chưa hiện | Kiểm tra *Ngày đăng* không nằm ở tương lai, bài đã chọn *Chuyên mục*. |
+| Khối "Xem nhiều nhất" về lại bài nổi bật sau khi deploy | Chưa đặt `SANITY_API_WRITE_TOKEN` nên lượt xem lưu file và bị xoá khi build lại (xem 3.5). |
 | Webhook trả 401 | `secret` trên URL webhook khác với `SANITY_REVALIDATE_SECRET` trên Hostinger. |

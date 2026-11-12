@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Clock3, Play } from "lucide-react";
+import { Clock3, Eye, Play } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { PostSummary } from "@/lib/content";
@@ -155,8 +155,9 @@ export function PostMini({ post, locale }: { post: PostSummary; locale: Locale }
   );
 }
 
-/** Thẻ dọc gọn cho cột phụ hẹp: ảnh trên, chuyên mục + tiêu đề dưới. */
-export function PostTile({ post, locale }: { post: PostSummary; locale: Locale }) {
+/** Thẻ dọc gọn cho cột phụ hẹp: ảnh trên, chuyên mục + tiêu đề dưới, kèm lượt xem nếu có. */
+export function PostTile({ post, locale, views }: { post: PostSummary; locale: Locale; views?: number }) {
+  const t = getDictionary(locale);
   return (
     <article className="group relative">
       <Cover post={post} className="aspect-[16/9]" sizes="(min-width: 1024px) 300px, 100vw" />
@@ -167,6 +168,12 @@ export function PostTile({ post, locale }: { post: PostSummary; locale: Locale }
             <span className="link-title">{post.title}</span>
           </Link>
         </h3>
+        {views ? (
+          <p className="mt-1.5 inline-flex items-center gap-1 text-[0.8125rem] text-ink-2">
+            <Eye className="size-3.5" strokeWidth={2} aria-hidden="true" />
+            {t.post.views(new Intl.NumberFormat(locale).format(views))}
+          </p>
+        ) : null}
       </div>
     </article>
   );

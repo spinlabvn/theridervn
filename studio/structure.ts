@@ -15,4 +15,9 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
       S.documentTypeListItem("category").title("Chuyên mục"),
       S.documentTypeListItem("author").title("Tác giả"),
+      S.divider(),
+      S.listItem()
+        .title("Lượt xem")
+        .schemaType("postViews")
+        .child(S.documentTypeList("postViews").title("Lượt xem").defaultOrdering([{ field: "views", direction: "desc" }])),
     ]);

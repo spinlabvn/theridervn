@@ -8,6 +8,7 @@ import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getAllPosts, getAllTags, getCategories } from "@/lib/content";
 import { href } from "@/lib/format";
+import { getViewCounts } from "@/lib/views";
 
 export const revalidate = 60;
 
@@ -28,13 +29,22 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   if (!isLocale(locale)) notFound();
   const t = getDictionary(locale);
 
-  const [posts, categories, tags] = await Promise.all([getAllPosts(locale), getCategories(locale), getAllTags(locale)]);
+  const [posts, categories, tags, views] = await Promise.all([
+    getAllPosts(locale),
+    getCategories(locale),
+    getAllTags(locale),
+    getViewCounts(),
+  ]);
   if (!posts.length) {
     return <p className="container-x py-32 text-center text-lg text-ink-2">{t.list.empty}</p>;
   }
 
   const feed = posts.slice(0, site.postsPerPage);
-  const picks = posts.filter((p) => p.featured).slice(0, 3);
+  // Xem nhiều nhất; khi chưa đủ dữ liệu lượt xem thì bù bằng bài nổi bật rồi bài mới nhất
+  const ranked = posts
+    .filter((p) => (views.get(p.slug) ?? 0) > 0)
+    .sort((a, b) => views.get(b.slug)! - views.get(a.slug)! || b.publishedAt.localeCompare(a.publishedAt));
+  const picks = [...new Set([...ranked, ...posts.filter((p) => p.featured), ...posts])].slice(0, 3);
 
   return (
     <>
@@ -84,11 +94,11 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
         <aside className="space-y-8 lg:col-span-4 xl:col-span-3">
           {picks.length ? (
-            <Panel id="picks" title={t.home.editorsPick}>
+            <Panel id="most-viewed" title={t.home.mostViewed}>
               <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
                 {picks.map((post) => (
                   <li key={post.slug}>
-                    <PostTile post={post} locale={locale} />
+                    <PostTile post={post} locale={locale} views={views.get(post.slug)} />
                   </li>
                 ))}
               </ul>

@@ -8,6 +8,7 @@ import { CategoryLabel, PostMeta, PostMini } from "@/components/PostCard";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { ShareBar } from "@/components/ShareBar";
 import { TableOfContents } from "@/components/TableOfContents";
+import { ViewTracker } from "@/components/ViewTracker";
 import { site } from "@/config/site";
 import { isLocale, localeMeta, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -84,6 +85,7 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
   return (
     <>
       <ReadingProgress targetId="article-body" label={t.post.progress} />
+      <ViewTracker slug={slug} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
 
       <article>

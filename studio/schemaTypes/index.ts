@@ -3,5 +3,6 @@ import { blockContent } from "./blockContent";
 import { category } from "./category";
 import { localeBlockContent, localeString, localeText } from "./locale";
 import { post } from "./post";
+import { postViews } from "./postViews";
 
-export const schemaTypes = [localeString, localeText, blockContent, localeBlockContent, category, author, post];
+export const schemaTypes = [localeString, localeText, blockContent, localeBlockContent, category, author, post, postViews];

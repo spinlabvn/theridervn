@@ -19,7 +19,7 @@ const vi = {
   language: { switch: "Đổi ngôn ngữ" },
   home: {
     eyebrow: "Tin tức & đánh giá xe đạp",
-    editorsPick: "Biên tập chọn",
+    mostViewed: "Xem nhiều nhất",
     allStories: "Xem tất cả bài viết",
     news: "Tin tức",
     today: "Hôm nay",
@@ -30,6 +30,7 @@ const vi = {
     by: "Bởi",
     minRead: "phút đọc",
     video: "Video",
+    views: (n: string) => `${n} lượt xem`,
     published: "Đăng ngày",
     contents: "Nội dung",
     tags: "Thẻ",
@@ -99,7 +100,7 @@ const en: Dictionary = {
   language: { switch: "Change language" },
   home: {
     eyebrow: "Cycling news & reviews",
-    editorsPick: "Editor's pick",
+    mostViewed: "Most viewed",
     allStories: "See all stories",
     news: "News",
     today: "Today",
@@ -110,6 +111,7 @@ const en: Dictionary = {
     by: "By",
     minRead: "min read",
     video: "Video",
+    views: (n: string) => `${n} views`,
     published: "Published",
     contents: "Contents",
     tags: "Tags",
