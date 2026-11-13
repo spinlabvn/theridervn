@@ -29,7 +29,7 @@ export default async function SearchPage({ params, searchParams }: PageProps<"/[
 
   return (
     <div className="container-x pt-12 sm:pt-16">
-      <h1 className="display text-6xl sm:text-7xl lg:text-8xl">{t.search.title}</h1>
+      <h1 className="display text-4xl sm:text-5xl">{t.search.title}</h1>
       <div className="mt-8 max-w-3xl">
         <SearchForm locale={locale} defaultValue={q} autoFocus={!q} />
       </div>
@@ -50,7 +50,7 @@ export default async function SearchPage({ params, searchParams }: PageProps<"/[
               </>
             ) : (
               <div className="border-t border-line pt-8">
-                <h2 className="display text-4xl">{t.search.noResults(q)}</h2>
+                <h2 className="display text-2xl">{t.search.noResults(q)}</h2>
                 <p className="mt-3 text-ink-2">{t.search.noResultsHint}</p>
               </div>
             )
@@ -66,7 +66,7 @@ export default async function SearchPage({ params, searchParams }: PageProps<"/[
               {categories.map((c) => (
                 <li key={c.slug} className="border-b border-line">
                   <Link href={href.category(locale, c.slug)} className="group flex min-h-12 items-center justify-between py-2">
-                    <span className="display text-2xl group-hover:text-accent-ink">{c.title}</span>
+                    <span className="display text-lg group-hover:text-accent-ink">{c.title}</span>
                     <span className="text-sm text-ink-2">{c.count}</span>
                   </Link>
                 </li>

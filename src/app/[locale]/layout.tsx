@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, Be_Vietnam_Pro, Newsreader } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { Footer } from "@/components/Footer";
@@ -11,25 +11,12 @@ import { href } from "@/lib/format";
 import { themeInitScript } from "@/lib/theme";
 import "../globals.css";
 
-const barlow = Barlow_Condensed({
-  subsets: ["latin", "vietnamese"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-barlow",
-  display: "swap",
-});
-
+// Một họ font cho toàn site như website Spinlab: Be Vietnam Pro (đủ dấu tiếng Việt), tiêu đề đậm 800 in hoa
 const beVietnam = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-be-vietnam",
   display: "swap",
-});
-
-const newsreader = Newsreader({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-newsreader",
-  display: "swap",
-  style: ["normal", "italic"],
 });
 
 export function generateStaticParams() {
@@ -80,7 +67,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
       lang={localeMeta[locale].htmlLang}
       data-theme="light"
       suppressHydrationWarning
-      className={`${barlow.variable} ${beVietnam.variable} ${newsreader.variable}`}
+      className={beVietnam.variable}
     >
       <body className="flex min-h-dvh flex-col">
         <Script id="theme-init" strategy="beforeInteractive">

@@ -82,6 +82,6 @@ Khi đổi màu `--accent`, hãy giữ độ tương phản: chữ trên nền a
 
 ## Thiết kế
 
-- Font: **Barlow Condensed** (tiêu đề), **Be Vietnam Pro** (giao diện), **Newsreader** (thân bài) – cả ba đều hỗ trợ đầy đủ dấu tiếng Việt, tự host qua `next/font`.
+- Font: **Be Vietnam Pro** cho toàn site (giống website Spinlab) – tiêu đề đậm 800 in hoa, đủ dấu tiếng Việt, tự host qua `next/font`.
 - Màu: giấy `#F5F3EE` / mực `#111214`, accent cam tín hiệu `#FF4F1A`; chế độ tối dùng bộ màu riêng, đã kiểm tra tương phản WCAG AA.
 - Chuyển động: chỉ dùng `transform`/`opacity`, tắt hoàn toàn khi người dùng bật "giảm chuyển động".

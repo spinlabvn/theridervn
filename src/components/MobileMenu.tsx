@@ -79,7 +79,7 @@ export function MobileMenu({
                         <Link
                           href={href.category(locale, child.category)}
                           onClick={close}
-                          className="display flex min-h-11 items-center rounded-md bg-surface-2 px-3 text-xl hover:bg-accent hover:text-on-accent"
+                          className="flex min-h-11 items-center rounded-md bg-surface-2 px-3 text-sm font-semibold uppercase tracking-[0.02em] hover:bg-accent hover:text-on-accent"
                         >
                           {child.label}
                         </Link>
@@ -92,7 +92,7 @@ export function MobileMenu({
                   <Link
                     href={href.category(locale, item.category)}
                     onClick={close}
-                    className="display block py-1.5 text-4xl hover:opacity-80"
+                    className="display block py-1.5 text-2xl hover:opacity-80"
                   >
                     {item.label}
                   </Link>

@@ -119,13 +119,13 @@ export function PostRow({ post, locale, index }: { post: PostSummary; locale: Lo
   return (
     <article className="group relative grid grid-cols-[1fr_auto] gap-4 border-t border-line py-5 sm:grid-cols-[auto_1fr_auto] sm:gap-6">
       {typeof index === "number" ? (
-        <span aria-hidden="true" className="display hidden w-12 text-5xl text-line sm:block group-hover:text-accent">
+        <span aria-hidden="true" className="display hidden w-12 text-4xl text-line sm:block group-hover:text-accent">
           {String(index + 1).padStart(2, "0")}
         </span>
       ) : null}
       <div className="min-w-0">
         <CategoryLabel post={post} locale={locale} />
-        <h3 className="display mt-1.5 text-2xl sm:text-[1.75rem]">
+        <h3 className="display mt-1.5 text-lg sm:text-xl">
           <Link href={href.post(locale, post.slug)} className="after:absolute after:inset-0">
             <span className="link-title">{post.title}</span>
           </Link>
@@ -144,7 +144,7 @@ export function PostMini({ post, locale }: { post: PostSummary; locale: Locale }
       <Cover post={post} className="aspect-video w-28" sizes="112px" />
       <div className="min-w-0">
         <CategoryLabel post={post} locale={locale} />
-        <h3 className="display mt-1 line-clamp-2 text-xl">
+        <h3 className="display mt-1 line-clamp-2 text-base">
           <Link href={href.post(locale, post.slug)} className="after:absolute after:inset-0">
             <span className="link-title">{post.title}</span>
           </Link>

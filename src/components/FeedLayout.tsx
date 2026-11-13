@@ -27,7 +27,7 @@ function Panel({
 }) {
   return (
     <section aria-labelledby={id} className={`flex flex-col border border-line ${className}`}>
-      <Heading id={id} className="on-brand display bg-paper px-4 pb-1.5 pt-2 text-2xl text-ink">
+      <Heading id={id} className="on-brand display bg-paper px-4 py-2 text-lg text-ink">
         {title}
       </Heading>
       <div className="flex flex-1 flex-col p-4">{children}</div>
@@ -70,7 +70,7 @@ function AdSlot({ locale, slot }: { locale: Locale; slot: keyof typeof site.ads 
     >
       <Megaphone className="size-7 shrink-0 text-accent-ink sm:size-8" strokeWidth={1.6} aria-hidden="true" />
       <span className={slot === "feed" ? "text-left" : "contents"}>
-        <span className={`display block ${slot === "feed" ? "text-xl sm:text-3xl" : "text-3xl"}`}>{t.home.adCta}</span>
+        <span className={`display block ${slot === "feed" ? "text-base sm:text-xl" : "text-xl"}`}>{t.home.adCta}</span>
         <span className={`block text-sm text-ink-2 ${slot === "feed" ? "hidden sm:block" : "max-w-[16rem]"}`}>{t.home.adLead}</span>
         <span className="mt-1 block text-sm font-semibold">
           <span className="link-title">{site.email}</span>

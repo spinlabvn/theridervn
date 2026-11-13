@@ -99,7 +99,7 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
           </Link>
           <div className="mx-auto mt-6 max-w-5xl text-center">
             <CategoryLabel post={post} locale={locale} solid />
-            <h1 className="rise display mt-5 text-5xl sm:text-7xl lg:text-[5.5rem]">{post.title}</h1>
+            <h1 className="rise display mt-5 text-3xl sm:text-5xl lg:text-[3.5rem]">{post.title}</h1>
             <p className="rise mx-auto mt-6 max-w-3xl text-lg text-ink-2 sm:text-xl" style={{ ["--i" as string]: 1 }}>
               {post.excerpt}
             </p>
@@ -197,7 +197,7 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
 
       {related.length ? (
         <section aria-labelledby="related" className="container-x mt-16 lg:mt-20">
-          <h2 id="related" className="display border-t-4 border-ink pt-4 text-3xl sm:text-4xl">
+          <h2 id="related" className="display border-t-4 border-ink pt-4 text-2xl sm:text-3xl">
             {t.post.related}
           </h2>
           <ul className="mt-4 grid gap-x-8 md:grid-cols-3">

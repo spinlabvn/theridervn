@@ -11,10 +11,10 @@ export default function NotFound() {
   const t = getDictionary(locale);
   return (
     <div className="container-x flex min-h-[60vh] flex-col items-start justify-center py-24">
-      <p className="display text-[9rem] leading-none text-accent sm:text-[14rem]" aria-hidden="true">
+      <p className="display text-[6rem] leading-none text-accent sm:text-[9rem]" aria-hidden="true">
         404
       </p>
-      <h1 className="display mt-2 text-5xl sm:text-6xl">{t.notFound.title}</h1>
+      <h1 className="display mt-2 text-3xl sm:text-4xl">{t.notFound.title}</h1>
       <p className="mt-4 max-w-lg text-lg text-ink-2">{t.notFound.lead}</p>
       <Link
         href={`/${locale}`}
