@@ -6,15 +6,9 @@ Thứ tự khuyến nghị: **(1) đưa code lên GitHub → (2) tạo Node.js W
 
 ## 1. Đưa code lên GitHub
 
-1. Vào https://github.com/new, tạo repository **trống** (không tick README, .gitignore hay license), ví dụ `therider-website`, chế độ **Private**.
-2. Trong thư mục `therider` (code đã được `git commit` sẵn), chạy:
+**Đã xong:** code nằm ở https://github.com/spinlabvn/theridervn (nhánh `main`). Mỗi lần sửa code: `git add -A && git commit -m "mô tả thay đổi" && git push`.
 
-```bash
-git remote add origin https://github.com/<tai-khoan-cua-ban>/therider-website.git
-git push -u origin main
-```
-
-Từ đó, mỗi lần sửa code: `git add -A && git commit -m "mô tả thay đổi" && git push`.
+Repo đang để **Public**. Muốn chuyển sang Private: GitHub → **Settings** → **Danger Zone** → **Change visibility** (Hostinger vẫn kết nối được qua tài khoản GitHub).
 
 > File `.env.local` (chứa khoá bí mật) đã nằm trong `.gitignore`, sẽ **không** bị đẩy lên GitHub.
 
@@ -25,7 +19,7 @@ Từ đó, mỗi lần sửa code: `git add -A && git commit -m "mô tả thay �
 Áp dụng cho gói **Business Web Hosting** hoặc **Cloud** (có mục Node.js). Giao diện hPanel có thể thay đổi đôi chút theo thời gian.
 
 1. Đăng nhập **hPanel** → **Websites** → **Add website** → chọn **Node.js Apps**.
-2. Chọn **Import Git repository** → kết nối tài khoản GitHub → chọn repo `therider-website`, nhánh `main`.
+2. Chọn **Import Git repository** → kết nối tài khoản GitHub → chọn repo `spinlabvn/theridervn`, nhánh `main`.
 3. Cấu hình build (Hostinger thường tự nhận diện Next.js; kiểm tra lại các giá trị):
 
 | Mục | Giá trị |
