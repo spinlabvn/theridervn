@@ -180,8 +180,8 @@ export function PostTile({ post, locale, views }: { post: PostSummary; locale: L
 }
 
 /**
- * Một dòng trong dòng tin trang chủ (kiểu Pinkbike): ảnh bên trái; tác giả + ngày,
- * tiêu đề đậm, tóm tắt, chuyên mục và thẻ bên phải.
+ * Một dòng trong dòng tin trang chủ (kiểu Pinkbike): ảnh bên trái; tiêu đề đậm, tóm tắt,
+ * chuyên mục + thẻ, rồi ngày đăng và thời gian đọc ở dòng cuối bên phải.
  */
 export function PostFeedItem({ post, locale, priority = false }: { post: PostSummary; locale: Locale; priority?: boolean }) {
   const t = getDictionary(locale);
@@ -190,17 +190,7 @@ export function PostFeedItem({ post, locale, priority = false }: { post: PostSum
     <article className="group relative grid grid-cols-[8.5rem_1fr] gap-4 py-5 sm:grid-cols-[13rem_1fr] sm:gap-5 xl:grid-cols-[260px_1fr]">
       <Cover post={post} priority={priority} className="aspect-video self-start [&_span]:size-10" sizes="(min-width: 1280px) 260px, (min-width: 640px) 208px, 136px" />
       <div className="min-w-0">
-        <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] text-ink-2">
-          <span className="font-semibold text-ink">{post.author.name}</span>
-          {ago !== null ? (
-            <span className="rounded-sm bg-yellow-300 px-1.5 py-px font-semibold text-black">
-              {ago === 0 ? t.home.today : t.home.yesterday}
-            </span>
-          ) : (
-            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, locale)}</time>
-          )}
-        </p>
-        <h3 className="mt-1 text-lg font-bold leading-snug sm:text-[1.375rem]">
+        <h3 className="text-lg font-bold leading-snug sm:text-[1.375rem]">
           <Link href={href.post(locale, post.slug)} className="after:absolute after:inset-0">
             <span className="link-title">{post.title}</span>
           </Link>
@@ -222,11 +212,21 @@ export function PostFeedItem({ post, locale, priority = false }: { post: PostSum
               {tag}
             </Link>
           ))}
-          <span className="inline-flex items-center gap-1 pl-1 text-ink-2">
+        </div>
+        <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.8125rem] text-ink-2">
+          {ago !== null ? (
+            <time dateTime={post.publishedAt} className="rounded-sm bg-yellow-300 px-1.5 py-px font-semibold text-black">
+              {ago === 0 ? t.home.today : t.home.yesterday}
+            </time>
+          ) : (
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, locale)}</time>
+          )}
+          <span aria-hidden="true" className="hidden size-1 rounded-full bg-current opacity-50 sm:block" />
+          <span className="inline-flex items-center gap-1">
             {post.isVideo ? <Play className="size-3.5" strokeWidth={2} aria-hidden="true" /> : <Clock3 className="size-3.5" strokeWidth={2} aria-hidden="true" />}
             {post.isVideo ? t.post.video : `${post.readingMinutes} ${t.post.minRead}`}
           </span>
-        </div>
+        </p>
       </div>
     </article>
   );

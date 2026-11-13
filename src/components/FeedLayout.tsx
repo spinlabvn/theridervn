@@ -233,9 +233,10 @@ export async function FeedLayout({
         </Panel>
       ) : null}
 
-      <Panel id="home-ad" title={t.home.ad} className="order-3 lg:col-span-4 xl:order-none xl:col-span-1 xl:col-start-1 xl:row-start-1">
+      {/* Không có thanh tiêu đề: banner phủ kín khung, cao bằng khối "Xem nhiều nhất" */}
+      <aside aria-label={t.home.ad} className="order-3 flex flex-col lg:col-span-4 xl:order-none xl:col-span-1 xl:col-start-1 xl:row-start-1">
         <AdSlot locale={locale} slot="sidebar" />
-      </Panel>
+      </aside>
 
       {tags.length ? (
         <Panel
