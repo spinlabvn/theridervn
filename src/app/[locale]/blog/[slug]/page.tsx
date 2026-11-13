@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { ArticleBody } from "@/components/ArticleBody";
-import { CategoryLabel, PostMeta, PostMini } from "@/components/PostCard";
+import { CategoryLabel, PostMini } from "@/components/PostCard";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { ShareBar } from "@/components/ShareBar";
 import { TableOfContents } from "@/components/TableOfContents";
@@ -103,34 +103,6 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
             <p className="rise mx-auto mt-6 max-w-3xl text-lg text-ink-2 sm:text-xl" style={{ ["--i" as string]: 1 }}>
               {post.excerpt}
             </p>
-            <div className="rise mt-8 flex flex-col items-center gap-3" style={{ ["--i" as string]: 2 }}>
-              <div className="flex items-center gap-3">
-                {post.author.avatarUrl ? (
-                  <Image
-                    src={`${post.author.avatarUrl}?auto=format&w=96&h=96&fit=crop`}
-                    alt=""
-                    width={44}
-                    height={44}
-                    className="size-11 rounded-full object-cover"
-                  />
-                ) : (
-                  <span aria-hidden="true" className="display grid size-11 place-items-center rounded-full bg-ink text-lg text-paper">
-                    {post.author.name
-                      .split(" ")
-                      .map((w) => w[0])
-                      .slice(-2)
-                      .join("")}
-                  </span>
-                )}
-                <span className="text-left text-sm">
-                  <span className="block font-semibold">
-                    {t.post.by} {post.author.name}
-                  </span>
-                  <span className="block text-ink-2">{post.author.role}</span>
-                </span>
-              </div>
-              <PostMeta post={post} locale={locale} className="text-ink-2" />
-            </div>
           </div>
         </header>
 
@@ -170,6 +142,37 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
             <ArticleBody body={post.body} videoTitle={post.title} />
 
             <footer className="mx-auto mt-14 max-w-[44rem] space-y-8 border-t border-line pt-8">
+              {/* Người đăng và thời gian lên bài – đặt cuối bài */}
+              <div className="flex items-center gap-3">
+                {post.author.avatarUrl ? (
+                  <Image
+                    src={`${post.author.avatarUrl}?auto=format&w=96&h=96&fit=crop`}
+                    alt=""
+                    width={44}
+                    height={44}
+                    className="size-11 rounded-full object-cover"
+                  />
+                ) : (
+                  <span aria-hidden="true" className="display grid size-11 shrink-0 place-items-center rounded-full bg-ink text-lg text-paper">
+                    {post.author.name
+                      .split(" ")
+                      .map((w) => w[0])
+                      .slice(-2)
+                      .join("")}
+                  </span>
+                )}
+                <div className="text-sm">
+                  <p>
+                    <span className="font-semibold">
+                      {t.post.by} {post.author.name}
+                    </span>
+                    {post.author.role ? <span className="text-ink-2"> · {post.author.role}</span> : null}
+                  </p>
+                  <p className="mt-0.5 text-ink-2">
+                    {t.post.published} <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, locale)}</time>
+                  </p>
+                </div>
+              </div>
               {post.tags.length ? (
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="eyebrow mr-1 text-ink-2">{t.post.tags}</span>
@@ -184,12 +187,7 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
                   ))}
                 </div>
               ) : null}
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <ShareBar url={url} title={post.title} labels={{ share: t.post.share, copy: t.post.copyLink, copied: t.post.copied }} />
-                <p className="text-sm text-ink-2">
-                  {t.post.published} <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, locale)}</time>
-                </p>
-              </div>
+              <ShareBar url={url} title={post.title} labels={{ share: t.post.share, copy: t.post.copyLink, copied: t.post.copied }} />
             </footer>
           </div>
         </div>
