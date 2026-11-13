@@ -2,6 +2,14 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  /**
+   * Hosting dùng chung (Hostinger) báo số CPU của cả máy chủ nhưng giới hạn tiến trình/bộ nhớ mỗi tài khoản.
+   * Build bằng webpack (script "build") và chỉ dùng 2 tiến trình để không bị chặn giữa chừng.
+   */
+  experimental: {
+    cpus: 2,
+    webpackMemoryOptimizations: true,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

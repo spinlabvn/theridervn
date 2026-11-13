@@ -28,7 +28,7 @@ Repo đang để **Public**. Muốn chuyển sang Private: GitHub → **Settings
 | Node.js version | **22.x** (tối thiểu 20.9) |
 | Root directory | `/` (để mặc định) |
 | Install command | `npm install` |
-| Build command | `npm run build` |
+| Build command | `npm run build` (đã cấu hình build bằng webpack – **không** đổi thành `next build`) |
 | Start command | `npm start` |
 
 4. Mục **Environment variables** – thêm:
@@ -117,6 +117,7 @@ Chưa có token thì lượt xem lưu vào file `.data/views.json` trên máy ch
 
 | Hiện tượng | Cách xử lý |
 | --- | --- |
+| Build lỗi nội bộ Turbopack khi xử lý CSS/PostCSS (`globals.css`) | Hosting dùng chung giới hạn tiến trình/bộ nhớ nên Turbopack bị chặn. Script `build` đã chuyển sang `next build --webpack` và `next.config.ts` giới hạn 2 tiến trình (`experimental.cpus`). Đảm bảo Build command là `npm run build`, rồi Redeploy. Nếu vẫn lỗi: xoá cache build trên Hostinger (hoặc thư mục `.next`) rồi deploy lại. |
 | Build lỗi `Cannot find module 'tailwindcss'` | Đảm bảo install command là `npm install` (không dùng `--omit=dev`). Các gói build đã được đặt trong `dependencies`. |
 | Website chưa hiện bài mới viết trên Sanity | Chưa Redeploy sau khi thêm `NEXT_PUBLIC_SANITY_PROJECT_ID`. |
 | Ảnh từ Sanity không hiện | Ảnh bìa là trường bắt buộc; kiểm tra bài đã có ảnh và đã **Publish** (không chỉ lưu nháp). |
