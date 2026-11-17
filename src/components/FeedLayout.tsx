@@ -41,23 +41,22 @@ function Panel({
  */
 function AdSlot({ locale, slot }: { locale: Locale; slot: keyof typeof site.ads }) {
   const t = getDictionary(locale);
-  const { image, href: link, alt } = site.ads[slot];
+  const { image, imageMobile, href: link, alt } = site.ads[slot];
   const box = slot === "feed" ? "aspect-[970/250]" : "min-h-[18rem] flex-1";
   if (image) {
+    const sizes = slot === "feed" ? "(min-width: 1280px) 840px, (min-width: 1024px) 60vw, 100vw" : "(min-width: 1280px) 250px, (min-width: 1024px) 33vw, 100vw";
     return (
       <a
         href={link || `mailto:${site.email}`}
         target="_blank"
         rel="sponsored noopener"
-        className={`relative block overflow-hidden bg-surface-2 ${box}`}
+        // Có bản ngang: dưới xl ô giữ đúng tỉ lệ 6:5 của ảnh, từ xl giãn theo cột như cũ
+        className={`relative block overflow-hidden bg-surface-2 ${imageMobile ? "aspect-[6/5] xl:aspect-auto xl:flex-1" : box}`}
       >
-        <Image
-          src={image}
-          alt={alt}
-          fill
-          sizes={slot === "feed" ? "(min-width: 1280px) 840px, (min-width: 1024px) 60vw, 100vw" : "(min-width: 1280px) 250px, (min-width: 1024px) 33vw, 100vw"}
-          className="object-cover"
-        />
+        {imageMobile ? (
+          <Image src={imageMobile} alt={alt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover xl:hidden" />
+        ) : null}
+        <Image src={image} alt={alt} fill sizes={sizes} className={`object-cover ${imageMobile ? "hidden xl:block" : ""}`} />
       </a>
     );
   }
