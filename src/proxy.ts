@@ -1,21 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { defaultLocale, isLocale, LOCALE_COOKIE, type Locale } from "@/i18n/config";
 
-
-
+/**
+ * Mặc định luôn là tiếng Việt; chỉ dùng ngôn ngữ khác khi người đọc đã tự chọn bằng nút đổi ngôn ngữ (cookie).
+ * Không dựa vào ngôn ngữ trình duyệt.
+ */
 function preferredLocale(request: NextRequest): Locale {
   const cookie = request.cookies.get(LOCALE_COOKIE)?.value;
-  if (cookie && isLocale(cookie)) return cookie;
-  const header = request.headers.get("accept-language") ?? "";
-  const langs = header
-    .split(",")
-    .map((part) => {
-      const [tag, q] = part.trim().split(";q=");
-      return { lang: tag.toLowerCase().slice(0, 2), q: q ? Number(q) : 1 };
-    })
-    .sort((a, b) => b.q - a.q);
-  const match = langs.find((l) => isLocale(l.lang));
-  return match ? (match.lang as Locale) : defaultLocale;
+  return cookie && isLocale(cookie) ? cookie : defaultLocale;
 }
 
 /** Mọi URL không có tiền tố ngôn ngữ (/, /blog/...) được chuyển hướng sang /vi/... hoặc /en/... */
