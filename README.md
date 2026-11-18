@@ -76,7 +76,7 @@ Ba bài "Tin mới" trên therider.vn không thuộc chuyên mục nào (chỉ h
 | Quảng cáo trang chủ (ô cột trái, banner sau bài thứ 3) | Ảnh vào `public/ads/`, khai báo ở `ads` trong `src/config/site.ts` (cả hai ô là danh sách banner xoay vòng, mỗi banner 5 giây, rê chuột thì dừng – `adRotateSeconds`; cột trái: bản dọc 1:3 + bản ngang 6:5 `imageMobile` dưới 1280px; dòng tin: bản 970:250 + bản 2:1 `imageMobile` dưới 768px) |
 | Chữ trên giao diện (menu, nút…) | `src/i18n/dictionaries.ts` |
 | Favicon | `src/app/icon.svg` |
-| Ảnh chia sẻ mặc định | `src/app/[locale]/opengraph-image.tsx` |
+| Ảnh chia sẻ mặc định (khi gửi link) | `src/app/[locale]/opengraph-image.png` (1200×630, logo + "By Rider For Rider") |
 
 Khi đổi màu `--accent`, hãy giữ độ tương phản: chữ trên nền accent dùng `--on-accent`, còn chữ màu accent trên nền giấy dùng `--accent-ink` (≥ 4.5:1).
 
