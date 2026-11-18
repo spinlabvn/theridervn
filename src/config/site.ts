@@ -51,9 +51,21 @@ export const site = {
         alt: "Xe đạp Polygon chính hãng – 48 mẫu road, địa hình, gravel, thành phố tại Spinlab",
       },
     ] as AdBanner[],
-    /** Banner ngang trong dòng tin, sau bài thứ 3 – tỉ lệ cố định 970:250 (vd. 1940×500). */
-    feed: { image: "", imageMobile: "", href: "", alt: "" } as AdBanner,
+    /**
+     * Banner ngang trong dòng tin, sau bài thứ 3 – cũng xoay vòng như cột trái.
+     * Từ 768px: tỉ lệ 970:250 (vd. 1940×500). `imageMobile`: bản 2:1 (vd. 1200×600) cho điện thoại.
+     */
+    feed: [
+      {
+        image: "/ads/story-bike-ngang-rong.jpg",
+        imageMobile: "/ads/story-bike-mobile.jpg",
+        href: "https://spinlab.vn/thuong-hieu-story-bike",
+        alt: "Xe dirt jump và street trial Story chính hãng – xem tại Spinlab",
+      },
+      // Ô mời đặt quảng cáo (image trống) – thay bằng banner thật hoặc xoá dòng này
+      { image: "", imageMobile: "", href: "", alt: "" },
+    ] as AdBanner[],
   },
-  /** Thời gian hiện mỗi banner ở cột trái trước khi chuyển sang banner kế (giây). */
-  adRotateSeconds: 10,
+  /** Thời gian hiện mỗi banner quảng cáo trước khi chuyển sang banner kế (giây). */
+  adRotateSeconds: 5,
 } as const;

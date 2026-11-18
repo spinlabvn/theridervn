@@ -38,21 +38,21 @@ function Panel({
 
 /**
  * Một banner quảng cáo, hoặc ô mời đặt quảng cáo khi chưa có ảnh.
- * `className` quyết định kích thước/vị trí: "feed" là banner ngang 970:250 trong dòng tin,
- * "sidebar" phủ kín khung của AdCarousel.
+ * Banner phủ kín khung của AdCarousel (`className`). Bản `imageMobile` dùng khi khung đổi tỉ lệ:
+ * dưới md với "feed" (banner trong dòng tin), dưới xl với "sidebar".
  */
 function AdCreative({ locale, slot, ad, className }: { locale: Locale; slot: "sidebar" | "feed"; ad: AdBanner; className: string }) {
   const t = getDictionary(locale);
   const { image, imageMobile, href: link, alt } = ad;
   if (image) {
     const sizes = slot === "feed" ? "(min-width: 1280px) 840px, (min-width: 1024px) 60vw, 100vw" : "(min-width: 1280px) 250px, (min-width: 1024px) 33vw, 100vw";
+    const [narrowOnly, wideOnly] = slot === "feed" ? ["md:hidden", "hidden md:block"] : ["xl:hidden", "hidden xl:block"];
     return (
       <a href={link || `mailto:${site.email}`} target="_blank" rel="sponsored noopener" className={`block overflow-hidden bg-surface-2 ${className}`}>
-        {/* Có bản ngang: dùng dưới xl, khi ô quảng cáo nằm ngang */}
         {imageMobile ? (
-          <Image src={imageMobile} alt={alt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover xl:hidden" />
+          <Image src={imageMobile} alt={alt} fill sizes={slot === "feed" ? "100vw" : "(min-width: 1024px) 33vw, 100vw"} className={`object-cover ${narrowOnly}`} />
         ) : null}
-        <Image src={image} alt={alt} fill sizes={sizes} className={`object-cover ${imageMobile ? "hidden xl:block" : ""}`} />
+        <Image src={image} alt={alt} fill sizes={sizes} className={`object-cover ${imageMobile ? wideOnly : ""}`} />
       </a>
     );
   }
@@ -199,7 +199,11 @@ export async function FeedLayout({
                   {i === 2 && posts.length > 3 ? (
                     <li aria-label={t.home.ad} className="py-5">
                       <p className="eyebrow mb-2 text-[0.6875rem] text-ink-2">{t.home.ad}</p>
-                      <AdCreative locale={locale} slot="feed" ad={site.ads.feed} className="relative aspect-[970/250]" />
+                      <AdCarousel seconds={site.adRotateSeconds} className="aspect-[2/1] md:aspect-[970/250]">
+                        {site.ads.feed.map((ad, i) => (
+                          <AdCreative key={i} locale={locale} slot="feed" ad={ad} className="absolute inset-0" />
+                        ))}
+                      </AdCarousel>
                     </li>
                   ) : null}
                 </Fragment>
