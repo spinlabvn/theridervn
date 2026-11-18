@@ -65,10 +65,8 @@ const vi = {
     back: "Về trang chủ",
   },
   footer: {
-    tagline: "Câu chuyện, trang bị và cung đường cho người mê xe đạp thể thao.",
     explore: "Khám phá",
     follow: "Theo dõi",
-    contact: "Hợp tác & quảng cáo",
     rss: "RSS",
     rights: "Bảo lưu mọi quyền.",
     taxId: "MST",
@@ -142,10 +140,8 @@ const en: Dictionary = {
     back: "Back to home",
   },
   footer: {
-    tagline: "Stories, gear and routes for people obsessed with fast bikes.",
     explore: "Explore",
     follow: "Follow",
-    contact: "Partnerships & advertising",
     rss: "RSS",
     rights: "All rights reserved.",
     taxId: "Tax ID",

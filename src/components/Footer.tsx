@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Mail, Rss } from "lucide-react";
+import { ArrowUpRight, Rss } from "lucide-react";
 import { site } from "@/config/site";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -26,17 +26,7 @@ export async function Footer({ locale }: { locale: Locale }) {
         <div className="grid gap-10 py-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Logo />
-            <p className="mt-4 max-w-sm text-ink-2">{t.footer.tagline}</p>
-            <a
-              href={`mailto:${site.email}`}
-              className="group mt-6 inline-flex min-h-11 items-center gap-2 font-medium hover:text-accent-ink"
-            >
-              <Mail className="size-5" strokeWidth={1.8} aria-hidden="true" />
-              <span>
-                {t.footer.contact}: <span className="link-title">{site.email}</span>
-              </span>
-            </a>
-            <address className="mt-6 text-sm leading-relaxed text-ink-2 not-italic">
+            <address className="mt-4 text-sm leading-relaxed text-ink-2 not-italic">
               <p className="font-semibold text-ink">{site.company.name}</p>
               <p>
                 {t.footer.taxId}: {site.company.taxId}
