@@ -28,7 +28,6 @@ const vi = {
     adLead: "Tiếp cận cộng đồng đạp xe thể thao của TheRider.",
   },
   post: {
-    by: "Bởi",
     minRead: "phút đọc",
     video: "Video",
     views: (n: string) => `${n} lượt xem`,
@@ -102,7 +101,6 @@ const en: Dictionary = {
     adLead: "Reach TheRider's performance cycling community.",
   },
   post: {
-    by: "By",
     minRead: "min read",
     video: "Video",
     views: (n: string) => `${n} views`,

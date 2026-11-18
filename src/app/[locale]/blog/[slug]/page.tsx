@@ -141,37 +141,10 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
             <ArticleBody body={post.body} videoTitle={post.title} />
 
             <footer className="mx-auto mt-14 max-w-[44rem] space-y-8 border-t border-line pt-8">
-              {/* Người đăng và thời gian lên bài – đặt cuối bài */}
-              <div className="flex items-center gap-3">
-                {post.author.avatarUrl ? (
-                  <Image
-                    src={`${post.author.avatarUrl}?auto=format&w=96&h=96&fit=crop`}
-                    alt=""
-                    width={44}
-                    height={44}
-                    className="size-11 rounded-full object-cover"
-                  />
-                ) : (
-                  <span aria-hidden="true" className="display grid size-11 shrink-0 place-items-center rounded-full bg-ink text-lg text-paper">
-                    {post.author.name
-                      .split(" ")
-                      .map((w) => w[0])
-                      .slice(-2)
-                      .join("")}
-                  </span>
-                )}
-                <div className="text-sm">
-                  <p>
-                    <span className="font-semibold">
-                      {t.post.by} {post.author.name}
-                    </span>
-                    {post.author.role ? <span className="text-ink-2"> · {post.author.role}</span> : null}
-                  </p>
-                  <p className="mt-0.5 text-ink-2">
-                    {t.post.published} <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, locale)}</time>
-                  </p>
-                </div>
-              </div>
+              {/* Thời gian lên bài – đặt cuối bài */}
+              <p className="text-sm text-ink-2">
+                {t.post.published} <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, locale)}</time>
+              </p>
               {post.tags.length ? (
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="eyebrow mr-1 text-ink-2">{t.post.tags}</span>
