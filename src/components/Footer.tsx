@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight, Rss } from "lucide-react";
 import { site } from "@/config/site";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -70,19 +69,13 @@ export async function Footer({ locale }: { locale: Locale }) {
                 </li>
               ))}
             </ul>
-            <a href={href.rss(locale)} className="mt-4 inline-flex min-h-11 items-center gap-2 text-ink-2 hover:text-ink">
-              <Rss className="size-4" strokeWidth={1.8} aria-hidden="true" />
-              {t.footer.rss}
-              <ArrowUpRight className="size-4" strokeWidth={1.8} aria-hidden="true" />
-            </a>
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-line py-6 text-sm text-ink-2 sm:flex-row sm:justify-between">
+        <div className="border-t border-line py-6 text-sm text-ink-2">
           <p>
             © {year} {site.name}. {t.footer.rights}
           </p>
-          <p>{new URL(site.url).host}</p>
         </div>
       </div>
     </footer>

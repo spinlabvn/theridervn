@@ -67,7 +67,6 @@ const vi = {
   footer: {
     explore: "Khám phá",
     follow: "Theo dõi",
-    rss: "RSS",
     rights: "Bảo lưu mọi quyền.",
     taxId: "MST",
   },
@@ -142,7 +141,6 @@ const en: Dictionary = {
   footer: {
     explore: "Explore",
     follow: "Follow",
-    rss: "RSS",
     rights: "All rights reserved.",
     taxId: "Tax ID",
   },
