@@ -44,8 +44,12 @@ export const site = {
         href: "https://spinlab.vn/lop-xe#gravel",
         alt: "Lốp gravel Vittoria Terreno – xem tại Spinlab",
       },
-      // Ô mời đặt quảng cáo (image trống) – thay bằng banner thật hoặc xoá dòng này
-      { image: "", imageMobile: "", href: "", alt: "" },
+      {
+        image: "/ads/polygon-xe-dap-doc.jpg",
+        imageMobile: "/ads/polygon-xe-dap-ngang.jpg",
+        href: "https://spinlab.vn/thuong-hieu-polygon",
+        alt: "Xe đạp Polygon chính hãng – 48 mẫu road, địa hình, gravel, thành phố tại Spinlab",
+      },
     ] as AdBanner[],
     /** Banner ngang trong dòng tin, sau bài thứ 3 – tỉ lệ cố định 970:250 (vd. 1940×500). */
     feed: { image: "", imageMobile: "", href: "", alt: "" } as AdBanner,

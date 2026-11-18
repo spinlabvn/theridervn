@@ -230,7 +230,7 @@ export async function FeedLayout({
 
       {/* Không có thanh tiêu đề: banner xoay vòng phủ kín khung, cao bằng khối "Xem nhiều nhất"; dưới xl giữ tỉ lệ 6:5 của bản ngang */}
       <aside aria-label={t.home.ad} className="order-3 flex flex-col lg:col-span-4 xl:order-none xl:col-span-1 xl:col-start-1 xl:row-start-1">
-        <AdCarousel seconds={site.adRotateSeconds} label={t.home.adShow} className="aspect-[6/5] xl:aspect-auto xl:min-h-[18rem] xl:flex-1">
+        <AdCarousel seconds={site.adRotateSeconds} className="aspect-[6/5] xl:aspect-auto xl:min-h-[18rem] xl:flex-1">
           {site.ads.sidebar.map((ad, i) => (
             <AdCreative key={i} locale={locale} slot="sidebar" ad={ad} className="absolute inset-0" />
           ))}
