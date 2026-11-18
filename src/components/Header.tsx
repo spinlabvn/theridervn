@@ -35,7 +35,8 @@ export function Header({ locale }: { locale: Locale }) {
           <MobileMenu
             labels={{ open: t.nav.menu, close: t.nav.close, categories: t.nav.categories, search: t.nav.search }}
             locale={locale}
-            primary={[{ href: href.home(locale), label: t.nav.home }]}
+            // "Trang Chủ" đã nằm trong menu chính nên không lặp lại ở đây
+            primary={[]}
             searchHref={href.search(locale)}
           >
             <LocaleSwitcher locale={locale} label={t.language.switch} />

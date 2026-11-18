@@ -190,29 +190,32 @@ export function PostFeedItem({ post, locale, priority = false }: { post: PostSum
     <article className="group relative grid grid-cols-[8.5rem_1fr] gap-4 py-5 sm:grid-cols-[13rem_1fr] sm:gap-5 xl:grid-cols-[260px_1fr]">
       <Cover post={post} priority={priority} className="aspect-video self-start [&_span]:size-10" sizes="(min-width: 1280px) 260px, (min-width: 640px) 208px, 136px" />
       <div className="min-w-0">
+        {/* Nhãn chuyên mục (cam) đứng đầu dòng tiêu đề */}
         <h3 className="text-lg font-bold leading-snug sm:text-[1.375rem]">
+          <Link
+            href={href.category(locale, post.category.slug)}
+            className="relative z-10 mr-2 inline-block rounded-sm bg-accent px-2 py-0.5 align-[0.15em] text-[0.8125rem] leading-5 font-semibold text-on-accent hover:bg-ink hover:text-paper"
+          >
+            {post.category.title}
+          </Link>
           <Link href={href.post(locale, post.slug)} className="after:absolute after:inset-0">
             <span className="link-title">{post.title}</span>
           </Link>
         </h3>
         <p className="mt-1 line-clamp-2 hidden text-[0.9375rem] text-ink-2 sm:block">{post.excerpt}</p>
-        <div className="mt-2.5 flex flex-wrap items-center gap-1.5 text-[0.8125rem]">
-          <Link
-            href={href.category(locale, post.category.slug)}
-            className="relative z-10 inline-flex min-h-7 items-center rounded-sm bg-accent px-2 font-semibold text-on-accent hover:bg-ink hover:text-paper"
-          >
-            {post.category.title}
-          </Link>
-          {post.tags.slice(0, 4).map((tag) => (
-            <Link
-              key={tag}
-              href={href.tag(locale, slugify(tag))}
-              className="relative z-10 hidden min-h-7 items-center rounded-sm bg-surface-2 px-2 text-ink-2 hover:bg-ink hover:text-paper sm:inline-flex"
-            >
-              {tag}
-            </Link>
-          ))}
-        </div>
+        {post.tags.length ? (
+          <div className="mt-2.5 hidden flex-wrap items-center gap-1.5 text-[0.8125rem] sm:flex">
+            {post.tags.slice(0, 4).map((tag) => (
+              <Link
+                key={tag}
+                href={href.tag(locale, slugify(tag))}
+                className="relative z-10 inline-flex min-h-7 items-center rounded-sm bg-surface-2 px-2 text-ink-2 hover:bg-ink hover:text-paper"
+              >
+                {tag}
+              </Link>
+            ))}
+          </div>
+        ) : null}
         <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.8125rem] text-ink-2">
           {ago !== null ? (
             <time dateTime={post.publishedAt} className="rounded-sm bg-yellow-300 px-1.5 py-px font-semibold text-black">

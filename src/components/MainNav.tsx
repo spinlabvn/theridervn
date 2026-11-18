@@ -4,9 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { hasChildren, mainMenu, type MenuLink } from "@/config/menu";
+import { hasChildren, isMenuActive, mainMenu, menuHref, menuLabel, type MenuLink } from "@/config/menu";
 import type { Locale } from "@/i18n/config";
-import { href } from "@/lib/format";
 
 const itemClass =
   "relative flex h-11 items-center gap-1 px-3.5 text-[0.9375rem] font-semibold uppercase tracking-[0.02em] text-ink-2 transition-colors duration-200 hover:text-ink aria-[current=page]:text-ink data-[active=true]:text-ink after:absolute after:inset-x-3 after:-bottom-[6px] after:h-[3px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 aria-[current=page]:after:scale-x-100 data-[active=true]:after:scale-x-100";
@@ -16,7 +15,7 @@ export function MainNav({ locale, label }: { locale: Locale; label: string }) {
   const pathname = usePathname();
   const [open, setOpen] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
-  const isActive = (l: MenuLink) => pathname.startsWith(href.category(locale, l.category));
+  const isActive = (l: MenuLink) => isMenuActive(l, locale, pathname);
 
   useEffect(() => setOpen(null), [pathname]);
 
@@ -45,13 +44,9 @@ export function MainNav({ locale, label }: { locale: Locale; label: string }) {
         {mainMenu.map((item) => {
           if (!hasChildren(item)) {
             return (
-              <li key={item.label}>
-                <Link
-                  href={href.category(locale, item.category)}
-                  aria-current={isActive(item) ? "page" : undefined}
-                  className={itemClass}
-                >
-                  {item.label}
+              <li key={menuHref(item, locale)}>
+                <Link href={menuHref(item, locale)} aria-current={isActive(item) ? "page" : undefined} className={itemClass}>
+                  {menuLabel(item.label, locale)}
                 </Link>
               </li>
             );
@@ -88,13 +83,13 @@ export function MainNav({ locale, label }: { locale: Locale; label: string }) {
               <div id={id} hidden={!expanded} className="absolute left-0 top-full z-50 pt-3">
                 <ul className="min-w-48 overflow-hidden rounded-md bg-[var(--brand-dark-red)] py-2 shadow-xl shadow-black/25">
                   {item.children.map((child) => (
-                    <li key={child.category}>
+                    <li key={menuHref(child, locale)}>
                       <Link
-                        href={href.category(locale, child.category)}
+                        href={menuHref(child, locale)}
                         aria-current={isActive(child) ? "page" : undefined}
                         className="flex min-h-11 items-center px-4 text-sm font-semibold uppercase tracking-[0.02em] text-white/85 transition-colors duration-150 hover:bg-white/10 hover:text-white aria-[current=page]:bg-white/10 aria-[current=page]:text-white"
                       >
-                        {child.label}
+                        {menuLabel(child.label, locale)}
                       </Link>
                     </li>
                   ))}

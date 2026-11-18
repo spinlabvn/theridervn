@@ -4,9 +4,8 @@ import Link from "next/link";
 import { Menu, Search, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { hasChildren, mainMenu } from "@/config/menu";
+import { hasChildren, mainMenu, menuHref, menuLabel } from "@/config/menu";
 import type { Locale } from "@/i18n/config";
-import { href } from "@/lib/format";
 
 type Item = { href: string; label: string };
 
@@ -75,40 +74,42 @@ export function MobileMenu({
                   <p className="eyebrow text-ink-2">{item.label}</p>
                   <ul className="mt-2 grid grid-cols-2 gap-2">
                     {item.children.map((child) => (
-                      <li key={child.category}>
+                      <li key={menuHref(child, locale)}>
                         <Link
-                          href={href.category(locale, child.category)}
+                          href={menuHref(child, locale)}
                           onClick={close}
                           className="flex min-h-11 items-center rounded-md bg-surface-2 px-3 text-sm font-semibold uppercase tracking-[0.02em] hover:bg-accent hover:text-on-accent"
                         >
-                          {child.label}
+                          {menuLabel(child.label, locale)}
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </li>
               ) : (
-                <li key={item.label}>
+                <li key={menuHref(item, locale)}>
                   <Link
-                    href={href.category(locale, item.category)}
+                    href={menuHref(item, locale)}
                     onClick={close}
                     className="display block py-1.5 text-2xl hover:opacity-80"
                   >
-                    {item.label}
+                    {menuLabel(item.label, locale)}
                   </Link>
                 </li>
               ),
             )}
           </ul>
-          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-1 border-t border-line pt-5">
-            {primary.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} onClick={close} className="flex min-h-11 items-center font-medium text-ink-2 hover:text-ink">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {primary.length ? (
+            <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-1 border-t border-line pt-5">
+              {primary.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} onClick={close} className="flex min-h-11 items-center font-medium text-ink-2 hover:text-ink">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : null}
           <Link
             href={searchHref}
             onClick={close}
