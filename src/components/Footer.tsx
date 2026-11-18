@@ -36,6 +36,13 @@ export async function Footer({ locale }: { locale: Locale }) {
                 {t.footer.contact}: <span className="link-title">{site.email}</span>
               </span>
             </a>
+            <address className="mt-6 text-sm leading-relaxed text-ink-2 not-italic">
+              <p className="font-semibold text-ink">{site.company.name}</p>
+              <p>
+                {t.footer.taxId}: {site.company.taxId}
+              </p>
+              <p>{site.company.address}</p>
+            </address>
           </div>
 
           <nav aria-label={t.footer.explore} className="md:col-span-4">

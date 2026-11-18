@@ -18,6 +18,12 @@ export const site = {
     height: 28,
   },
   email: "info@therider.vn",
+  /** Thông tin pháp lý hiện ở cuối trang (giữ nguyên tiếng Việt ở cả hai ngôn ngữ). */
+  company: {
+    name: "CÔNG TY TNHH TRUYỀN THÔNG THE RIDER",
+    taxId: "0318317841",
+    address: "N1 Điện Biên Phủ, Phường Thạnh Mỹ Tây, TP Hồ Chí Minh, Việt Nam",
+  },
   social: {
     facebook: "https://www.facebook.com/therider.vn",
     instagram: "https://www.instagram.com/therider.vn/",

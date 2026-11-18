@@ -71,6 +71,7 @@ const vi = {
     contact: "Hợp tác & quảng cáo",
     rss: "RSS",
     rights: "Bảo lưu mọi quyền.",
+    taxId: "MST",
   },
 };
 
@@ -147,6 +148,7 @@ const en: Dictionary = {
     contact: "Partnerships & advertising",
     rss: "RSS",
     rights: "All rights reserved.",
+    taxId: "Tax ID",
   },
 };
 
