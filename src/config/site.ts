@@ -39,14 +39,14 @@ export const site = {
      */
     sidebar: [
       {
-        image: "/ads/vittoria-terreno-gravel-doc.jpg",
-        imageMobile: "/ads/vittoria-terreno-gravel-ngang.jpg",
+        image: "/ads/vittoria-terreno-gravel-doc-v2.jpg",
+        imageMobile: "/ads/vittoria-terreno-gravel-ngang-v2.jpg",
         href: "https://spinlab.vn/lop-xe#gravel",
         alt: "Lốp gravel Vittoria Terreno – xem tại Spinlab",
       },
       {
-        image: "/ads/polygon-xe-dap-doc.jpg",
-        imageMobile: "/ads/polygon-xe-dap-ngang.jpg",
+        image: "/ads/polygon-xe-dap-doc-v2.jpg",
+        imageMobile: "/ads/polygon-xe-dap-ngang-v2.jpg",
         href: "https://spinlab.vn/thuong-hieu-polygon",
         alt: "Xe đạp Polygon chính hãng – 48 mẫu road, địa hình, gravel, thành phố tại Spinlab",
       },
@@ -57,8 +57,8 @@ export const site = {
      */
     feed: [
       {
-        image: "/ads/story-bike-ngang-rong.jpg",
-        imageMobile: "/ads/story-bike-mobile.jpg",
+        image: "/ads/story-bike-ngang-rong-v2.jpg",
+        imageMobile: "/ads/story-bike-mobile-v2.jpg",
         href: "https://spinlab.vn/thuong-hieu-story-bike",
         alt: "Xe dirt jump và street trial Story chính hãng – xem tại Spinlab",
       },
