@@ -43,7 +43,8 @@ export function ArticleBody({ body, videoTitle }: { body: BodyNode[]; videoTitle
               width={1600}
               height={1067}
               sizes="(min-width: 768px) 720px, 100vw"
-              className="h-auto w-full bg-surface-2"
+              // Ảnh dọc không cao quá màn hình: khung giới hạn 80vh, ảnh thu nhỏ đúng tỉ lệ và nằm giữa cột
+              className="h-auto max-h-[80vh] w-full object-contain"
             />
             {value.caption ? <figcaption>{value.caption}</figcaption> : null}
           </figure>

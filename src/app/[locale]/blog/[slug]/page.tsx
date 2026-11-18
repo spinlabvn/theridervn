@@ -108,32 +108,31 @@ export default async function PostPage({ params }: PageProps<"/[locale]/blog/[sl
 
         {post.coverUrl ? (
           <figure className="container-x mt-10 sm:mt-14">
-            {/* 16:9 trên desktop: đủ cao để không cắt bánh xe/yên trong ảnh chụp nguyên chiếc xe (ảnh gốc 3:2) */}
-            <div className="relative mx-auto aspect-[3/2] max-w-6xl overflow-hidden bg-surface-2 lg:aspect-video">
-              <Image
-                src={post.coverUrl}
-                alt={post.coverAlt}
-                fill
-                priority
-                sizes="(min-width: 1232px) 1152px, 100vw"
-                className="object-cover"
-                style={post.coverPosition ? { objectPosition: post.coverPosition } : undefined}
-              />
-            </div>
+            {/* Ảnh bìa giữ đúng tỉ lệ gốc (không cắt), rộng bằng khối tiêu đề; chỉ ảnh dọc quá cao mới bị giới hạn chiều cao */}
+            <Image
+              src={post.coverUrl}
+              alt={post.coverAlt}
+              width={1600}
+              height={1067}
+              priority
+              sizes="(min-width: 1064px) 1024px, 100vw"
+              className="mx-auto h-auto max-h-[80vh] w-full max-w-5xl bg-surface-2 object-cover"
+              style={post.coverPosition ? { objectPosition: post.coverPosition } : undefined}
+            />
           </figure>
         ) : null}
 
-        <div className="container-x mt-12 grid gap-12 lg:mt-16 lg:grid-cols-12">
+        {/* Hai cột bên bằng nhau nên cột bài luôn nằm giữa trang, thẳng trục với tiêu đề và ảnh bìa; mục lục ở cột trái */}
+        <div className="container-x mt-12 grid gap-12 lg:mt-16 xl:grid-cols-[13rem_minmax(0,1fr)_13rem]">
           {hasToc ? (
-            <aside className="hidden lg:col-span-3 lg:block">
+            <aside className="hidden xl:block">
               <div className="sticky top-28 space-y-10">
                 <TableOfContents headings={headings} label={t.post.contents} />
               </div>
             </aside>
           ) : null}
 
-          {/* Không có mục lục thì bài nằm giữa trang, thay vì lệch phải cạnh một cột trống */}
-          <div id="article-body" className={`w-full min-w-0 ${hasToc ? "lg:col-span-9" : "lg:col-span-12"}`}>
+          <div id="article-body" className="w-full min-w-0 xl:col-start-2">
             {post.isFallbackLanguage && locale === "en" ? (
               <p className="mx-auto mb-8 max-w-[44rem] border-l-4 border-accent bg-surface-2 px-4 py-3 text-sm">
                 This story is currently only available in Vietnamese.
