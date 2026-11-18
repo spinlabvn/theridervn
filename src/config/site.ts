@@ -3,6 +3,8 @@
  * Đặt logo vào public/brand/ rồi khai báo đường dẫn ở `logo` (để null sẽ dùng logo chữ).
  * Màu thương hiệu nằm trong src/app/globals.css (khối "BRAND TOKENS").
  */
+export type AdBanner = { image: string; imageMobile: string; href: string; alt: string };
+
 export const site = {
   name: "TheRider",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://therider.vn").replace(/\/$/, ""),
@@ -30,17 +32,24 @@ export const site = {
    */
   ads: {
     /**
-     * Ô cột trái – cao bằng khối "Xem nhiều nhất" (~250×850px trên màn hình rộng).
-     * Banner dọc khoảng 1:3 (vd. 500×1500), nội dung chính đặt giữa vì mép trên/dưới có thể bị cắt.
-     * `imageMobile` (tuỳ chọn): bản ngang 6:5 (vd. 1200×1000) hiện dưới 1280px, khi ô nằm ở cột phải hoặc trên điện thoại.
+     * Cột trái – banner xoay vòng, mỗi banner hiện `adRotateSeconds` giây. Thêm banner = thêm một dòng.
+     * Ô cao bằng khối "Xem nhiều nhất" (~250×850px trên màn hình rộng): banner dọc khoảng 1:3 (vd. 500×1500),
+     * nội dung chính đặt giữa vì mép trên/dưới có thể bị cắt.
+     * `imageMobile`: bản ngang 6:5 (vd. 1200×1000) hiện dưới 1280px, khi ô nằm ở cột phải hoặc trên điện thoại.
      */
-    sidebar: {
-      image: "/ads/vittoria-terreno-gravel-doc.jpg" as string,
-      imageMobile: "/ads/vittoria-terreno-gravel-ngang.jpg" as string,
-      href: "https://spinlab.vn/lop-xe#gravel" as string,
-      alt: "Lốp gravel Vittoria Terreno – xem tại Spinlab" as string,
-    },
+    sidebar: [
+      {
+        image: "/ads/vittoria-terreno-gravel-doc.jpg",
+        imageMobile: "/ads/vittoria-terreno-gravel-ngang.jpg",
+        href: "https://spinlab.vn/lop-xe#gravel",
+        alt: "Lốp gravel Vittoria Terreno – xem tại Spinlab",
+      },
+      // Ô mời đặt quảng cáo (image trống) – thay bằng banner thật hoặc xoá dòng này
+      { image: "", imageMobile: "", href: "", alt: "" },
+    ] as AdBanner[],
     /** Banner ngang trong dòng tin, sau bài thứ 3 – tỉ lệ cố định 970:250 (vd. 1940×500). */
-    feed: { image: "" as string, imageMobile: "" as string, href: "" as string, alt: "" as string },
+    feed: { image: "", imageMobile: "", href: "", alt: "" } as AdBanner,
   },
+  /** Thời gian hiện mỗi banner ở cột trái trước khi chuyển sang banner kế (giây). */
+  adRotateSeconds: 10,
 } as const;

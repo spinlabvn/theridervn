@@ -327,6 +327,21 @@
   }
 }
 
+/* Thanh thời gian của banner quảng cáo xoay vòng (AdCarousel): hết thanh thì sang banner kế */
+@keyframes ad-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.ad-progress {
+  transform-origin: left;
+  animation: ad-progress 10s linear both;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .rise {
     animation: rise 700ms var(--ease-out-quint) both;

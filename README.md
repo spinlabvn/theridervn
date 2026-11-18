@@ -73,7 +73,7 @@ Ba bài "Tin mới" trên therider.vn không thuộc chuyên mục nào (chỉ h
 | Logo | `public/brand/therider-logo.png` (lấy từ therider.vn), khai báo trong `src/config/site.ts` |
 | Màu thương hiệu | Khối **BRAND TOKENS** đầu file `src/app/globals.css` (có cả bản sáng và tối) |
 | Email, mạng xã hội | `src/config/site.ts` |
-| Quảng cáo trang chủ (ô cột trái, banner sau bài thứ 3) | Ảnh vào `public/ads/`, khai báo ở `ads` trong `src/config/site.ts` (ô cột trái: bản dọc 1:3 + bản ngang 6:5 `imageMobile` cho màn hình dưới 1280px) |
+| Quảng cáo trang chủ (ô cột trái, banner sau bài thứ 3) | Ảnh vào `public/ads/`, khai báo ở `ads` trong `src/config/site.ts` (ô cột trái: danh sách banner xoay vòng, mỗi banner 10 giây – `adRotateSeconds`; mỗi banner gồm bản dọc 1:3 + bản ngang 6:5 `imageMobile` cho màn hình dưới 1280px) |
 | Chữ trên giao diện (menu, nút…) | `src/i18n/dictionaries.ts` |
 | Favicon | `src/app/icon.svg` |
 | Ảnh chia sẻ mặc định | `src/app/[locale]/opengraph-image.tsx` |

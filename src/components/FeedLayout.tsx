@@ -2,12 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { ChevronLeft, ChevronRight, Megaphone } from "lucide-react";
-import { site } from "@/config/site";
+import { site, type AdBanner } from "@/config/site";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getAllPosts, getAllTags, type PostSummary } from "@/lib/content";
 import { href } from "@/lib/format";
 import { getViewCounts } from "@/lib/views";
+import { AdCarousel } from "./AdCarousel";
 import { PostFeedItem, PostTile } from "./PostCard";
 import { SearchForm } from "./SearchForm";
 
@@ -36,23 +37,18 @@ function Panel({
 }
 
 /**
- * Ô quảng cáo: banner khai báo trong site.ads, hoặc ô mời đặt quảng cáo khi chưa có.
- * "sidebar" giãn theo chiều cao khối chứa; "feed" là banner ngang tỉ lệ 970:250 trong dòng tin.
+ * Một banner quảng cáo, hoặc ô mời đặt quảng cáo khi chưa có ảnh.
+ * `className` quyết định kích thước/vị trí: "feed" là banner ngang 970:250 trong dòng tin,
+ * "sidebar" phủ kín khung của AdCarousel.
  */
-function AdSlot({ locale, slot }: { locale: Locale; slot: keyof typeof site.ads }) {
+function AdCreative({ locale, slot, ad, className }: { locale: Locale; slot: "sidebar" | "feed"; ad: AdBanner; className: string }) {
   const t = getDictionary(locale);
-  const { image, imageMobile, href: link, alt } = site.ads[slot];
-  const box = slot === "feed" ? "aspect-[970/250]" : "min-h-[18rem] flex-1";
+  const { image, imageMobile, href: link, alt } = ad;
   if (image) {
     const sizes = slot === "feed" ? "(min-width: 1280px) 840px, (min-width: 1024px) 60vw, 100vw" : "(min-width: 1280px) 250px, (min-width: 1024px) 33vw, 100vw";
     return (
-      <a
-        href={link || `mailto:${site.email}`}
-        target="_blank"
-        rel="sponsored noopener"
-        // Có bản ngang: dưới xl ô giữ đúng tỉ lệ 6:5 của ảnh, từ xl giãn theo cột như cũ
-        className={`relative block overflow-hidden bg-surface-2 ${imageMobile ? "aspect-[6/5] xl:aspect-auto xl:flex-1" : box}`}
-      >
+      <a href={link || `mailto:${site.email}`} target="_blank" rel="sponsored noopener" className={`block overflow-hidden bg-surface-2 ${className}`}>
+        {/* Có bản ngang: dùng dưới xl, khi ô quảng cáo nằm ngang */}
         {imageMobile ? (
           <Image src={imageMobile} alt={alt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover xl:hidden" />
         ) : null}
@@ -63,7 +59,7 @@ function AdSlot({ locale, slot }: { locale: Locale; slot: keyof typeof site.ads 
   return (
     <a
       href={`mailto:${site.email}`}
-      className={`group flex items-center justify-center border-2 border-dashed border-line bg-surface-2 text-center transition-colors duration-200 hover:border-accent ${box} ${
+      className={`group flex items-center justify-center border-2 border-dashed border-line bg-surface-2 text-center transition-colors duration-200 hover:border-accent ${className} ${
         slot === "feed" ? "gap-3 px-4 sm:gap-5" : "flex-col gap-3 p-6"
       }`}
     >
@@ -203,7 +199,7 @@ export async function FeedLayout({
                   {i === 2 && posts.length > 3 ? (
                     <li aria-label={t.home.ad} className="py-5">
                       <p className="eyebrow mb-2 text-[0.6875rem] text-ink-2">{t.home.ad}</p>
-                      <AdSlot locale={locale} slot="feed" />
+                      <AdCreative locale={locale} slot="feed" ad={site.ads.feed} className="relative aspect-[970/250]" />
                     </li>
                   ) : null}
                 </Fragment>
@@ -232,9 +228,13 @@ export async function FeedLayout({
         </Panel>
       ) : null}
 
-      {/* Không có thanh tiêu đề: banner phủ kín khung, cao bằng khối "Xem nhiều nhất" */}
+      {/* Không có thanh tiêu đề: banner xoay vòng phủ kín khung, cao bằng khối "Xem nhiều nhất"; dưới xl giữ tỉ lệ 6:5 của bản ngang */}
       <aside aria-label={t.home.ad} className="order-3 flex flex-col lg:col-span-4 xl:order-none xl:col-span-1 xl:col-start-1 xl:row-start-1">
-        <AdSlot locale={locale} slot="sidebar" />
+        <AdCarousel seconds={site.adRotateSeconds} label={t.home.adShow} className="aspect-[6/5] xl:aspect-auto xl:min-h-[18rem] xl:flex-1">
+          {site.ads.sidebar.map((ad, i) => (
+            <AdCreative key={i} locale={locale} slot="sidebar" ad={ad} className="absolute inset-0" />
+          ))}
+        </AdCarousel>
       </aside>
 
       {tags.length ? (

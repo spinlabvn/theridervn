@@ -26,6 +26,7 @@ const vi = {
     ad: "Quảng cáo",
     adCta: "Đặt quảng cáo tại đây",
     adLead: "Tiếp cận cộng đồng đạp xe thể thao của TheRider.",
+    adShow: "Xem quảng cáo",
   },
   post: {
     by: "Bởi",
@@ -102,6 +103,7 @@ const en: Dictionary = {
     ad: "Advertisement",
     adCta: "Advertise here",
     adLead: "Reach TheRider's performance cycling community.",
+    adShow: "Show ad",
   },
   post: {
     by: "By",
