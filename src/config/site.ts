@@ -72,6 +72,11 @@ export const site = {
       { image: "", imageMobile: "", href: "", alt: "" },
     ] as AdBanner[],
   },
+  /**
+   * Nền theo mùa lễ: "christmas" = nền Giáng sinh (bông tuyết, cây thông, xe đạp chở quà – public/season/).
+   * Đặt `null` để về nền trơn sau mùa lễ.
+   */
+  season: "christmas" as "christmas" | null,
   /** Thời gian hiện mỗi banner quảng cáo trước khi chuyển sang banner kế (giây). */
   adRotateSeconds: 5,
 } as const;

@@ -67,7 +67,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
       suppressHydrationWarning
       className={beVietnam.variable}
     >
-      <body className="flex min-h-dvh flex-col">
+      <body className={`flex min-h-dvh flex-col ${site.season ? `season-${site.season}` : ""}`}>
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>

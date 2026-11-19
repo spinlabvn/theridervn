@@ -327,6 +327,35 @@
   }
 }
 
+/* ---------- Nền theo mùa (site.season) ----------
+ * Giáng sinh: hoa văn bông tuyết, cây thông, ngôi sao và xe đạp chở quà, rất nhạt để chữ vẫn dễ đọc;
+ * đầu trang có quầng đỏ/xanh lá mờ dần. Ô 520px ghép liền mép nên không thấy đường nối.
+ */
+body.season-christmas {
+  position: relative;
+  background-image: url("/season/christmas-light.svg");
+  background-size: 520px 520px;
+}
+[data-theme="dark"] body.season-christmas {
+  background-image: url("/season/christmas-dark.svg");
+}
+body.season-christmas::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: 560px;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 380px at 10% 0, rgb(188 43 40 / 0.1), transparent 70%),
+    radial-gradient(45% 340px at 90% 0, rgb(47 107 69 / 0.1), transparent 70%);
+}
+[data-theme="dark"] body.season-christmas::before {
+  background:
+    radial-gradient(55% 380px at 10% 0, rgb(255 90 80 / 0.12), transparent 70%),
+    radial-gradient(45% 340px at 90% 0, rgb(95 176 127 / 0.12), transparent 70%);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .rise {
     animation: rise 700ms var(--ease-out-quint) both;
