@@ -10,7 +10,6 @@ import { href } from "@/lib/format";
 import { getViewCounts } from "@/lib/views";
 import { AdCarousel } from "./AdCarousel";
 import { PostFeedItem, PostTile } from "./PostCard";
-import { SearchForm } from "./SearchForm";
 
 /** Khối có thanh tiêu đề đỏ thương hiệu, như các hộp trên Pinkbike. */
 function Panel({
@@ -157,7 +156,6 @@ export async function FeedLayout({
   title,
   isPageTitle = false,
   lead,
-  showSearch = false,
   posts,
   page,
   totalPages,
@@ -168,7 +166,6 @@ export async function FeedLayout({
   /** true: tiêu đề khối dòng tin là h1 của trang (trang chuyên mục, thẻ). */
   isPageTitle?: boolean;
   lead?: string;
-  showSearch?: boolean;
   posts: PostSummary[];
   page: number;
   totalPages: number;
@@ -188,7 +185,6 @@ export async function FeedLayout({
       <div className="order-1 min-w-0 lg:col-span-8 lg:row-span-3 xl:order-none xl:col-span-1 xl:col-start-2 xl:row-span-2 xl:row-start-1">
         <Panel id="latest" title={title} as={isPageTitle ? "h1" : "h2"}>
           {lead ? <p className="text-ink-2">{lead}</p> : null}
-          {showSearch ? <SearchForm locale={locale} size="md" /> : null}
           {posts.length ? (
             <ul className="mt-1 divide-y divide-line">
               {posts.map((post, i) => (

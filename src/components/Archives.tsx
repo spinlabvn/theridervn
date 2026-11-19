@@ -36,7 +36,6 @@ export async function HomeArchive({ locale, page }: { locale: Locale; page: numb
       <FeedLayout
         locale={locale}
         title={t.home.news}
-        showSearch={page === 1}
         posts={result.items}
         page={result.page}
         totalPages={result.totalPages}
