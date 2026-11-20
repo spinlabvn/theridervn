@@ -51,10 +51,10 @@ export const site = {
         alt: "Lốp gravel Vittoria Terreno – xem tại Spinlab",
       },
       {
-        image: "/ads/polygon-tambora-gravel-doc.jpg",
-        imageMobile: "/ads/polygon-tambora-gravel-ngang.jpg",
+        image: "/ads/polygon-tambora-gravel-doc-v2.jpg",
+        imageMobile: "/ads/polygon-tambora-gravel-ngang-v2.jpg",
         href: "https://spinlab.vn/xe-gravel",
-        alt: "Polygon Tambora MY27 – dòng xe gravel khung carbon mới, 4 phiên bản, giá từ 45.000.000₫",
+        alt: "Polygon Tambora – dòng xe gravel khung carbon mới, 4 phiên bản, giá từ 45.000.000₫",
       },
     ] as AdBanner[],
     /**
