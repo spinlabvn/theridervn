@@ -1,6 +1,6 @@
 [
  {
-  "slug": "polygon-tambora-my27-gravel-carbon",
+  "slug": "polygon-tambora-gravel-carbon",
   "sourceUrl": "",
   "publishedAt": "2026-11-19T23:00:00+07:00",
   "featured": true,
@@ -11,18 +11,18 @@
    "Tambora"
   ],
   "author": "TheRider",
-  "coverUrl": "/media/polygon-tambora-my27.jpg",
+  "coverUrl": "/media/polygon-tambora-cover.jpg",
   "coverAlt": {
-   "vi": "Bốn phiên bản xe gravel Polygon Tambora MY27",
-   "en": "The four Polygon Tambora MY27 gravel builds"
+   "vi": "Bốn phiên bản xe gravel Polygon Tambora",
+   "en": "The four Polygon Tambora gravel builds"
   },
   "title": {
-   "vi": "Polygon Tambora MY27: dòng gravel khung carbon mới, 4 phiên bản từ 45 triệu đồng",
-   "en": "Polygon Tambora MY27: a new carbon gravel line in four builds"
+   "vi": "Polygon Tambora ra mắt: gravel khung carbon, giá từ 45 triệu đồng",
+   "en": "Polygon Tambora unveiled: carbon gravel from 45 million VND"
   },
   "excerpt": {
-   "vi": "Polygon ra mắt Tambora MY27 – dòng xe gravel khung và phuộc carbon, chạy được lốp tới 55mm, có 4 phiên bản từ Shimano CUES đến SRAM Force XPLR AXS, giá từ 45 đến 118 triệu đồng.",
-   "en": "Polygon launches the Tambora MY27 – a carbon gravel line with room for 55mm tyres, offered in four builds from Shimano CUES to SRAM Force XPLR AXS, priced from 45 to 118 million VND."
+   "vi": "Dòng gravel mới của Polygon dùng chung một bộ khung carbon cho cả bốn phiên bản, chạy được lốp 55mm và có giá niêm yết tại Việt Nam từ 45 đến 118 triệu đồng.",
+   "en": "Polygon's new gravel line shares one carbon frame across four builds, clears 55mm tyres and lists in Vietnam from 45 to 118 million VND."
   },
   "body": {
    "vi": [
@@ -35,13 +35,13 @@
       {
        "_type": "span",
        "_key": "t0001",
-       "text": "Polygon vừa giới thiệu ",
+       "text": "Phân khúc gravel vừa có thêm một cái tên đáng chú ý. Polygon, thương hiệu xe đạp đến từ Indonesia, trình làng ",
        "marks": []
       },
       {
        "_type": "span",
        "_key": "t0002",
-       "text": "Tambora MY27",
+       "text": "Tambora",
        "marks": [
         "strong"
        ]
@@ -49,7 +49,7 @@
       {
        "_type": "span",
        "_key": "t0003",
-       "text": ", dòng xe gravel hoàn toàn mới với khung và phuộc carbon. Cả bốn phiên bản Tambora 9 AXS, Tambora 7 Di2, Tambora 6 và Tambora 4 dùng chung một bộ khung, chỉ khác nhau ở bộ truyền động, bánh xe và lốp. Tại Việt Nam, xe được Spinlab phân phối chính hãng với giá từ 45.000.000₫ đến 118.000.000₫.",
+       "text": " – dòng gravel hoàn toàn mới. Điều làm Tambora khác biệt không nằm ở phiên bản đắt nhất, mà ở phiên bản rẻ nhất: cả bốn phiên bản đều dùng chung một bộ khung và phuộc carbon. Người mua chỉ còn phải chọn bộ truyền động, bánh và lốp hợp với nhu cầu và túi tiền.",
        "marks": []
       }
      ]
@@ -57,13 +57,13 @@
     {
      "_type": "block",
      "_key": "t0006",
-     "style": "h2",
+     "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
        "_key": "t0005",
-       "text": "Một bộ khung carbon cho cả bốn phiên bản",
+       "text": "Giá niêm yết tại Việt Nam trải từ 45.000.000₫ cho Tambora 4 đến 118.000.000₫ cho Tambora 9 AXS.",
        "marks": []
       }
      ]
@@ -71,116 +71,120 @@
     {
      "_type": "block",
      "_key": "t0008",
-     "style": "normal",
+     "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
        "_key": "t0007",
-       "text": "Điểm đáng chú ý nhất của Tambora là ngay cả phiên bản thấp nhất cũng có khung và phuộc carbon. Bộ khung theo những chuẩn hiện đại của xe gravel:",
+       "text": "Một bộ khung cho tất cả",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0011",
+     "_key": "t0010",
      "style": "normal",
-     "listItem": "bullet",
-     "level": 1,
      "markDefs": [],
      "children": [
       {
        "_type": "span",
        "_key": "t0009",
-       "text": "Khung và phuộc carbon:",
-       "marks": [
-        "strong"
-       ]
-      },
-      {
-       "_type": "span",
-       "_key": "t0010",
-       "text": " phuộc full carbon, cổ côn 1-1/8\" – 1-1/2\", trục xuyên 12x100mm phía trước và 12x142mm phía sau, ngàm phanh flat mount.",
+       "text": "Polygon không làm khung hạng hai cho các bản giá thấp. Tambora 4 và Tambora 9 AXS có cùng khung carbon, cùng phuộc full carbon cổ côn 1-1/8\" – 1-1/2\", cùng trục xuyên 12x100mm phía trước và 12x142mm phía sau. Nói cách khác, khi muốn lên đời, bạn thay linh kiện chứ không phải thay xe.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0014",
+     "_key": "t0012",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "t0011",
+       "text": "Bộ khung cũng theo kịp những chuẩn mà người chơi gravel quan tâm:",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "t0015",
      "style": "normal",
      "listItem": "bullet",
      "level": 1,
      "markDefs": [],
      "children": [
-      {
-       "_type": "span",
-       "_key": "t0012",
-       "text": "Lốp tới 700x55C:",
-       "marks": [
-        "strong"
-       ]
-      },
       {
        "_type": "span",
        "_key": "t0013",
-       "text": " xe lắp sẵn lốp 45–50mm và vẫn còn chỗ cho lốp 55mm khi đi đường khó.",
+       "text": "Lốp tới 700x55C.",
+       "marks": [
+        "strong"
+       ]
+      },
+      {
+       "_type": "span",
+       "_key": "t0014",
+       "text": " Xe xuất xưởng với lốp 45–50mm và vẫn dư chỗ cho lốp to hơn khi gặp đường đá dăm hay bùn lầy.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0017",
+     "_key": "t0018",
      "style": "normal",
      "listItem": "bullet",
      "level": 1,
      "markDefs": [],
      "children": [
-      {
-       "_type": "span",
-       "_key": "t0015",
-       "text": "Pát chuẩn UDH:",
-       "marks": [
-        "strong"
-       ]
-      },
       {
        "_type": "span",
        "_key": "t0016",
-       "text": " pát chuyển dùng chuẩn Universal Derailleur Hanger, dễ tìm khi cần thay và tương thích với các bộ truyền động thế hệ mới.",
+       "text": "Pát UDH.",
+       "marks": [
+        "strong"
+       ]
+      },
+      {
+       "_type": "span",
+       "_key": "t0017",
+       "text": " Chuẩn Universal Derailleur Hanger dễ tìm khi chẳng may gãy pát giữa chuyến đi, và sẵn sàng cho các bộ truyền động thế hệ mới.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0020",
+     "_key": "t0021",
      "style": "normal",
      "listItem": "bullet",
      "level": 1,
      "markDefs": [],
      "children": [
-      {
-       "_type": "span",
-       "_key": "t0018",
-       "text": "Trục giữa ren T47:",
-       "marks": [
-        "strong"
-       ]
-      },
       {
        "_type": "span",
        "_key": "t0019",
-       "text": " chuẩn T47 76.75mm bền, dễ bảo dưỡng và hạn chế tiếng kêu.",
+       "text": "Trục giữa ren T47.",
+       "marks": [
+        "strong"
+       ]
+      },
+      {
+       "_type": "span",
+       "_key": "t0020",
+       "text": " Chuẩn ren T47 76.75mm bền, dễ bảo dưỡng và ít tiếng kêu hơn trục giữa ép.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0023",
+     "_key": "t0024",
      "style": "normal",
      "listItem": "bullet",
      "level": 1,
@@ -188,62 +192,62 @@
      "children": [
       {
        "_type": "span",
-       "_key": "t0021",
-       "text": "Đi dây âm hoàn toàn:",
+       "_key": "t0022",
+       "text": "Đi dây âm hoàn toàn.",
        "marks": [
         "strong"
        ]
       },
       {
        "_type": "span",
-       "_key": "t0022",
-       "text": " dây phanh và dây đề đi trong khung, gọn gàng và được bảo vệ khỏi bùn đất.",
+       "_key": "t0023",
+       "text": " Dây phanh và dây đề nằm gọn trong khung, tránh bùn đất và cho vẻ ngoài liền lạc.",
        "marks": []
       }
      ]
     },
     {
      "_type": "figure",
-     "_key": "t0024",
+     "_key": "t0025",
      "url": "/media/polygon-tambora-9-axs.jpg",
      "alt": "Polygon Tambora 9 AXS màu xanh và cam",
-     "caption": "Tambora 9 AXS, phiên bản cao nhất của dòng Tambora."
+     "caption": "Tambora 9 AXS với lớp sơn xanh – cam chuyển sắc."
     },
     {
      "_type": "block",
-     "_key": "t0026",
+     "_key": "t0027",
      "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0025",
-       "text": "Hình học khung",
+       "_key": "t0026",
+       "text": "Hình học: ưu tiên sự thoải mái",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0028",
+     "_key": "t0029",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0027",
-       "text": "Tambora có 6 size từ XXS đến XL, cho người cao từ 151 đến 195cm. Gióng sau dài 435mm ở mọi size, góc cổ 70–71° và góc ống yên 73–74.5°. Ở size M, reach 385mm và stack 575mm: phần đầu xe khá cao, cho tư thế ngồi thoải mái khi đạp đường dài.",
+       "_key": "t0028",
+       "text": "Tambora có sáu size từ XXS đến XL, cho người cao từ 151 đến 195cm, nên cả những người có vóc dáng nhỏ cũng dễ tìm được khung vừa. Ở size M, reach 385mm và stack 575mm cho phần đầu xe khá cao: tư thế ngồi thiên về thoải mái cho những chuyến đi dài hơn là cúi thấp để đua. Gióng sau 435mm ở mọi size cùng góc cổ 70–71° hứa hẹn cảm giác lái vững vàng khi đổ dốc trên đường sỏi.",
        "marks": []
       }
      ]
     },
     {
      "_type": "specTable",
-     "_key": "t0029",
+     "_key": "t0030",
      "hasHeader": true,
      "rows": [
       {
-       "_key": "t0030",
+       "_key": "t0031",
        "cells": [
         "Size",
         "Chiều cao (cm)",
@@ -254,7 +258,7 @@
        ]
       },
       {
-       "_key": "t0031",
+       "_key": "t0032",
        "cells": [
         "XXS",
         "151–161",
@@ -265,7 +269,7 @@
        ]
       },
       {
-       "_key": "t0032",
+       "_key": "t0033",
        "cells": [
         "XS",
         "157–167",
@@ -276,7 +280,7 @@
        ]
       },
       {
-       "_key": "t0033",
+       "_key": "t0034",
        "cells": [
         "S",
         "164–174",
@@ -287,7 +291,7 @@
        ]
       },
       {
-       "_key": "t0034",
+       "_key": "t0035",
        "cells": [
         "M",
         "171–181",
@@ -298,7 +302,7 @@
        ]
       },
       {
-       "_key": "t0035",
+       "_key": "t0036",
        "cells": [
         "L",
         "178–188",
@@ -309,7 +313,7 @@
        ]
       },
       {
-       "_key": "t0036",
+       "_key": "t0037",
        "cells": [
         "XL",
         "185–195",
@@ -323,13 +327,13 @@
     },
     {
      "_type": "block",
-     "_key": "t0038",
+     "_key": "t0039",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0037",
+       "_key": "t0038",
        "text": "Đơn vị mm, trừ chiều cao người lái. Ống ngang là chiều dài ống ngang hiệu dụng, cơ sở là chiều dài cơ sở.",
        "marks": [
         "em"
@@ -339,27 +343,27 @@
     },
     {
      "_type": "block",
-     "_key": "t0040",
+     "_key": "t0041",
      "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0039",
-       "text": "Bốn phiên bản",
+       "_key": "t0040",
+       "text": "Bốn phiên bản, bốn lựa chọn",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0042",
+     "_key": "t0043",
      "style": "h3",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0041",
+       "_key": "t0042",
        "text": "Tambora 9 AXS – 118.000.000₫",
        "marks": []
       }
@@ -367,27 +371,27 @@
     },
     {
      "_type": "block",
-     "_key": "t0044",
+     "_key": "t0045",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0043",
-       "text": "Bộ truyền động không dây SRAM Force XPLR AXS E1 1x13 tốc độ (đĩa 40T, líp 10-46T), phanh dầu SRAM Force với đĩa Paceline 160mm. Xe dùng ghi đông carbon tích hợp LINC, cọc yên carbon, yên Fizik Terra Argo, bộ bánh carbon Novatec G29 cao 35mm và lốp Schwalbe G-One R Pro 700x50C thành nâu.",
+       "_key": "t0044",
+       "text": "Dành cho người muốn mọi thứ tốt nhất ngay từ đầu. Bộ truyền động không dây SRAM Force XPLR AXS E1 1x13 tốc độ với líp 10-46T, phanh dầu SRAM Force, ghi đông carbon tích hợp LINC, yên Fizik Terra Argo, bộ bánh carbon Novatec G29 cao 35mm và lốp Schwalbe G-One R Pro 50mm thành nâu. Cấu hình này gần như không còn chỗ để nâng cấp.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0046",
+     "_key": "t0047",
      "style": "h3",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0045",
+       "_key": "t0046",
        "text": "Tambora 7 Di2 – 78.000.000₫",
        "marks": []
       }
@@ -395,34 +399,34 @@
     },
     {
      "_type": "block",
-     "_key": "t0048",
+     "_key": "t0049",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0047",
-       "text": "Bộ truyền động điện tử Shimano GRX Di2 1x12 tốc độ (đĩa 40T, líp 10-51T) và phanh dầu Shimano GRX. Giống bản 9 AXS, xe có bộ bánh carbon Novatec G29 35mm, cọc yên carbon và lốp Schwalbe G-One R Pro 50mm thành nâu. Ghi đông và pô tăng của FSA.",
+       "_key": "t0048",
+       "text": "Nhiều khả năng đây là phiên bản đáng tiền nhất. Rẻ hơn bản 9 AXS tới 40 triệu đồng, Tambora 7 Di2 vẫn giữ bộ bánh carbon Novatec G29, cọc yên carbon và lốp Schwalbe G-One R Pro. Bộ truyền động điện tử Shimano GRX Di2 1x12 tốc độ đi kèm líp 10-51T, cho số nhẹ hơn cả bản 9 AXS khi leo dốc. Ghi đông và pô tăng của FSA.",
        "marks": []
       }
      ]
     },
     {
      "_type": "figure",
-     "_key": "t0049",
+     "_key": "t0050",
      "url": "/media/polygon-tambora-7-di2.jpg",
      "alt": "Polygon Tambora 7 Di2 màu trắng và xanh",
      "caption": "Tambora 7 Di2."
     },
     {
      "_type": "block",
-     "_key": "t0051",
+     "_key": "t0052",
      "style": "h3",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0050",
+       "_key": "t0051",
        "text": "Tambora 6 – 65.000.000₫",
        "marks": []
       }
@@ -430,34 +434,34 @@
     },
     {
      "_type": "block",
-     "_key": "t0053",
+     "_key": "t0054",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0052",
-       "text": "Shimano GRX 2x12 tốc độ (đĩa 46/30T, líp 11-36T) cho dải số rộng, hợp với người hay leo dốc hoặc chạy cả đường nhựa lẫn đường đất. Phanh dầu Shimano GRX, vành nhôm 30mm tubeless-ready, đùm Novatec và lốp Schwalbe G-One R 700x50C.",
+       "_key": "t0053",
+       "text": "Quay về bộ truyền động cơ với Shimano GRX 2x12 tốc độ (đĩa 46/30T, líp 11-36T). Hai đĩa trước cho bước số khít, hợp với người hay đạp nhóm trên đường nhựa nhưng vẫn muốn rẽ vào đường đất mỗi cuối tuần. Bánh chuyển sang vành nhôm 30mm tubeless-ready, đùm Novatec và lốp Schwalbe G-One R 50mm.",
        "marks": []
       }
      ]
     },
     {
      "_type": "figure",
-     "_key": "t0054",
+     "_key": "t0055",
      "url": "/media/polygon-tambora-6.jpg",
      "alt": "Polygon Tambora 6 màu đỏ và đen",
      "caption": "Tambora 6."
     },
     {
      "_type": "block",
-     "_key": "t0056",
+     "_key": "t0057",
      "style": "h3",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0055",
+       "_key": "t0056",
        "text": "Tambora 4 – 45.000.000₫",
        "marks": []
       }
@@ -465,34 +469,34 @@
     },
     {
      "_type": "block",
-     "_key": "t0058",
+     "_key": "t0059",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0057",
-       "text": "Phiên bản dễ tiếp cận nhất nhưng vẫn giữ nguyên khung và phuộc carbon. Bộ truyền động Shimano CUES 2x10 tốc độ (đĩa 46/32T, líp 11-39T), phanh dầu Shimano CUES với đĩa 180mm, vành nhôm tubeless-ready và lốp Delium SpeedX 700x45C.",
+       "_key": "t0058",
+       "text": "Cánh cửa bước vào thế giới gravel carbon. Shimano CUES 2x10 tốc độ (đĩa 46/32T, líp 11-39T) không hào nhoáng nhưng bền bỉ, đi cùng phanh dầu Shimano CUES với đĩa 180mm, vành nhôm tubeless-ready và lốp Delium SpeedX 45mm. Khung vẫn là khung carbon của bản 118 triệu, nên đây là nền tảng tốt để nâng cấp dần theo thời gian.",
        "marks": []
       }
      ]
     },
     {
      "_type": "figure",
-     "_key": "t0059",
+     "_key": "t0060",
      "url": "/media/polygon-tambora-4.jpg",
      "alt": "Polygon Tambora 4 màu be và đen",
      "caption": "Tambora 4."
     },
     {
      "_type": "block",
-     "_key": "t0061",
+     "_key": "t0062",
      "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0060",
+       "_key": "t0061",
        "text": "So sánh nhanh",
        "marks": []
       }
@@ -500,21 +504,21 @@
     },
     {
      "_type": "specTable",
-     "_key": "t0062",
+     "_key": "t0063",
      "hasHeader": true,
      "rows": [
       {
-       "_key": "t0063",
+       "_key": "t0064",
        "cells": [
         "Phiên bản",
         "Bộ truyền động",
         "Bánh xe",
         "Lốp",
-        "Giá"
+        "Giá niêm yết"
        ]
       },
       {
-       "_key": "t0064",
+       "_key": "t0065",
        "cells": [
         "Tambora 9 AXS",
         "SRAM Force XPLR AXS E1, 1x13",
@@ -524,7 +528,7 @@
        ]
       },
       {
-       "_key": "t0065",
+       "_key": "t0066",
        "cells": [
         "Tambora 7 Di2",
         "Shimano GRX Di2, 1x12",
@@ -534,7 +538,7 @@
        ]
       },
       {
-       "_key": "t0066",
+       "_key": "t0067",
        "cells": [
         "Tambora 6",
         "Shimano GRX, 2x12",
@@ -544,7 +548,7 @@
        ]
       },
       {
-       "_key": "t0067",
+       "_key": "t0068",
        "cells": [
         "Tambora 4",
         "Shimano CUES, 2x10",
@@ -557,14 +561,28 @@
     },
     {
      "_type": "block",
-     "_key": "t0069",
+     "_key": "t0070",
      "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0068",
-       "text": "Giá bán và nơi mua",
+       "_key": "t0069",
+       "text": "Lời kết",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "t0072",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "t0071",
+       "text": "Tambora không cố trở thành chiếc gravel đua nhẹ nhất. Thế mạnh của nó là một bộ khung carbon hiện đại dùng chung từ trên xuống dưới, khoảng hở lốp rộng và hình học dễ chịu. Với người mới bước vào gravel, Tambora 4 là con đường ngắn nhất để sở hữu khung carbon. Với người đã chơi lâu, Tambora 7 Di2 là điểm cân bằng đáng cân nhắc giữa giá và trang bị.",
        "marks": []
       }
      ]
@@ -573,46 +591,12 @@
      "_type": "block",
      "_key": "t0074",
      "style": "normal",
-     "markDefs": [
-      {
-       "_type": "link",
-       "_key": "t0071",
-       "href": "https://spinlab.vn/xe-gravel"
-      }
-     ],
-     "children": [
-      {
-       "_type": "span",
-       "_key": "t0070",
-       "text": "Polygon Tambora MY27 được Spinlab phân phối chính hãng tại Việt Nam. Thông số chi tiết, màu sắc và bảng size của từng phiên bản có tại ",
-       "marks": []
-      },
-      {
-       "_type": "span",
-       "_key": "t0072",
-       "text": "spinlab.vn/xe-gravel",
-       "marks": [
-        "t0071"
-       ]
-      },
-      {
-       "_type": "span",
-       "_key": "t0073",
-       "text": ". Cấu hình có thể thay đổi theo lô hàng, nên liên hệ nhà phân phối để xác nhận trước khi mua.",
-       "marks": []
-      }
-     ]
-    },
-    {
-     "_type": "block",
-     "_key": "t0076",
-     "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0075",
-       "text": "Nguồn: Polygon Bikes, Spinlab",
+       "_key": "t0073",
+       "text": "Giá niêm yết tại thị trường Việt Nam, có thể thay đổi. Thông số theo Polygon Bikes.",
        "marks": [
         "em"
        ]
@@ -623,28 +607,42 @@
    "en": [
     {
      "_type": "block",
-     "_key": "t0080",
+     "_key": "t0078",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0077",
-       "text": "Polygon has introduced the ",
+       "_key": "t0075",
+       "text": "Gravel has a new name worth knowing. Indonesian brand Polygon has unveiled the ",
        "marks": []
       },
       {
        "_type": "span",
-       "_key": "t0078",
-       "text": "Tambora MY27",
+       "_key": "t0076",
+       "text": "Tambora",
        "marks": [
         "strong"
        ]
       },
       {
        "_type": "span",
+       "_key": "t0077",
+       "text": ", an all-new gravel line. What sets it apart isn't the most expensive build but the cheapest one: all four builds share the same carbon frame and fork. All that's left to choose is the drivetrain, wheels and tyres that suit your riding and your budget.",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "t0080",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
        "_key": "t0079",
-       "text": ", an all-new gravel line with a carbon frame and fork. All four builds – Tambora 9 AXS, Tambora 7 Di2, Tambora 6 and Tambora 4 – share the same frame and differ only in drivetrain, wheels and tyres. In Vietnam the bikes are distributed by Spinlab, priced from 45,000,000₫ to 118,000,000₫.",
+       "text": "Vietnamese list prices run from 45,000,000₫ for the Tambora 4 to 118,000,000₫ for the Tambora 9 AXS.",
        "marks": []
       }
      ]
@@ -658,7 +656,7 @@
       {
        "_type": "span",
        "_key": "t0081",
-       "text": "One carbon frame across all four builds",
+       "text": "One frame for all",
        "marks": []
       }
      ]
@@ -672,110 +670,100 @@
       {
        "_type": "span",
        "_key": "t0083",
-       "text": "The headline is that even the entry build gets a carbon frame and fork. The frame follows current gravel standards:",
+       "text": "Polygon hasn't built a second-tier frame for the cheaper models. The Tambora 4 and the Tambora 9 AXS share the same carbon frame, the same full-carbon fork with a 1-1/8\" – 1-1/2\" tapered steerer, and the same 12x100mm front and 12x142mm rear thru-axles. In other words, when it's time to upgrade, you swap parts, not bikes.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0087",
+     "_key": "t0086",
      "style": "normal",
-     "listItem": "bullet",
-     "level": 1,
      "markDefs": [],
      "children": [
       {
        "_type": "span",
        "_key": "t0085",
-       "text": "Carbon frame and fork:",
-       "marks": [
-        "strong"
-       ]
-      },
-      {
-       "_type": "span",
-       "_key": "t0086",
-       "text": " full-carbon fork with a 1-1/8\" – 1-1/2\" tapered steerer, 12x100mm front and 12x142mm rear thru-axles, flat-mount brakes.",
+       "text": "The frame also ticks the boxes gravel riders care about:",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0090",
+     "_key": "t0089",
      "style": "normal",
      "listItem": "bullet",
      "level": 1,
      "markDefs": [],
      "children": [
+      {
+       "_type": "span",
+       "_key": "t0087",
+       "text": "Room for 700x55C tyres.",
+       "marks": [
+        "strong"
+       ]
+      },
       {
        "_type": "span",
        "_key": "t0088",
-       "text": "Room for 700x55C tyres:",
-       "marks": [
-        "strong"
-       ]
-      },
-      {
-       "_type": "span",
-       "_key": "t0089",
-       "text": " the bikes ship on 45–50mm tyres with clearance for 55mm when the going gets rough.",
+       "text": " The bikes ship on 45–50mm rubber with space to spare for bigger tyres on chunky gravel or mud.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0093",
+     "_key": "t0092",
      "style": "normal",
      "listItem": "bullet",
      "level": 1,
      "markDefs": [],
      "children": [
+      {
+       "_type": "span",
+       "_key": "t0090",
+       "text": "UDH dropout.",
+       "marks": [
+        "strong"
+       ]
+      },
       {
        "_type": "span",
        "_key": "t0091",
-       "text": "UDH dropout:",
-       "marks": [
-        "strong"
-       ]
-      },
-      {
-       "_type": "span",
-       "_key": "t0092",
-       "text": " a Universal Derailleur Hanger that is easy to replace and ready for the latest drivetrains.",
+       "text": " The Universal Derailleur Hanger is easy to find if you snap one mid-ride, and ready for the latest drivetrains.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0096",
+     "_key": "t0095",
      "style": "normal",
      "listItem": "bullet",
      "level": 1,
      "markDefs": [],
      "children": [
+      {
+       "_type": "span",
+       "_key": "t0093",
+       "text": "T47 threaded bottom bracket.",
+       "marks": [
+        "strong"
+       ]
+      },
       {
        "_type": "span",
        "_key": "t0094",
-       "text": "T47 threaded bottom bracket:",
-       "marks": [
-        "strong"
-       ]
-      },
-      {
-       "_type": "span",
-       "_key": "t0095",
-       "text": " T47 76.75mm for durability, easy servicing and fewer creaks.",
+       "text": " T47 76.75mm is durable, easy to service and quieter than press-fit.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0099",
+     "_key": "t0098",
      "style": "normal",
      "listItem": "bullet",
      "level": 1,
@@ -783,62 +771,62 @@
      "children": [
       {
        "_type": "span",
-       "_key": "t0097",
-       "text": "Fully internal routing:",
+       "_key": "t0096",
+       "text": "Fully internal routing.",
        "marks": [
         "strong"
        ]
       },
       {
        "_type": "span",
-       "_key": "t0098",
-       "text": " brake and shift lines run inside the frame, tidy and protected from mud.",
+       "_key": "t0097",
+       "text": " Brake and shift lines live inside the frame, safe from grime and visually clean.",
        "marks": []
       }
      ]
     },
     {
      "_type": "figure",
-     "_key": "t0100",
+     "_key": "t0099",
      "url": "/media/polygon-tambora-9-axs.jpg",
      "alt": "Polygon Tambora 9 AXS in blue and orange",
-     "caption": "Tambora 9 AXS, the top build of the Tambora line."
+     "caption": "The Tambora 9 AXS in its blue-to-orange fade."
     },
     {
      "_type": "block",
-     "_key": "t0102",
+     "_key": "t0101",
      "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0101",
-       "text": "Geometry",
+       "_key": "t0100",
+       "text": "Geometry: comfort first",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0104",
+     "_key": "t0103",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0103",
-       "text": "The Tambora comes in six sizes, XXS to XL, for riders from 151 to 195cm. Chainstays are 435mm across the range, with a 70–71° head angle and a 73–74.5° seat angle. A size M has 385mm of reach and 575mm of stack: a fairly tall front end for a comfortable position on long rides.",
+       "_key": "t0102",
+       "text": "The Tambora comes in six sizes, XXS to XL, for riders from 151 to 195cm, so smaller riders have a real chance of a good fit. A size M has 385mm of reach and 575mm of stack, a fairly tall front end that favours comfort on long days over a low racing tuck. 435mm chainstays across the range and a 70–71° head angle point to a steady ride on loose descents.",
        "marks": []
       }
      ]
     },
     {
      "_type": "specTable",
-     "_key": "t0105",
+     "_key": "t0104",
      "hasHeader": true,
      "rows": [
       {
-       "_key": "t0106",
+       "_key": "t0105",
        "cells": [
         "Size",
         "Rider height (cm)",
@@ -849,7 +837,7 @@
        ]
       },
       {
-       "_key": "t0107",
+       "_key": "t0106",
        "cells": [
         "XXS",
         "151–161",
@@ -860,7 +848,7 @@
        ]
       },
       {
-       "_key": "t0108",
+       "_key": "t0107",
        "cells": [
         "XS",
         "157–167",
@@ -871,7 +859,7 @@
        ]
       },
       {
-       "_key": "t0109",
+       "_key": "t0108",
        "cells": [
         "S",
         "164–174",
@@ -882,7 +870,7 @@
        ]
       },
       {
-       "_key": "t0110",
+       "_key": "t0109",
        "cells": [
         "M",
         "171–181",
@@ -893,7 +881,7 @@
        ]
       },
       {
-       "_key": "t0111",
+       "_key": "t0110",
        "cells": [
         "L",
         "178–188",
@@ -904,7 +892,7 @@
        ]
       },
       {
-       "_key": "t0112",
+       "_key": "t0111",
        "cells": [
         "XL",
         "185–195",
@@ -918,13 +906,13 @@
     },
     {
      "_type": "block",
-     "_key": "t0114",
+     "_key": "t0113",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0113",
+       "_key": "t0112",
        "text": "Millimetres, except rider height. Top tube is the effective top tube length.",
        "marks": [
         "em"
@@ -934,27 +922,27 @@
     },
     {
      "_type": "block",
-     "_key": "t0116",
+     "_key": "t0115",
      "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0115",
-       "text": "Four builds",
+       "_key": "t0114",
+       "text": "Four builds, four choices",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0118",
+     "_key": "t0117",
      "style": "h3",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0117",
+       "_key": "t0116",
        "text": "Tambora 9 AXS – 118,000,000₫",
        "marks": []
       }
@@ -962,27 +950,27 @@
     },
     {
      "_type": "block",
-     "_key": "t0120",
+     "_key": "t0119",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0119",
-       "text": "Wireless SRAM Force XPLR AXS E1 1x13 (40T chainring, 10-46T cassette) with SRAM Force hydraulic brakes and Paceline 160mm rotors. It gets a LINC integrated carbon bar, carbon seatpost, Fizik Terra Argo saddle, 35mm-deep Novatec G29 carbon wheels and tan-wall Schwalbe G-One R Pro 700x50C tyres.",
+       "_key": "t0118",
+       "text": "For riders who want the best from day one. Wireless SRAM Force XPLR AXS E1 1x13 with a 10-46T cassette, SRAM Force hydraulic brakes, a LINC integrated carbon bar, Fizik Terra Argo saddle, 35mm-deep Novatec G29 carbon wheels and tan-wall Schwalbe G-One R Pro 50mm tyres. There's very little left to upgrade.",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0122",
+     "_key": "t0121",
      "style": "h3",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0121",
+       "_key": "t0120",
        "text": "Tambora 7 Di2 – 78,000,000₫",
        "marks": []
       }
@@ -990,34 +978,34 @@
     },
     {
      "_type": "block",
-     "_key": "t0124",
+     "_key": "t0123",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0123",
-       "text": "Electronic Shimano GRX Di2 1x12 (40T chainring, 10-51T cassette) with Shimano GRX hydraulic brakes. Like the 9 AXS it rolls on 35mm Novatec G29 carbon wheels with a carbon seatpost and tan-wall Schwalbe G-One R Pro 50mm tyres. Bar and stem are from FSA.",
+       "_key": "t0122",
+       "text": "Quite possibly the pick of the range. It costs 40 million VND less than the 9 AXS yet keeps the Novatec G29 carbon wheels, carbon seatpost and Schwalbe G-One R Pro tyres. Electronic Shimano GRX Di2 1x12 comes with a 10-51T cassette, giving an even easier climbing gear than the 9 AXS. Bar and stem are from FSA.",
        "marks": []
       }
      ]
     },
     {
      "_type": "figure",
-     "_key": "t0125",
+     "_key": "t0124",
      "url": "/media/polygon-tambora-7-di2.jpg",
      "alt": "Polygon Tambora 7 Di2 in white and blue",
      "caption": "Tambora 7 Di2."
     },
     {
      "_type": "block",
-     "_key": "t0127",
+     "_key": "t0126",
      "style": "h3",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0126",
+       "_key": "t0125",
        "text": "Tambora 6 – 65,000,000₫",
        "marks": []
       }
@@ -1025,34 +1013,34 @@
     },
     {
      "_type": "block",
-     "_key": "t0129",
+     "_key": "t0128",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0128",
-       "text": "Shimano GRX 2x12 (46/30T chainrings, 11-36T cassette) for a wide gear range, suited to riders who climb a lot or mix tarmac with dirt. Shimano GRX hydraulic brakes, tubeless-ready 30mm alloy rims, Novatec hubs and Schwalbe G-One R 700x50C tyres.",
+       "_key": "t0127",
+       "text": "Back to mechanical shifting with Shimano GRX 2x12 (46/30T chainrings, 11-36T cassette). The double gives tight gear steps, ideal for riders who do group rides on tarmac but still want to head for the dirt at the weekend. Wheels switch to tubeless-ready 30mm alloy rims on Novatec hubs, with Schwalbe G-One R 50mm tyres.",
        "marks": []
       }
      ]
     },
     {
      "_type": "figure",
-     "_key": "t0130",
+     "_key": "t0129",
      "url": "/media/polygon-tambora-6.jpg",
      "alt": "Polygon Tambora 6 in red and black",
      "caption": "Tambora 6."
     },
     {
      "_type": "block",
-     "_key": "t0132",
+     "_key": "t0131",
      "style": "h3",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0131",
+       "_key": "t0130",
        "text": "Tambora 4 – 45,000,000₫",
        "marks": []
       }
@@ -1060,34 +1048,34 @@
     },
     {
      "_type": "block",
-     "_key": "t0134",
+     "_key": "t0133",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0133",
-       "text": "The most accessible build still keeps the carbon frame and fork. Shimano CUES 2x10 (46/32T chainrings, 11-39T cassette), Shimano CUES hydraulic brakes with 180mm rotors, tubeless-ready alloy rims and Delium SpeedX 700x45C tyres.",
+       "_key": "t0132",
+       "text": "The way into carbon gravel. Shimano CUES 2x10 (46/32T chainrings, 11-39T cassette) is unglamorous but tough, paired with Shimano CUES hydraulic brakes on 180mm rotors, tubeless-ready alloy rims and Delium SpeedX 45mm tyres. The frame is the same carbon one as the 118-million build, making it a solid platform to upgrade over time.",
        "marks": []
       }
      ]
     },
     {
      "_type": "figure",
-     "_key": "t0135",
+     "_key": "t0134",
      "url": "/media/polygon-tambora-4.jpg",
      "alt": "Polygon Tambora 4 in tan and black",
      "caption": "Tambora 4."
     },
     {
      "_type": "block",
-     "_key": "t0137",
+     "_key": "t0136",
      "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0136",
+       "_key": "t0135",
        "text": "At a glance",
        "marks": []
       }
@@ -1095,21 +1083,21 @@
     },
     {
      "_type": "specTable",
-     "_key": "t0138",
+     "_key": "t0137",
      "hasHeader": true,
      "rows": [
       {
-       "_key": "t0139",
+       "_key": "t0138",
        "cells": [
         "Build",
         "Drivetrain",
         "Wheels",
         "Tyres",
-        "Price"
+        "List price"
        ]
       },
       {
-       "_key": "t0140",
+       "_key": "t0139",
        "cells": [
         "Tambora 9 AXS",
         "SRAM Force XPLR AXS E1, 1x13",
@@ -1119,7 +1107,7 @@
        ]
       },
       {
-       "_key": "t0141",
+       "_key": "t0140",
        "cells": [
         "Tambora 7 Di2",
         "Shimano GRX Di2, 1x12",
@@ -1129,7 +1117,7 @@
        ]
       },
       {
-       "_key": "t0142",
+       "_key": "t0141",
        "cells": [
         "Tambora 6",
         "Shimano GRX, 2x12",
@@ -1139,7 +1127,7 @@
        ]
       },
       {
-       "_key": "t0143",
+       "_key": "t0142",
        "cells": [
         "Tambora 4",
         "Shimano CUES, 2x10",
@@ -1152,62 +1140,42 @@
     },
     {
      "_type": "block",
-     "_key": "t0145",
+     "_key": "t0144",
      "style": "h2",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0144",
-       "text": "Pricing and availability",
+       "_key": "t0143",
+       "text": "Verdict",
        "marks": []
       }
      ]
     },
     {
      "_type": "block",
-     "_key": "t0150",
-     "style": "normal",
-     "markDefs": [
-      {
-       "_type": "link",
-       "_key": "t0147",
-       "href": "https://spinlab.vn/xe-gravel"
-      }
-     ],
-     "children": [
-      {
-       "_type": "span",
-       "_key": "t0146",
-       "text": "The Polygon Tambora MY27 is distributed in Vietnam by Spinlab. Full specs, colours and size charts for each build are at ",
-       "marks": []
-      },
-      {
-       "_type": "span",
-       "_key": "t0148",
-       "text": "spinlab.vn/xe-gravel",
-       "marks": [
-        "t0147"
-       ]
-      },
-      {
-       "_type": "span",
-       "_key": "t0149",
-       "text": ". Specs may change between shipments, so check with the distributor before buying.",
-       "marks": []
-      }
-     ]
-    },
-    {
-     "_type": "block",
-     "_key": "t0152",
+     "_key": "t0146",
      "style": "normal",
      "markDefs": [],
      "children": [
       {
        "_type": "span",
-       "_key": "t0151",
-       "text": "Sources: Polygon Bikes, Spinlab",
+       "_key": "t0145",
+       "text": "The Tambora isn't trying to be the lightest gravel race bike. Its strengths are a modern carbon frame shared top to bottom, generous tyre clearance and friendly geometry. For newcomers, the Tambora 4 is the shortest route to a carbon gravel bike. For seasoned riders, the Tambora 7 Di2 strikes a compelling balance between price and spec.",
+       "marks": []
+      }
+     ]
+    },
+    {
+     "_type": "block",
+     "_key": "t0148",
+     "style": "normal",
+     "markDefs": [],
+     "children": [
+      {
+       "_type": "span",
+       "_key": "t0147",
+       "text": "Vietnamese market list prices, subject to change. Specifications from Polygon Bikes.",
        "marks": [
         "em"
        ]
