@@ -21,8 +21,8 @@
    "en": "Polygon Tambora unveiled: carbon gravel from 45 million VND"
   },
   "excerpt": {
-   "vi": "Dòng gravel mới của Polygon dùng chung một bộ khung carbon cho cả bốn phiên bản, chạy được lốp 55mm và có giá niêm yết tại Việt Nam từ 45 đến 118 triệu đồng.",
-   "en": "Polygon's new gravel line shares one carbon frame across four builds, clears 55mm tyres and lists in Vietnam from 45 to 118 million VND."
+   "vi": "Dòng gravel mới của Polygon dùng chung một bộ khung carbon cho cả bốn phiên bản, chạy được lốp 55mm và có giá niêm yết tại Việt Nam từ 45 đến 118 triệu đồng (tại Mỹ từ 1.999 đến 4.499 USD).",
+   "en": "Polygon's new gravel line shares one carbon frame across four builds, clears 55mm tyres and lists from 45 to 118 million VND in Vietnam and from $1,999 to $4,499 in the US."
   },
   "body": {
    "vi": [
@@ -63,7 +63,7 @@
       {
        "_type": "span",
        "_key": "t0005",
-       "text": "Giá niêm yết tại Việt Nam trải từ 45.000.000₫ cho Tambora 4 đến 118.000.000₫ cho Tambora 9 AXS.",
+       "text": "Giá niêm yết tại Việt Nam trải từ 45.000.000₫ cho Tambora 4 đến 118.000.000₫ cho Tambora 9 AXS. Tại thị trường Mỹ, Polygon niêm yết dòng xe từ 1.999 USD đến 4.499 USD.",
        "marks": []
       }
      ]
@@ -364,7 +364,7 @@
       {
        "_type": "span",
        "_key": "t0042",
-       "text": "Tambora 9 AXS – 118.000.000₫",
+       "text": "Tambora 9 AXS – 118.000.000₫ (4.499 USD)",
        "marks": []
       }
      ]
@@ -392,7 +392,7 @@
       {
        "_type": "span",
        "_key": "t0046",
-       "text": "Tambora 7 Di2 – 78.000.000₫",
+       "text": "Tambora 7 Di2 – 78.000.000₫ (3.199 USD)",
        "marks": []
       }
      ]
@@ -427,7 +427,7 @@
       {
        "_type": "span",
        "_key": "t0051",
-       "text": "Tambora 6 – 65.000.000₫",
+       "text": "Tambora 6 – 65.000.000₫ (2.499 USD)",
        "marks": []
       }
      ]
@@ -462,7 +462,7 @@
       {
        "_type": "span",
        "_key": "t0056",
-       "text": "Tambora 4 – 45.000.000₫",
+       "text": "Tambora 4 – 45.000.000₫ (1.999 USD)",
        "marks": []
       }
      ]
@@ -514,7 +514,8 @@
         "Bộ truyền động",
         "Bánh xe",
         "Lốp",
-        "Giá niêm yết"
+        "Giá Việt Nam",
+        "Giá Mỹ"
        ]
       },
       {
@@ -524,7 +525,8 @@
         "SRAM Force XPLR AXS E1, 1x13",
         "Carbon Novatec G29",
         "Schwalbe G-One R Pro 50mm",
-        "118.000.000₫"
+        "118.000.000₫",
+        "4.499 USD"
        ]
       },
       {
@@ -534,7 +536,8 @@
         "Shimano GRX Di2, 1x12",
         "Carbon Novatec G29",
         "Schwalbe G-One R Pro 50mm",
-        "78.000.000₫"
+        "78.000.000₫",
+        "3.199 USD"
        ]
       },
       {
@@ -544,7 +547,8 @@
         "Shimano GRX, 2x12",
         "Vành nhôm 30mm",
         "Schwalbe G-One R 50mm",
-        "65.000.000₫"
+        "65.000.000₫",
+        "2.499 USD"
        ]
       },
       {
@@ -554,7 +558,8 @@
         "Shimano CUES, 2x10",
         "Vành nhôm 30mm",
         "Delium SpeedX 45mm",
-        "45.000.000₫"
+        "45.000.000₫",
+        "1.999 USD"
        ]
       }
      ]
@@ -596,7 +601,7 @@
       {
        "_type": "span",
        "_key": "t0073",
-       "text": "Giá niêm yết tại thị trường Việt Nam, có thể thay đổi. Thông số theo Polygon Bikes.",
+       "text": "Giá niêm yết tại thị trường Việt Nam và Mỹ, có thể thay đổi. Giá Mỹ và thông số theo Polygon Bikes.",
        "marks": [
         "em"
        ]
@@ -642,7 +647,7 @@
       {
        "_type": "span",
        "_key": "t0079",
-       "text": "Vietnamese list prices run from 45,000,000₫ for the Tambora 4 to 118,000,000₫ for the Tambora 9 AXS.",
+       "text": "Vietnamese list prices run from 45,000,000₫ for the Tambora 4 to 118,000,000₫ for the Tambora 9 AXS. In the US, Polygon lists the range from $1,999 to $4,499.",
        "marks": []
       }
      ]
@@ -943,7 +948,7 @@
       {
        "_type": "span",
        "_key": "t0116",
-       "text": "Tambora 9 AXS – 118,000,000₫",
+       "text": "Tambora 9 AXS – 118,000,000₫ ($4,499)",
        "marks": []
       }
      ]
@@ -971,7 +976,7 @@
       {
        "_type": "span",
        "_key": "t0120",
-       "text": "Tambora 7 Di2 – 78,000,000₫",
+       "text": "Tambora 7 Di2 – 78,000,000₫ ($3,199)",
        "marks": []
       }
      ]
@@ -1006,7 +1011,7 @@
       {
        "_type": "span",
        "_key": "t0125",
-       "text": "Tambora 6 – 65,000,000₫",
+       "text": "Tambora 6 – 65,000,000₫ ($2,499)",
        "marks": []
       }
      ]
@@ -1041,7 +1046,7 @@
       {
        "_type": "span",
        "_key": "t0130",
-       "text": "Tambora 4 – 45,000,000₫",
+       "text": "Tambora 4 – 45,000,000₫ ($1,999)",
        "marks": []
       }
      ]
@@ -1093,7 +1098,8 @@
         "Drivetrain",
         "Wheels",
         "Tyres",
-        "List price"
+        "Vietnam",
+        "USA"
        ]
       },
       {
@@ -1103,7 +1109,8 @@
         "SRAM Force XPLR AXS E1, 1x13",
         "Carbon Novatec G29",
         "Schwalbe G-One R Pro 50mm",
-        "118,000,000₫"
+        "118,000,000₫",
+        "$4,499"
        ]
       },
       {
@@ -1113,7 +1120,8 @@
         "Shimano GRX Di2, 1x12",
         "Carbon Novatec G29",
         "Schwalbe G-One R Pro 50mm",
-        "78,000,000₫"
+        "78,000,000₫",
+        "$3,199"
        ]
       },
       {
@@ -1123,7 +1131,8 @@
         "Shimano GRX, 2x12",
         "30mm alloy rims",
         "Schwalbe G-One R 50mm",
-        "65,000,000₫"
+        "65,000,000₫",
+        "$2,499"
        ]
       },
       {
@@ -1133,7 +1142,8 @@
         "Shimano CUES, 2x10",
         "30mm alloy rims",
         "Delium SpeedX 45mm",
-        "45,000,000₫"
+        "45,000,000₫",
+        "$1,999"
        ]
       }
      ]
@@ -1175,7 +1185,7 @@
       {
        "_type": "span",
        "_key": "t0147",
-       "text": "Vietnamese market list prices, subject to change. Specifications from Polygon Bikes.",
+       "text": "List prices for the Vietnamese and US markets, subject to change. US prices and specifications from Polygon Bikes.",
        "marks": [
         "em"
        ]
